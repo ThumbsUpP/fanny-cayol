@@ -1,0 +1,102 @@
+@use './styles/variables' as v;
+
+.hero {
+  position: relative;
+  display: grid;
+  gap: 2.5rem;
+  padding: clamp(3rem, 7vw, 5rem) 1.5rem clamp(4rem, 8vw, 6rem);
+  max-width: v.$page-max-width;
+  margin: 0 auto;
+  align-items: center;
+
+  &__accent {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 20% 20%, rgba(132, 193, 250, 0.35), transparent 60%),
+      radial-gradient(circle at 85% 10%, rgba(132, 193, 250, 0.3), transparent 55%);
+    pointer-events: none;
+    filter: blur(6px);
+  }
+
+  &__content {
+    position: relative;
+    z-index: 1;
+    max-width: 560px;
+  }
+
+  &__eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(v.$primary-color, 0.7);
+    margin-bottom: 1rem;
+
+    &::before {
+      content: '';
+      display: inline-block;
+      width: 36px;
+      height: 2px;
+      background: v.$accent-color;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 2rem;
+  }
+
+  &__cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.9rem 1.6rem;
+    border-radius: 999px;
+    font-weight: 600;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 10px 25px rgba(v.$primary-color, 0.12);
+
+    &:hover {
+      transform: translateY(-2px);
+    }
+
+    &--primary {
+      background: linear-gradient(120deg, #5aa7ff, #6edfd3);
+      color: #0a1f40;
+      box-shadow: 0 10px 30px rgba(90, 167, 255, 0.35);
+    }
+
+    &--secondary {
+      background: #ffffff;
+      color: v.$primary-color;
+      border: 1px solid rgba(v.$primary-color, 0.1);
+    }
+  }
+
+  &__image {
+    position: relative;
+    z-index: 1;
+    width: min(420px, 70vw);
+    justify-self: center;
+    aspect-ratio: 3 / 4;
+    border-radius: 26px;
+    background: url('https://images.unsplash.com/photo-1596178060671-7a80dc8059ea?auto=format&w=1200&q=60')
+      center / cover;
+    box-shadow: 0 25px 60px rgba(v.$primary-color, 0.15);
+  }
+}
+
+@media (max-width: 720px) {
+  .hero {
+    text-align: center;
+
+    &__actions {
+      justify-content: center;
+    }
+  }
+}

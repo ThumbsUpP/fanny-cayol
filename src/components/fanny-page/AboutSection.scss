@@ -1,0 +1,50 @@
+@use './styles/variables' as v;
+
+.about {
+  display: grid;
+  gap: 2rem;
+  align-items: center;
+
+  &__image {
+    position: relative;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 18px 45px rgba(v.$primary-color, 0.15);
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__content {
+    background: rgba(#ffffff, 0.8);
+    padding: clamp(1.75rem, 3vw, 2.5rem);
+    border-radius: 24px;
+    box-shadow: 0 14px 40px rgba(v.$primary-color, 0.07);
+    backdrop-filter: blur(6px);
+  }
+
+  &__highlights {
+    display: grid;
+    gap: 1.2rem;
+    margin: 1.5rem 0 0;
+    padding: 0;
+    list-style: none;
+
+    li {
+      border-left: 3px solid rgba(v.$accent-color, 0.9);
+      padding-left: 1rem;
+
+      h3 {
+        margin-bottom: 0.35rem;
+      }
+    }
+  }
+
+  @media (min-width: 860px) {
+    grid-template-columns: 1.1fr 1fr;
+  }
+}

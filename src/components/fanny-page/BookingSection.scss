@@ -1,0 +1,60 @@
+@use './styles/variables' as v;
+
+.booking {
+  display: grid;
+  gap: 2rem;
+  align-items: center;
+  background: linear-gradient(95deg, rgba(v.$primary-color, 0.92), rgba(51, 123, 235, 0.85));
+  color: #f7fbff;
+  border-radius: 28px;
+  padding: clamp(2.5rem, 4vw, 3.5rem);
+  box-shadow: 0 22px 60px rgba(v.$primary-color, 0.2);
+
+  h2,
+  p {
+    color: inherit;
+  }
+
+  &__media {
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 16px 45px rgba(#000, 0.28);
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  &__cta {
+    padding: 0.85rem 1.6rem;
+    border-radius: 999px;
+    font-weight: 600;
+    background: rgba(#ffffff, 0.15);
+    color: #ffffff;
+    border: 1px solid rgba(#ffffff, 0.4);
+    transition: transform 0.2s ease, background 0.2s ease;
+
+    &:hover {
+      transform: translateY(-2px);
+      background: rgba(#ffffff, 0.28);
+    }
+
+    &--primary {
+      background: #ffffff;
+      color: v.$primary-color;
+    }
+  }
+
+  @media (min-width: 900px) {
+    grid-template-columns: 1fr 1fr;
+  }
+}

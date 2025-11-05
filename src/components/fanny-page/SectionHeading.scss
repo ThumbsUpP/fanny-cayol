@@ -1,0 +1,11 @@
+@use './styles/variables' as v;
+
+.section-heading {
+  text-align: center;
+  margin-bottom: clamp(2rem, 4vw, 3rem);
+
+  p {
+    max-width: 620px;
+    margin: 0.75rem auto 0;
+  }
+}

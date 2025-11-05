@@ -31,7 +31,7 @@ const FannyPage: React.FC = () => (
     <ServicesSection services={services} />
     <BookingSection {...bookingContent} />
     <GiftCardSection {...giftCardContent} />
-    <AmbianceSection cards={ambianceCards} />
+    {/* <AmbianceSection cards={ambianceCards} /> */}
     <ContactSection cards={contactCards} />
     <ContactFormSection {...contactFormContent} />
     <SiteFooter {...footerContent} />

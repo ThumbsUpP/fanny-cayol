@@ -25,7 +25,6 @@ const images = {
 } as const;
 
 export const heroContent: HeroContent = {
-  eyebrow: 'Bienvenue chez Fanny Cayol-Peridon',
   title: 'Entre montagne et bien-être, prenez un moment pour vous',
   description:
     'Installée à Autrans-Méaudre, je vous accompagne avec bienveillance pour soulager vos tensions, rééquilibrer votre corps et vous offrir une parenthèse de douceur.',

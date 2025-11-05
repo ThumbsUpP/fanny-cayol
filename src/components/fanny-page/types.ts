@@ -6,7 +6,6 @@ export type HeroButton = {
 };
 
 export type HeroContent = {
-  eyebrow: string;
   title: string;
   description: string;
   buttons: HeroButton[];

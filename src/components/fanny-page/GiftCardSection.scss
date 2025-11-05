@@ -6,7 +6,7 @@
     #ffffff;
   border-radius: 28px;
   padding: clamp(2.25rem, 4vw, 3rem);
-  box-shadow: 0 20px 55px rgba(v.$primary-color, 0.08);
+  box-shadow: 0 20px 55px rgba(v.$primary-dark, 0.14);
 
   &__content {
     max-width: 640px;
@@ -16,12 +16,13 @@
     display: inline-flex;
     align-items: center;
     gap: 0.75rem;
-    background: linear-gradient(120deg, #f8afc2, #fce1ec);
-    color: #3c1f47;
+    background: linear-gradient(120deg, v.$primary-light, v.$accent-strong);
     padding: 0.85rem 1.6rem;
     border-radius: 999px;
     font-weight: 600;
-    box-shadow: 0 12px 28px rgba(#f8afc2, 0.35);
+    box-shadow: 0 12px 28px rgba(v.$primary-dark, 0.18);
+    color: #ffffff !important;
+
 
     span {
       font-size: 1.2rem;

@@ -14,7 +14,8 @@
     background: #ffffff;
     border-radius: 24px;
     overflow: hidden;
-    box-shadow: 0 18px 40px rgba(v.$primary-color, 0.08);
+    box-shadow: 0 18px 40px rgba(v.$primary-dark, 0.12);
+    border: 1px solid rgba(v.$primary-dark, 0.08);
     height: 100%;
 
     img {

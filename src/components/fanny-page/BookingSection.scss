@@ -4,11 +4,11 @@
   display: grid;
   gap: 2rem;
   align-items: center;
-  background: linear-gradient(95deg, rgba(v.$primary-color, 0.92), rgba(51, 123, 235, 0.85));
-  color: #f7fbff;
+  background: linear-gradient(95deg, rgba(v.$primary-dark, 0.95), rgba(v.$primary-color, 0.88));
+  color: #f5fbf7;
   border-radius: 28px;
   padding: clamp(2.5rem, 4vw, 3.5rem);
-  box-shadow: 0 22px 60px rgba(v.$primary-color, 0.2);
+  box-shadow: 0 22px 60px rgba(v.$primary-dark, 0.22);
 
   h2,
   p {
@@ -18,7 +18,7 @@
   &__media {
     border-radius: 20px;
     overflow: hidden;
-    box-shadow: 0 16px 45px rgba(#000, 0.28);
+    box-shadow: 0 16px 45px rgba(#000, 0.21);
 
     img {
       width: 100%;
@@ -50,7 +50,10 @@
 
     &--primary {
       background: #ffffff;
-      color: v.$primary-color;
+      color: v.$primary-dark;
+    }
+    &--secondary {
+      color: v.$soft-accent !important;
     }
   }
 

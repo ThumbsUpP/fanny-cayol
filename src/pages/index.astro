@@ -1,44 +1,23 @@
 ---
-import Counter from '../components/Counter';
+import FannyPage from '../components/FannyPage';
 ---
 
-<!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Fanny Cayol - Site Vitrine</title>
-    <meta name="description" content="Site vitrine pour Fanny Cayol" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bienvenue chez Fanny Cayol-Peridon</title>
+    <meta
+      name="description"
+      content="Kinésithérapeute, ostéopathe et masseuse à Autrans-Méaudre. Prenez rendez-vous pour un moment de bien-être sur-mesure."
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+    />
   </head>
   <body>
-    <main>
-      <h1>Welcome to Fanny Cayol's Website</h1>
-      <p>This is a static site built with Astro, React, and TypeScript.</p>
-      <Counter client:load />
-    </main>
+    <FannyPage />
   </body>
 </html>
-
-<style>
-  :global(body) {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 2rem;
-    line-height: 1.6;
-  }
-  
-  main {
-    text-align: center;
-  }
-  
-  h1 {
-    color: #333;
-    margin-bottom: 1rem;
-  }
-  
-  p {
-    color: #666;
-    margin-bottom: 2rem;
-  }
-</style>

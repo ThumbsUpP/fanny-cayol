@@ -1,4 +1,5 @@
 import React from 'react';
+import SectionHeading from './SectionHeading';
 import './AudiencesSection.scss';
 import type { AudiencesContent } from './types';
 
@@ -9,14 +10,12 @@ const AudiencesSection: React.FC<AudiencesContent> = ({
 }) => {
   return (
     <section className="audiences" id="publics_et_soins" aria-labelledby="publics-et-soins-heading">
-      <div className="audiences__header">
-        {React.createElement(headingLevel, { id: 'publics-et-soins-heading' }, heading)}
-      </div>
+      <SectionHeading title={heading} titleTag={headingLevel} id="publics-et-soins-heading" />
       <div className="audiences__grid">
         {categories.map(({ id, heading: categoryHeading, headingLevel: categoryHeadingLevel, text }) => {
           return (
             <article className="audiences__item" key={id} id={id}>
-              {React.createElement(categoryHeadingLevel, undefined, categoryHeading)}
+              {React.createElement(categoryHeadingLevel, { className: 'audiences__item-heading' }, categoryHeading)}
               <p>{text}</p>
             </article>
           );

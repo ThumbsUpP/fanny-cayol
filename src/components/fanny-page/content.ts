@@ -212,7 +212,7 @@ export const audiencesContent: AudiencesContent = {
   categories: [
     {
       id: 'nourrissons_enfants',
-      heading: 'Ostéopathie et Kinésithérapie pour Nourrissons & enfants',
+      heading: 'Nourrissons & enfants',
       headingLevel: 'h2',
       text: 'Dans mon cabinet, les plus jeunes bénéficient de soins adaptés qui respectent leur développement et leur croissance. La kinésithérapie et l’ostéopathie pour les nourrissons et les enfants visent à corriger les déséquilibres précoces, soutenir le développement moteur et traiter les troubles spécifiques de la petite enfance (coliques, troubles du sommeil, problèmes posturaux…).',
     },

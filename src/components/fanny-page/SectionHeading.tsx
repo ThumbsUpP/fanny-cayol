@@ -1,15 +1,23 @@
 import React from 'react';
 import './SectionHeading.scss';
+import type { HeadingLevel } from './types';
 
 type SectionHeadingProps = {
   title: string;
-  description: string;
+  description?: string;
+  titleTag?: HeadingLevel;
+  id?: string;
 };
 
-const SectionHeading: React.FC<SectionHeadingProps> = ({ title, description }) => (
+const SectionHeading: React.FC<SectionHeadingProps> = ({
+  title,
+  description,
+  titleTag = 'h2',
+  id,
+}) => (
   <div className="section-heading">
-    <h2>{title}</h2>
-    <p>{description}</p>
+    {React.createElement(titleTag, { id }, title)}
+    {description && <p>{description}</p>}
   </div>
 );
 

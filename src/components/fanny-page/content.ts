@@ -10,11 +10,26 @@ import type {
   Service,
 } from './types';
 
+const images = {
+  hero: '/images/profile-picture.jpeg',
+  about: '/images/maison-de-sante.jpeg',
+  osteopathy: '/images/cabinet.jpeg',
+  wellnessMassage: '/images/maison-de-sante.jpeg',
+  expressMassage: '/images/montagne.jpeg',
+  lymphatic: '/images/montagne-2.jpeg',
+  booking: '/images/maison-de-sante.jpeg',
+  ambianceNature: '/images/montagne.jpeg',
+  ambianceCabin: '/images/cabinet.jpeg',
+  ambianceCare: '/images/maison-de-sante.jpeg',
+  contactForm: '/images/cabinet.jpeg',
+} as const;
+
 export const heroContent: HeroContent = {
   eyebrow: 'Bienvenue chez Fanny Cayol-Peridon',
   title: 'Entre montagne et bien-être, prenez un moment pour vous',
   description:
     'Installée à Autrans-Méaudre, je vous accompagne avec bienveillance pour soulager vos tensions, rééquilibrer votre corps et vous offrir une parenthèse de douceur.',
+  image: images.hero,
   buttons: [
     {
       label: 'Appeler maintenant',
@@ -31,7 +46,7 @@ export const heroContent: HeroContent = {
 };
 
 export const aboutContent: AboutContent = {
-  image: 'https://images.unsplash.com/photo-1599059812633-4d1353162593?auto=format&w=1400&q=60',
+  image: images.about,
   imageAlt: 'Massage professionnel dans un cadre naturel',
   title: 'Kinésithérapeute, Ostéopathe & Masseuse',
   description:
@@ -55,34 +70,30 @@ export const services: Service[] = [
     title: 'Ostéopathie',
     duration: '45 min / 60 €',
     description: 'Soulage les tensions profondes et rééquilibre votre corps en douceur.',
-    image:
-      'https://images.unsplash.com/photo-1596178060671-7a80dc8059ea?auto=format&w=1200&q=60',
+    image: images.osteopathy,
   },
   {
     title: 'Massage bien-être',
     duration: '1 h / 60 €',
     description: 'Détente profonde pour un lâcher-prise total et une relaxation complète.',
-    image:
-      'https://images.unsplash.com/photo-1621009372659-ec37f97073b2?auto=format&w=1200&q=60',
+    image: images.wellnessMassage,
   },
   {
     title: 'Massage express',
     duration: '30 min / 30 €',
     description: 'La pause idéale pour relâcher les tensions du quotidien.',
-    image:
-      'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&w=1200&q=60',
+    image: images.expressMassage,
   },
   {
     title: 'Drainage lymphatique',
     duration: '1 h / 70 €',
     description: 'Stimule la circulation et apporte une sensation de légèreté.',
-    image:
-      'https://images.unsplash.com/photo-1519824145371-296894a0daa9?auto=format&w=1200&q=60',
+    image: images.lymphatic,
   },
 ];
 
 export const bookingContent: BookingContent = {
-  image: 'https://images.unsplash.com/photo-1596176530528-3ed3c8ac9c26?auto=format&w=1400&q=60',
+  image: images.booking,
   imageAlt: "Client profitant d'un massage relaxant",
   title: 'Réservez votre moment de bien-être',
   description:
@@ -114,20 +125,17 @@ export const ambianceCards: AmbianceCard[] = [
   {
     title: 'Inspiration tropicale',
     description: 'Mon parcours en Guadeloupe nourrit une approche douce et naturelle.',
-    image:
-      'https://images.unsplash.com/photo-1680983468499-7e6690652f83?auto=format&w=1200&q=60',
+    image: images.ambianceNature,
   },
   {
     title: 'Cadre apaisant',
     description: 'À Autrans-Méaudre, profitez d’un lieu calme au cœur du Vercors.',
-    image:
-      'https://images.unsplash.com/photo-1687721761035-b61774890cc9?auto=format&w=1200&q=60',
+    image: images.ambianceCabin,
   },
   {
     title: 'Approche bienveillante',
     description: 'Chaque geste est pensé pour votre confort et votre équilibre.',
-    image:
-      'https://images.unsplash.com/photo-1729324738509-7935838d5ef9?auto=format&w=1200&q=60',
+    image: images.ambianceCare,
   },
 ];
 
@@ -157,7 +165,7 @@ export const contactCards: ContactCard[] = [
 ];
 
 export const contactFormContent: ContactFormContent = {
-  image: 'https://images.unsplash.com/photo-1622947344865-a7fcf40e88e7?auto=format&w=1400&q=60',
+  image: images.contactForm,
   imageAlt: 'Écriture sur un carnet dans une ambiance zen',
   title: 'Restons en contact',
   description:

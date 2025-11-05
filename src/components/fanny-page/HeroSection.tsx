@@ -2,11 +2,10 @@ import React from 'react';
 import './HeroSection.scss';
 import type { HeroContent } from './types';
 
-const HeroSection: React.FC<HeroContent> = ({ eyebrow, title, description, buttons }) => (
+const HeroSection: React.FC<HeroContent> = ({ title, description, buttons, image }) => (
   <header className="hero">
     <div className="hero__accent" />
     <div className="hero__content">
-      <span className="hero__eyebrow">{eyebrow}</span>
       <h1>{title}</h1>
       <p>{description}</p>
       <div className="hero__actions">
@@ -18,7 +17,7 @@ const HeroSection: React.FC<HeroContent> = ({ eyebrow, title, description, butto
         ))}
       </div>
     </div>
-    <div className="hero__image" aria-hidden="true" />
+    <div className="hero__image" style={{ backgroundImage: `url(${image})` }} aria-hidden="true" />
   </header>
 );
 

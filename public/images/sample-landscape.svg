@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 960">
+  <defs>
+    <linearGradient id="skyGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#87c9ff" />
+      <stop offset="100%" stop-color="#f5efe6" />
+    </linearGradient>
+    <linearGradient id="mountainGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#274072" />
+      <stop offset="100%" stop-color="#5b7dba" />
+    </linearGradient>
+    <linearGradient id="mountainLight" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#e6eefc" stop-opacity="0.4" />
+    </linearGradient>
+    <radialGradient id="sun" cx="50%" cy="35%" r="25%">
+      <stop offset="0%" stop-color="#ffe9a6" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#ffe9a6" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+  <rect width="1440" height="960" fill="url(#skyGradient)" />
+  <circle cx="1080" cy="220" r="180" fill="url(#sun)" />
+  <path
+    d="M0 720 L280 520 L480 680 L720 440 L960 660 L1180 540 L1440 720 L1440 960 L0 960 Z"
+    fill="url(#mountainGradient)"
+  />
+  <path
+    d="M720 440 L960 660 L1180 540 L1440 720 L1440 960 L720 960 Z"
+    fill="url(#mountainLight)"
+    opacity="0.65"
+  />
+  <path
+    d="M0 800 L200 720 L440 820 L720 700 L940 780 L1180 720 L1440 820 L1440 960 L0 960 Z"
+    fill="#1e3063"
+    opacity="0.55"
+  />
+</svg>

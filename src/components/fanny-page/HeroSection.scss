@@ -4,7 +4,7 @@
   position: relative;
   display: grid;
   gap: 2.5rem;
-  padding: clamp(3rem, 7vw, 5rem) 1.5rem clamp(4rem, 8vw, 6rem);
+  padding: clamp(3rem, 7vw, 5rem) clamp(1.5rem, 6vw, 3rem) clamp(4rem, 8vw, 6rem);
   max-width: v.$page-max-width;
   margin: 0 auto;
   align-items: center;
@@ -22,26 +22,6 @@
     position: relative;
     z-index: 1;
     max-width: 560px;
-  }
-
-  &__eyebrow {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-size: 0.85rem;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: rgba(v.$primary-color, 0.7);
-    margin-bottom: 1rem;
-
-    &::before {
-      content: '';
-      display: inline-block;
-      width: 36px;
-      height: 2px;
-      background: v.$accent-color;
-    }
   }
 
   &__actions {
@@ -81,12 +61,14 @@
   &__image {
     position: relative;
     z-index: 1;
-    width: min(420px, 70vw);
+    width: min(420px, 100%);
     justify-self: center;
-    aspect-ratio: 3 / 4;
+    aspect-ratio: 4 / 5;
     border-radius: 26px;
-    background: url('https://images.unsplash.com/photo-1596178060671-7a80dc8059ea?auto=format&w=1200&q=60')
-      center / cover;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: #e8eefc;
     box-shadow: 0 25px 60px rgba(v.$primary-color, 0.15);
   }
 }
@@ -97,6 +79,47 @@
 
     &__actions {
       justify-content: center;
+    }
+
+    &__content {
+      order: 2;
+      text-align: center;
+    }
+
+    &__image {
+      order: 1;
+      width: clamp(220px, 60vw, 320px);
+    }
+  }
+}
+
+@media (min-width: 720px) and (max-width: 1024px) {
+  .hero {
+    grid-template-columns: minmax(0, 1fr);
+    justify-items: center;
+    text-align: center;
+
+    &__image {
+      width: clamp(320px, 40vw, 380px);
+    }
+
+    &__content {
+      text-align: center;
+      max-width: min(520px, 80%);
+    }
+
+    &__actions {
+      justify-content: center;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr);
+
+    &__image {
+      width: min(420px, 36vw);
     }
   }
 }

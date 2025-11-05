@@ -10,6 +10,7 @@ export type HeroContent = {
   title: string;
   description: string;
   buttons: HeroButton[];
+  image: string;
 };
 
 export type Highlight = {

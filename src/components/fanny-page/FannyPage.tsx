@@ -24,7 +24,7 @@ import {
 const FannyPage: React.FC = () => (
   <div className="fanny-page">
     <HeroSection {...heroContent} />
-    <AboutSection {...aboutContent} />
+    {/* <AboutSection {...aboutContent} />   */}
     <ServicesSection services={services} />
     <BookingSection {...bookingContent} />
     <GiftCardSection {...giftCardContent} />

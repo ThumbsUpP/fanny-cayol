@@ -25,9 +25,9 @@ const images = {
 } as const;
 
 export const heroContent: HeroContent = {
-  title: 'Entre montagne et bien-être, prenez un moment pour vous',
+  title: 'Kinésithérapeute & Ostéopathe à Autrans-Méaudre',
   description:
-    'Installée à Autrans-Méaudre, je vous accompagne avec bienveillance pour soulager vos tensions, rééquilibrer votre corps et vous offrir une parenthèse de douceur.',
+    'Fanny Cayol-Peridon vous accompagne avec une approche douce, personnalisée et ancrée dans la nature pour soulager vos tensions, rééquilibrer votre corps et retrouver votre bien-être.',
   image: images.hero,
   buttons: [
     {

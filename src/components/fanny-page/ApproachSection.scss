@@ -1,4 +1,5 @@
 @use './styles/variables' as v;
+@use './styles/cards';
 
 .approach {
   &__grid {
@@ -12,26 +13,18 @@
   }
 
   &__item {
+    @include cards.surface;
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
     padding: 1.75rem;
-    border-radius: 24px;
-    background: #ffffff;
-    box-shadow: 0 16px 38px rgba(v.$primary-color, 0.08);
-    border: 1px solid rgba(v.$primary-color, 0.08);
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
-
-    &:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 22px 46px rgba(v.$primary-color, 0.12);
-    }
   }
 
   &__item-heading {
     margin: 0;
-    font-size: 1.25rem;
+    font-size: clamp(1.05rem, 1.8vw, 1.15rem);
     color: v.$primary-color;
+    font-weight: 600;
   }
 
   &__item p {

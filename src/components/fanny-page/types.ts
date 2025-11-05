@@ -99,6 +99,7 @@ export type StructuredSection = {
   heading: string;
   headingLevel: HeadingLevel;
   text: string;
+  icon?: string;
 };
 
 export type ApproachContent = {

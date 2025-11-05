@@ -24,6 +24,10 @@ const images = {
   ambianceCabin: '/images/cabinet.jpeg',
   ambianceCare: '/images/maison-de-sante.jpeg',
   contactForm: '/images/cabinet.jpeg',
+  ecoute: '/images/ecoute.png',
+  formation: '/images/formation.png',
+  hollistic: '/images/hollistic.png',
+  perso: '/images/perso.png',
 } as const;
 
 export const heroContent: HeroContent = {
@@ -183,25 +187,29 @@ export const approachContent: ApproachContent = {
       id: 'approche_personnalisee',
       heading: 'Approche Personnalisée',
       headingLevel: 'h2',
-      text: 'Chaque patient est unique. Je m’engage à fournir des soins sur mesure, adaptés à vos besoins personnels et à votre condition physique.',
+      text: 'Chaque patient est unique. Je m\'engage à fournir des soins sur mesure, adaptés à vos besoins personnels et à votre condition physique.',
+      icon: images.perso,
     },
     {
       id: 'ecoute_attentive',
       heading: 'Écoute Attentive',
       headingLevel: 'h2',
-      text: 'L’écoute est la première étape de tout traitement efficace. Vous serez toujours entendu, et vos préoccupations, pleinement comprises.',
+      text: 'L\'écoute est la première étape de tout traitement efficace. Vous serez toujours entendu, et vos préoccupations, pleinement comprises.',
+      icon: images.ecoute,
     },
     {
       id: 'formation_continue',
       heading: 'Formation Continue',
       headingLevel: 'h2',
-      text: 'Je suis constamment à la recherche de nouvelles techniques et de formations pour rester à la pointe de la kinésithérapie et de l’ostéopathie, vous garantissant ainsi les meilleurs soins possibles.',
+      text: 'Je suis constamment à la recherche de nouvelles techniques et de formations pour rester à la pointe de la kinésithérapie et de l\'ostéopathie, vous garantissant ainsi les meilleurs soins possibles.',
+      icon: images.formation,
     },
     {
       id: 'bien_etre_holistique',
       heading: 'Bien-être Holistique',
       headingLevel: 'h2',
       text: 'Ma vision de la santé est holistique, cherchant à optimiser votre bien-être général, pas seulement à traiter les symptômes. Les techniques douces sont au coeur de cette approche tissulaire et psycho-émotionnelle.',
+      icon: images.hollistic,
     },
   ],
 };

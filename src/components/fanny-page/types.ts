@@ -91,3 +91,31 @@ export type FooterContent = {
   appointmentHref: string;
   links: FooterLink[];
 };
+
+export type HeadingLevel = 'h1' | 'h2' | 'h3';
+
+export type StructuredSection = {
+  id: string;
+  heading: string;
+  headingLevel: HeadingLevel;
+  text: string;
+};
+
+export type ApproachContent = {
+  heading: string;
+  headingLevel: HeadingLevel;
+  sections: StructuredSection[];
+};
+
+export type AudienceCategory = {
+  id: string;
+  heading: string;
+  headingLevel: HeadingLevel;
+  text: string;
+};
+
+export type AudiencesContent = {
+  heading: string;
+  headingLevel: HeadingLevel;
+  categories: AudienceCategory[];
+};

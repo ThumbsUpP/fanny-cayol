@@ -1,6 +1,8 @@
 import type {
   AboutContent,
   AmbianceCard,
+  ApproachContent,
+  AudiencesContent,
   BookingContent,
   ContactCard,
   ContactFormContent,
@@ -116,7 +118,7 @@ export const giftCardContent: GiftCardContent = {
   description:
     "Faites plaisir à vos proches avec une carte cadeau personnalisée. Choisissez le soin, indiquez le destinataire et le message qui l'accompagne. Une attention qui fait du bien et se réserve en ligne.",
   ctaLabel: 'Acheter un bon cadeau',
-  ctaHref: 'mailto:fanny@example.com',
+  ctaHref: 'mailto:fcayolperidon@gmail.com',
   ctaIcon: '🎁',
 };
 
@@ -170,7 +172,69 @@ export const contactFormContent: ContactFormContent = {
   description:
     'Une question ou un besoin particulier ? Écrivez-moi et je vous répondrai rapidement pour construire ensemble votre moment de bien-être.',
   ctaLabel: 'Écrire un message',
-  ctaHref: 'mailto:fanny@example.com',
+  ctaHref: 'mailto:fcayolperidon@gmail.com',
+};
+
+export const approachContent: ApproachContent = {
+  heading: 'Approche & Valeurs',
+  headingLevel: 'h1',
+  sections: [
+    {
+      id: 'approche_personnalisee',
+      heading: 'Approche Personnalisée',
+      headingLevel: 'h2',
+      text: 'Chaque patient est unique. Je m’engage à fournir des soins sur mesure, adaptés à vos besoins personnels et à votre condition physique.',
+    },
+    {
+      id: 'ecoute_attentive',
+      heading: 'Écoute Attentive',
+      headingLevel: 'h2',
+      text: 'L’écoute est la première étape de tout traitement efficace. Vous serez toujours entendu, et vos préoccupations, pleinement comprises.',
+    },
+    {
+      id: 'formation_continue',
+      heading: 'Formation Continue',
+      headingLevel: 'h2',
+      text: 'Je suis constamment à la recherche de nouvelles techniques et de formations pour rester à la pointe de la kinésithérapie et de l’ostéopathie, vous garantissant ainsi les meilleurs soins possibles.',
+    },
+    {
+      id: 'bien_etre_holistique',
+      heading: 'Bien-être Holistique',
+      headingLevel: 'h2',
+      text: 'Ma vision de la santé est holistique, cherchant à optimiser votre bien-être général, pas seulement à traiter les symptômes. Les techniques douces sont au coeur de cette approche tissulaire et psycho-émotionnelle.',
+    },
+  ],
+};
+
+export const audiencesContent: AudiencesContent = {
+  heading: 'Pour qui ?',
+  headingLevel: 'h1',
+  categories: [
+    {
+      id: 'nourrissons_enfants',
+      heading: 'Ostéopathie et Kinésithérapie pour Nourrissons & enfants',
+      headingLevel: 'h2',
+      text: 'Dans mon cabinet, les plus jeunes bénéficient de soins adaptés qui respectent leur développement et leur croissance. La kinésithérapie et l’ostéopathie pour les nourrissons et les enfants visent à corriger les déséquilibres précoces, soutenir le développement moteur et traiter les troubles spécifiques de la petite enfance (coliques, troubles du sommeil, problèmes posturaux…).',
+    },
+    {
+      id: 'adultes',
+      heading: 'Adultes',
+      headingLevel: 'h2',
+      text: 'Que ce soit pour des douleurs de dos, des troubles musculo-squelettiques ou simplement pour un bien-être général, mon approche en kinésithérapie et ostéopathie aide les adultes de tous âges. Les traitements sont personnalisés pour répondre aux besoins individuels, favorisant une récupération optimale et un maintien de la santé corporelle.',
+    },
+    {
+      id: 'sportifs',
+      heading: 'Sportifs',
+      headingLevel: 'h2',
+      text: 'Je propose des services de kinésithérapie et d’ostéopathie qui ciblent la prévention des blessures, le traitement des affections sportives et l’amélioration de la performance. Les soins sont conçus pour accélérer la récupération et optimiser la fonction physique, essentielle à toute activité sportive.',
+    },
+    {
+      id: 'personnes_agees',
+      heading: 'Personnes âgées',
+      headingLevel: 'h2',
+      text: 'Mon cabinet offre des soins spécialement conçus pour les personnes âgées, visant à améliorer leur mobilité et à réduire leurs douleurs. Les techniques de kinésithérapie et d’ostéopathie adaptées aux besoins des seniors aident à maintenir l’autonomie et à améliorer la qualité de vie générale.',
+    },
+  ],
 };
 
 export const footerContent: FooterContent = {

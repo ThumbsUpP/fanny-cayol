@@ -135,9 +135,6 @@
     justify-self: center;
     aspect-ratio: 4 / 5;
     border-radius: v.$radius-lg;
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
     background-color: v.$soft-accent;
     border: 3px solid rgba(255, 255, 255, 0.9);
     box-shadow: 0 28px 60px rgba(20, 37, 28, 0.18);
@@ -159,6 +156,13 @@
       border-radius: v.$radius-base;
       border: 1px solid rgba(255, 255, 255, 0.35);
       pointer-events: none;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
     }
   }
 }

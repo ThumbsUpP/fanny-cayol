@@ -35,6 +35,7 @@ export const heroContent: HeroContent = {
   description:
     'Fanny Cayol-Peridon vous accompagne avec une approche douce, personnalisée et ancrée dans la nature pour soulager vos tensions, rééquilibrer votre corps et retrouver votre bien-être.',
   image: images.hero,
+  imageAlt: 'Portrait de Fanny Cayol-Peridon',
   buttons: [
     {
       label: 'Appeler maintenant',
@@ -44,7 +45,7 @@ export const heroContent: HeroContent = {
     },
     {
       label: 'Prendre rendez-vous',
-      href: 'https://share.google/8mC8xm2MKbQ72ALVs',
+      href: 'https://www.doctolib.fr/osteopathe/autrans-meaudre-en-vercors/fanny-cayol-peridon-autrans-meaudre-en-vercors',
       variant: 'secondary',
     },
   ],
@@ -111,7 +112,7 @@ export const bookingContent: BookingContent = {
     },
     {
       label: 'Doctolib',
-      href: 'https://share.google/8mC8xm2MKbQ72ALVs',
+      href: 'https://www.doctolib.fr/osteopathe/autrans-meaudre-en-vercors/fanny-cayol-peridon-autrans-meaudre-en-vercors',
       variant: 'secondary',
     },
   ],
@@ -165,7 +166,7 @@ export const contactCards: ContactCard[] = [
     icon: '💻',
     title: 'Réservation en ligne',
     lines: ['Doctolib'],
-    link: 'https://share.google/8mC8xm2MKbQ72ALVs',
+    link: 'https://www.doctolib.fr/osteopathe/autrans-meaudre-en-vercors/fanny-cayol-peridon-autrans-meaudre-en-vercors',
   },
 ];
 
@@ -252,7 +253,7 @@ export const footerContent: FooterContent = {
   phoneLabel: '06 68 37 86 16',
   phoneHref: 'tel:0668378616',
   appointmentLabel: 'Doctolib',
-  appointmentHref: 'https://share.google/8mC8xm2MKbQ72ALVs',
+  appointmentHref: 'https://www.doctolib.fr/osteopathe/autrans-meaudre-en-vercors/fanny-cayol-peridon-autrans-meaudre-en-vercors',
   links: [
     { label: 'Mentions légales', href: '#' },
     { label: 'Politique de confidentialité', href: '#' },

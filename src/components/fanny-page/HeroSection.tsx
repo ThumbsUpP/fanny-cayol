@@ -2,7 +2,13 @@ import React from 'react';
 import './HeroSection.scss';
 import type { HeroContent } from './types';
 
-const HeroSection: React.FC<HeroContent> = ({ title, description, buttons, image }) => (
+const HeroSection: React.FC<HeroContent> = ({
+  title,
+  description,
+  buttons,
+  image,
+  imageAlt = '',
+}) => (
   <header className="hero">
     <div className="hero__accent" />
     <div className="hero__container">
@@ -24,12 +30,16 @@ const HeroSection: React.FC<HeroContent> = ({ title, description, buttons, image
           ))}
         </div>
       </div>
-      <div
-        className="hero__image"
-        style={{ backgroundImage: `url(${image})`, animationDelay: '0.18s' }}
-        aria-hidden="true"
-        data-animate="fade-up"
-      />
+      <div className="hero__image" data-animate="fade-up" style={{ animationDelay: '0.18s' }}>
+        <img
+          src={image}
+          alt={imageAlt}
+          fetchPriority="high"
+          decoding="async"
+          width={420}
+          height={525}
+        />
+      </div>
     </div>
   </header>
 );

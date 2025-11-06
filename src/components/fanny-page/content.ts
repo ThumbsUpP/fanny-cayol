@@ -28,6 +28,9 @@ const images = {
   formation: '/images/formation.png',
   hollistic: '/images/hollistic.png',
   perso: '/images/perso.png',
+  drainage: '/images/drainage.jpeg',
+  osteo: '/images/osteo.jpg',
+  massage: '/images/massage.jpg',
 } as const;
 
 export const heroContent: HeroContent = {
@@ -76,13 +79,13 @@ export const services: Service[] = [
     title: 'Ostéopathie',
     duration: '45 min / 60 €',
     description: 'Soulage les tensions profondes et rééquilibre votre corps en douceur.',
-    image: images.osteopathy,
+    image: images.osteo,
   },
   {
     title: 'Massage bien-être',
     duration: '1 h / 60 €',
     description: 'Détente profonde pour un lâcher-prise total et une relaxation complète.',
-    image: images.wellnessMassage,
+    image: images.massage,
   },
   {
     title: 'Massage express',
@@ -94,7 +97,7 @@ export const services: Service[] = [
     title: 'Drainage lymphatique',
     duration: '1 h / 70 €',
     description: 'Stimule la circulation et apporte une sensation de légèreté.',
-    image: images.lymphatic,
+    image: images.drainage,
   },
 ];
 

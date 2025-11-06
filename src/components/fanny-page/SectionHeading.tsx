@@ -15,9 +15,9 @@ const SectionHeading: React.FC<SectionHeadingProps> = ({
   titleTag = 'h2',
   id,
 }) => (
-  <div className="section-heading">
-    {React.createElement(titleTag, { id }, title)}
-    {description && <p>{description}</p>}
+  <div className="section-heading" data-animate="fade-up">
+    {React.createElement(titleTag, { id, className: 'section-heading__title' }, title)}
+    {description && <p className="section-heading__description">{description}</p>}
   </div>
 );
 

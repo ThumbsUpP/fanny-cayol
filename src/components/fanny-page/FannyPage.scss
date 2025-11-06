@@ -1,48 +1,102 @@
 @use './styles/variables' as v;
 
 .fanny-page {
-  font-family: 'Inter', 'Work Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  position: relative;
+  font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   color: v.$text-color;
   background: v.$background-gradient;
   min-height: 100vh;
-  line-height: 1.6;
-  padding-bottom: 4rem;
+  line-height: 1.7;
+  letter-spacing: 0.01em;
+  padding-bottom: clamp(5rem, 10vw, 7rem);
+  -webkit-font-smoothing: antialiased;
+
+  &::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background: radial-gradient(circle at 10% 15%, rgba(v.$accent-strong, 0.25), transparent 55%),
+      radial-gradient(circle at 85% 25%, rgba(v.$primary-light, 0.18), transparent 50%);
+    opacity: 0.6;
+    z-index: -1;
+  }
 
   h1,
   h2,
   h3 {
-    color: v.$primary-color;
-    line-height: 1.2;
+    color: v.$primary-dark;
+    line-height: 1.18;
+    letter-spacing: -0.01em;
   }
 
   h1 {
-    font-size: clamp(2.2rem, 4vw, 3.5rem);
-    margin-bottom: 1rem;
+    font-size: clamp(2.7rem, 4vw, 3.9rem);
+    margin-bottom: 1.25rem;
+    font-weight: 700;
   }
 
   h2 {
-    font-size: clamp(1.8rem, 3vw, 2.5rem);
-    margin-bottom: 0.75rem;
+    font-size: clamp(2rem, 3.6vw, 3rem);
+    margin-bottom: 1rem;
+    font-weight: 600;
   }
 
   h3 {
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
+    font-size: clamp(1.2rem, 2.2vw, 1.35rem);
+    margin-bottom: 0.75rem;
+    font-weight: 600;
   }
 
   p {
     color: v.$muted-color;
-    margin-bottom: 1rem;
+    margin-bottom: 1.1rem;
+    font-size: clamp(1rem, 1.07vw, 1.05rem);
   }
 
   a {
     color: v.$primary-dark;
     text-decoration: none;
+    transition: color v.$transition-soft, opacity v.$transition-soft;
+
+    &:hover {
+      color: v.$primary-color;
+    }
   }
 
   section {
-    padding: clamp(2.5rem, 6vw, 4rem) 1.5rem;
+    padding: v.$section-padding-y v.$section-padding-x;
     max-width: v.$page-max-width;
     margin: 0 auto;
+  }
+
+  section + section {
+    margin-top: clamp(3rem, 6vw, 5rem);
+  }
+
+  [data-animate='fade-up'] {
+    opacity: 0;
+    transform: translateY(24px);
+    animation: fadeUp 0.9s ease forwards;
+    animation-delay: var(--delay, 0s);
+  }
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fanny-page {
+    letter-spacing: 0;
+
+    [data-animate='fade-up'] {
+      opacity: 1;
+      transform: none;
+      animation: none;
+    }
   }
 }

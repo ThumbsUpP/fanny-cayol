@@ -2,10 +2,31 @@
 
 .section-heading {
   text-align: center;
-  margin-bottom: clamp(2rem, 4vw, 3rem);
+  margin-bottom: clamp(2.75rem, 6vw, 4.5rem);
+  display: grid;
+  gap: clamp(0.75rem, 2vw, 1.25rem);
+  position: relative;
+  max-width: 760px;
+  margin-inline: auto;
 
-  p {
-    max-width: 620px;
-    margin: 0.75rem auto 0;
+  &::after {
+    content: '';
+    width: clamp(64px, 12vw, 96px);
+    height: 3px;
+    border-radius: 999px;
+    margin: 0 auto;
+    background: linear-gradient(90deg, rgba(#ffffff, 0), rgba(#6e9d85, 0.46), rgba(#ffffff, 0));
+  }
+
+  &__title {
+    margin: 0;
+  }
+
+  &__description {
+    max-width: 640px;
+    margin: 0 auto;
+    color: rgba(86, 97, 90, 0.92);
+    font-size: clamp(1.02rem, 1.4vw, 1.12rem);
+    line-height: 1.8;
   }
 }

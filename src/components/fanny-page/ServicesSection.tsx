@@ -14,8 +14,13 @@ const ServicesSection: React.FC<ServicesSectionProps> = ({ services }) => (
       description="Chaque soin est pensé pour vous offrir un moment unique de détente et de récupération. Sélectionnez l'accompagnement qui répond à vos besoins du moment."
     />
     <div className="services__grid">
-      {services.map(({ title, description, duration, image }) => (
-        <article className="services__card" key={title}>
+      {services.map(({ title, description, duration, image }, index) => (
+        <article
+          className="services__card"
+          key={title}
+          data-animate="fade-up"
+          style={{ animationDelay: `${0.08 * (index + 1)}s` }}
+        >
           <div className="services__media">
             <img src={image} alt={title} loading="lazy" />
           </div>

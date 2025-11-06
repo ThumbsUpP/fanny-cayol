@@ -2,19 +2,30 @@
 
 .site-footer {
   max-width: v.$page-max-width;
-  margin: clamp(3rem, 6vw, 5rem) auto 0;
-  padding: 2rem 1.5rem 0;
-  border-top: 1px solid rgba(v.$primary-dark, 0.15);
+  margin: clamp(3.5rem, 7vw, 6rem) auto 0;
+  padding: clamp(2.5rem, 4vw, 3rem) clamp(1.75rem, 4vw, 2.5rem);
+  border-radius: v.$radius-lg;
+  border: 1px solid rgba(v.$primary-dark, 0.08);
+  background: linear-gradient(180deg, rgba(#ffffff, 0.85), rgba(v.$soft-accent, 0.65));
   display: grid;
-  gap: 1.5rem;
+  gap: clamp(1.5rem, 3vw, 2.25rem);
   text-align: center;
+  box-shadow: v.$shadow-soft;
+  backdrop-filter: blur(14px);
 
   p {
     margin-bottom: 0.4rem;
+    color: rgba(v.$muted-color, 0.9);
   }
 
   a {
     font-weight: 600;
+    color: v.$primary-dark;
+    transition: color v.$transition-soft;
+
+    &:hover {
+      color: v.$primary-color;
+    }
   }
 
   &__links {
@@ -25,6 +36,7 @@
 
     a {
       color: rgba(v.$primary-dark, 0.75);
+      font-weight: 500;
     }
   }
 }

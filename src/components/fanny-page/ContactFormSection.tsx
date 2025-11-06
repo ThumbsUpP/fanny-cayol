@@ -11,13 +11,13 @@ const ContactFormSection: React.FC<ContactFormContent> = ({
   ctaHref,
 }) => (
   <section className="contact-form">
-    <div className="contact-form__media">
+    <div className="contact-form__media" data-animate="fade-up">
       <img src={image} alt={imageAlt} loading="lazy" />
     </div>
-    <div className="contact-form__content">
+    <div className="contact-form__content" data-animate="fade-up" style={{ animationDelay: '0.12s' }}>
       <h2>{title}</h2>
       <p>{description}</p>
-      <a href={ctaHref} className="contact-form__cta">
+      <a href={ctaHref} className="contact-form__cta" data-animate="fade-up" style={{ animationDelay: '0.22s' }}>
         {ctaLabel}
       </a>
     </div>

@@ -14,8 +14,13 @@ const ContactSection: React.FC<ContactSectionProps> = ({ cards }) => (
       description="Le cabinet est situé au cœur du Vercors, facilement accessible et entouré de nature."
     />
     <div className="contact__grid">
-      {cards.map(({ icon, title, lines, link }) => (
-        <article className="contact__card" key={title}>
+      {cards.map(({ icon, title, lines, link }, index) => (
+        <article
+          className="contact__card"
+          key={title}
+          data-animate="fade-up"
+          style={{ animationDelay: `${0.08 * (index + 1)}s` }}
+        >
           <div className="contact__icon" aria-hidden="true">
             {icon}
           </div>

@@ -13,7 +13,7 @@ import type {
 } from './types';
 
 const images = {
-  hero: '/images/profile-picture.jpeg',
+  hero: '/images/profile-picture.jpg',
   about: '/images/maison-de-sante.jpeg',
   osteopathy: '/images/cabinet.jpeg',
   wellnessMassage: '/images/maison-de-sante.jpeg',

@@ -12,7 +12,7 @@ const SiteFooter: React.FC<FooterContent> = ({
   appointmentLabel,
   links,
 }) => (
-  <footer className="site-footer">
+  <footer className="site-footer" data-animate="fade-up">
     <div>
       <h3>{title}</h3>
       <p>{subtitle}</p>

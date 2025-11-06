@@ -7,13 +7,26 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  isolation: isolate;
+  overflow: hidden;
 
-  // Add overlay for better text readability
   &::before {
     content: '';
     position: absolute;
     inset: 0;
-    background: rgba(255, 255, 255, 0.92);
+    background: linear-gradient(180deg, rgba(245, 250, 246, 0.86) 0%, rgba(249, 253, 250, 0.94) 100%);
+    backdrop-filter: blur(2px);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 15% 85%, rgba(v.$accent-color, 0.35), transparent 55%),
+      radial-gradient(circle at 85% 25%, rgba(v.$primary-light, 0.28), transparent 60%);
+    opacity: 0.8;
     pointer-events: none;
     z-index: 0;
   }
@@ -21,8 +34,8 @@
   &__container {
     position: relative;
     display: grid;
-    gap: 2.5rem;
-    padding: clamp(3rem, 7vw, 5rem) clamp(1.5rem, 6vw, 3rem) clamp(4rem, 8vw, 6rem);
+    gap: clamp(2.5rem, 5vw, 3.5rem);
+    padding: clamp(4.5rem, 9vw, 6.75rem) clamp(1.5rem, 6vw, 3.5rem) clamp(5rem, 10vw, 7rem);
     max-width: v.$page-max-width;
     margin: 0 auto;
     align-items: center;
@@ -35,48 +48,84 @@
     background: radial-gradient(circle at 20% 20%, rgba(v.$accent-strong, 0.45), transparent 60%),
       radial-gradient(circle at 85% 10%, rgba(v.$primary-light, 0.35), transparent 55%);
     pointer-events: none;
-    filter: blur(6px);
+    filter: blur(8px);
     z-index: 1;
+    animation: heroAccentFloat 14s ease-in-out infinite alternate;
   }
 
   &__content {
     position: relative;
     z-index: 2;
     max-width: 560px;
+    padding: clamp(1.25rem, 3vw, 2rem);
+    border-radius: v.$radius-lg;
+    border: 1px solid rgba(v.$primary-dark, 0.08);
+    background: rgba(255, 255, 255, 0.82);
+    box-shadow: 0 20px 45px rgba(20, 37, 28, 0.12);
+    backdrop-filter: blur(12px);
+
+    p {
+      margin-top: 1rem;
+      font-size: clamp(1.05rem, 1.2vw, 1.15rem);
+      color: rgba(v.$muted-color, 0.9);
+    }
   }
 
   &__actions {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.75rem;
-    margin-top: 2rem;
+    gap: 1rem;
+    margin-top: 2.5rem;
   }
 
   &__cta {
     display: inline-flex;
     align-items: center;
-    gap: 0.5rem;
-    padding: 0.9rem 1.6rem;
-    border-radius: 999px;
+    justify-content: center;
+    gap: 0.6rem;
+    padding: 0.95rem 1.85rem;
+    border-radius: v.$radius-pill;
+    font-size: 1rem;
     font-weight: 600;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    box-shadow: 0 10px 25px rgba(v.$primary-dark, 0.12);
+    position: relative;
+    overflow: hidden;
+    box-shadow: v.$shadow-soft;
+    transition: transform v.$transition-soft, box-shadow v.$transition-soft, background-position 0.5s ease,
+      color v.$transition-soft;
+    background-size: 180% 180%;
 
     &:hover {
-      transform: translateY(-2px);
+      transform: translateY(-2px) scale(1.03);
+      box-shadow: v.$shadow-hover;
     }
 
     &--primary {
-      background: linear-gradient(120deg, v.$primary-light, v.$primary-dark);
+      background: linear-gradient(135deg, v.$primary-light 0%, v.$primary-dark 100%);
       color: #ffffff !important;
-      box-shadow: 0 10px 30px rgba(v.$primary-dark, 0.28);
+
+      &:hover {
+        background-position: right center;
+      }
     }
 
     &--secondary {
-      background: #ffffff;
+      background: linear-gradient(135deg, rgba(#ffffff, 0.9), rgba(v.$soft-accent, 0.9));
       color: v.$primary-dark;
-      border: 1px solid rgba(v.$primary-dark, 0.15);
+      border: 1px solid rgba(v.$primary-dark, 0.12);
+
+      &:hover {
+        background-position: right center;
+      }
     }
+  }
+
+  &__cta-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.2rem;
+    height: 1.2rem;
+    font-size: 1.2rem;
   }
 
   &__image {
@@ -85,12 +134,50 @@
     width: min(420px, 100%);
     justify-self: center;
     aspect-ratio: 4 / 5;
-    border-radius: 26px;
+    border-radius: v.$radius-lg;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     background-color: v.$soft-accent;
-    box-shadow: 0 25px 60px rgba(v.$primary-dark, 0.22);
+    border: 3px solid rgba(255, 255, 255, 0.9);
+    box-shadow: 0 28px 60px rgba(20, 37, 28, 0.18);
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(v.$primary-dark, 0.12));
+      mix-blend-mode: soft-light;
+      opacity: 0.65;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      inset: 12px;
+      border-radius: v.$radius-base;
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      pointer-events: none;
+    }
+  }
+}
+
+@keyframes heroAccentFloat {
+  from {
+    transform: translate3d(0, -4px, 0) scale(1);
+  }
+
+  to {
+    transform: translate3d(0, 12px, 0) scale(1.04);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero {
+    &__accent {
+      animation: none;
+    }
   }
 }
 
@@ -109,6 +196,7 @@
     &__content {
       order: 2;
       text-align: center;
+      backdrop-filter: none;
     }
 
     &__image {
@@ -128,6 +216,7 @@
 
     &__image {
       width: clamp(320px, 40vw, 380px);
+      margin-inline: auto;
     }
 
     &__content {
@@ -149,6 +238,7 @@
 
     &__image {
       width: min(420px, 36vw);
+      justify-self: end;
     }
   }
 }

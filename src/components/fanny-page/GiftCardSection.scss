@@ -2,30 +2,53 @@
 
 .gift-card {
   position: relative;
-  background: radial-gradient(circle at 20% 20%, rgba(v.$accent-color, 0.35), transparent 60%),
-    #ffffff;
-  border-radius: 28px;
-  padding: clamp(2.25rem, 4vw, 3rem);
-  box-shadow: 0 20px 55px rgba(v.$primary-dark, 0.14);
+  background: linear-gradient(135deg, rgba(#ffffff, 0.92), rgba(v.$soft-accent, 0.75));
+  border-radius: v.$radius-lg;
+  padding: clamp(2.75rem, 5vw, 3.5rem);
+  box-shadow: v.$shadow-soft;
+  border: 1px solid rgba(v.$primary-dark, 0.08);
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 20% 20%, rgba(v.$accent-color, 0.3), transparent 60%),
+      radial-gradient(circle at 90% 80%, rgba(v.$primary-light, 0.18), transparent 55%);
+    opacity: 0.8;
+    pointer-events: none;
+  }
 
   &__content {
     max-width: 640px;
+    position: relative;
+    z-index: 1;
+    display: grid;
+    gap: clamp(1.1rem, 2.5vw, 1.6rem);
   }
 
   &__cta {
     display: inline-flex;
     align-items: center;
-    gap: 0.75rem;
-    background: linear-gradient(120deg, v.$primary-light, v.$accent-strong);
-    padding: 0.85rem 1.6rem;
-    border-radius: 999px;
+    gap: 0.65rem;
+    background: linear-gradient(135deg, v.$primary-light, v.$accent-strong);
+    padding: 0.95rem 1.85rem;
+    border-radius: v.$radius-pill;
     font-weight: 600;
-    box-shadow: 0 12px 28px rgba(v.$primary-dark, 0.18);
+    box-shadow: 0 16px 36px rgba(v.$primary-dark, 0.22);
     color: #ffffff !important;
+    transition: transform v.$transition-soft, box-shadow v.$transition-soft, background-position 0.5s ease;
+    background-size: 160%;
+
+    &:hover {
+      transform: translateY(-2px) scale(1.03);
+      box-shadow: 0 24px 48px rgba(v.$primary-dark, 0.24);
+      background-position: right center;
+    }
 
 
     span {
-      font-size: 1.2rem;
+      font-size: 1.25rem;
     }
   }
 }

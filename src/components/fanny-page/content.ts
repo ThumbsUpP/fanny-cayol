@@ -122,7 +122,7 @@ export const giftCardContent: GiftCardContent = {
   description:
     "Faites plaisir à vos proches avec une carte cadeau personnalisée. Choisissez le soin, indiquez le destinataire et le message qui l'accompagne. Une attention qui fait du bien et se réserve en ligne.",
   ctaLabel: 'Acheter un bon cadeau',
-  ctaHref: 'mailto:fcayolperidon@gmail.com',
+  ctaHref: 'mailto:fcayolperidon@gmail.com?subject=Je souhaite offrir un bon cadeau pour un massage&body=Bonjour Fanny,%0D%0A%0D%0AJe souhaiterais offrir un bon cadeau pour un massage.%0D%0A%0D%0AMes coordonnées :%0D%0ANom : [Votre nom]%0D%0ATéléphone : [Votre numéro de téléphone]%0D%0A%0D%0APouvez-vous me donner plus d\'informations sur :%0D%0A- Les différents types de soins disponibles%0D%0A- Les tarifs%0D%0A- La validité du bon cadeau%0D%0A- Les modalités de réservation%0D%0A%0D%0AMerci par avance pour votre retour.%0D%0A%0D%0ACordialement',
   ctaIcon: '🎁',
 };
 

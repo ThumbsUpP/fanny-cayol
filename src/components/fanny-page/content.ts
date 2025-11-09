@@ -31,6 +31,7 @@ const images = {
   drainage: '/images/drainage.jpeg',
   osteo: '/images/osteo.jpg',
   massage: '/images/massage.jpg',
+  reflexology: '/images/montagne-2.jpeg',
 } as const;
 
 export const heroContent: HeroContent = {
@@ -83,13 +84,13 @@ export const services: Service[] = [
   },
   {
     title: 'Massage bien-être',
-    duration: '1 h / 60 €',
+    duration: '1 h / 70 €',
     description: 'Détente profonde pour un lâcher-prise total et une relaxation complète.',
     image: images.massage,
   },
   {
     title: 'Massage express',
-    duration: '30 min / 30 €',
+    duration: '30 min / 35 €',
     description: 'La pause idéale pour relâcher les tensions du quotidien.',
     image: images.expressMassage,
   },
@@ -98,6 +99,13 @@ export const services: Service[] = [
     duration: '1 h / 70 €',
     description: 'Stimule la circulation et apporte une sensation de légèreté.',
     image: images.drainage,
+  },
+  {
+    title: 'Réflexologie plantaire',
+    duration: '45 min / 60 €',
+    description:
+      'La réflexologie plantaire utilise le massage et la pression sur des zones spécifiques du pied liées aux organes du corps. Elle apaise les tensions nerveuses, soutient le système immunitaire et rétablit l’équilibre énergétique (Qi). Parfaite pour la détente, la récupération sportive et l’apaisement des douleurs chroniques.',
+    image: images.reflexology,
   },
 ];
 

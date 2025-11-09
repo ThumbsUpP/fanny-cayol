@@ -34,7 +34,7 @@ const images = {
 } as const;
 
 export const heroContent: HeroContent = {
-  title: 'Kinésithérapeute & Ostéopathe à Autrans-Méaudre',
+  title: 'Ostéopathe & Masseuse à Autrans-Méaudre',
   description:
     'Fanny Cayol-Peridon vous accompagne avec une approche douce, personnalisée et ancrée dans la nature pour soulager vos tensions, rééquilibrer votre corps et retrouver votre bien-être.',
   image: images.hero,
@@ -187,6 +187,12 @@ export const approachContent: ApproachContent = {
   heading: 'Approche & Valeurs',
   headingLevel: 'h1',
   sections: [
+    {
+      id: 'experience_professionnelle',
+      heading: 'Expérience professionnelle',
+      headingLevel: 'h2',
+      text: 'Kinésithérapeute diplômée d\'État, j\'ai développé mon expertise aux côtés de mon activité d\'ostéopathe pour proposer un accompagnement complet et adapté à chaque patient.',
+    },
     {
       id: 'approche_personnalisee',
       heading: 'Approche Personnalisée',

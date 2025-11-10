@@ -199,7 +199,7 @@ export const approachContent: ApproachContent = {
       id: 'experience_professionnelle',
       heading: 'Expérience professionnelle',
       headingLevel: 'h2',
-      text: 'Kinésithérapeute diplômée d\'État, j\'ai développé mon expertise aux côtés de mon activité d\'ostéopathe pour proposer un accompagnement complet et adapté à chaque patient.',
+      text: 'Initialement Kinésithérapeute diplômé d\'État, j\'ai enrichi ma pratique par des formations complémentaires en massage et je suis devenu Ostéopathe afin de proposer un soin thérapeutique complet et de haute qualité.',
     },
     {
       id: 'approche_personnalisee',

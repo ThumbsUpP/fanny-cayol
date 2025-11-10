@@ -6,6 +6,7 @@ import type {
   BookingContent,
   ContactCard,
   ContactFormContent,
+  ExperienceContent,
   FooterContent,
   GiftCardContent,
   HeroContent,
@@ -52,6 +53,17 @@ export const heroContent: HeroContent = {
       href: 'https://www.doctolib.fr/osteopathe/autrans-meaudre-en-vercors/fanny-cayol-peridon-autrans-meaudre-en-vercors',
       variant: 'secondary',
     },
+  ],
+};
+
+export const experienceContent: ExperienceContent = {
+  heading: 'Expérience professionnelle',
+  headingLevel: 'h1',
+  description:
+    "Initialement Kinésithérapeute diplômée d'État, j'ai enrichi ma pratique avec des formations complémentaires en massage et je suis devenue Ostéopathe afin de proposer un soin thérapeutique complet et de haute qualité.",
+  details: [
+    'Prise en charge globale, du drainage lymphatique aux techniques d’ostéopathie tissulaire.',
+    'Plusieurs années d’expérience entre la Guadeloupe et le Vercors pour des soins ancrés dans la douceur et la bienveillance.',
   ],
 };
 
@@ -195,12 +207,6 @@ export const approachContent: ApproachContent = {
   heading: 'Approche & Valeurs',
   headingLevel: 'h1',
   sections: [
-    {
-      id: 'experience_professionnelle',
-      heading: 'Expérience professionnelle',
-      headingLevel: 'h2',
-      text: 'Initialement Kinésithérapeute diplômé d\'État, j\'ai enrichi ma pratique par des formations complémentaires en massage et je suis devenu Ostéopathe afin de proposer un soin thérapeutique complet et de haute qualité.',
-    },
     {
       id: 'approche_personnalisee',
       heading: 'Approche Personnalisée',

@@ -1,6 +1,7 @@
 import React from 'react';
 import './FannyPage.scss';
 import HeroSection from './HeroSection';
+import ExperienceSection from './ExperienceSection';
 import ApproachSection from './ApproachSection';
 import AudiencesSection from './AudiencesSection';
 import ServicesSection from './ServicesSection';
@@ -17,6 +18,7 @@ import {
   bookingContent,
   contactCards,
   contactFormContent,
+  experienceContent,
   footerContent,
   giftCardContent,
   heroContent,
@@ -26,6 +28,7 @@ import {
 const FannyPage: React.FC = () => (
   <div className="fanny-page">
     <HeroSection {...heroContent} />
+    <ExperienceSection {...experienceContent} />
     <ApproachSection {...approachContent} />
     <AudiencesSection {...audiencesContent} />
     <ServicesSection services={services} />

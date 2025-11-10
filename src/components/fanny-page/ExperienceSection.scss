@@ -1,0 +1,37 @@
+@use './styles/variables' as v;
+@use './styles/cards';
+
+.experience {
+  &__card {
+    @include cards.surface;
+    padding: clamp(1.85rem, 3vw, 2.5rem);
+    display: grid;
+    gap: clamp(1rem, 2vw, 1.5rem);
+    max-width: 58rem;
+  }
+
+  &__description {
+    margin: 0;
+    color: rgba(v.$muted-color, 0.95);
+    font-size: clamp(1.05rem, 1.2vw, 1.1rem);
+    line-height: 1.8;
+  }
+
+  &__list {
+    margin: 0;
+    padding-left: 1.25rem;
+    display: grid;
+    gap: 0.65rem;
+    color: v.$muted-color;
+  }
+
+  &__item {
+    position: relative;
+    padding-left: 0.5rem;
+
+    &::marker {
+      color: v.$primary-color;
+      font-size: 0.85em;
+    }
+  }
+}

@@ -103,6 +103,13 @@ export type StructuredSection = {
   icon?: string;
 };
 
+export type ExperienceContent = {
+  heading: string;
+  headingLevel: HeadingLevel;
+  description: string;
+  details?: string[];
+};
+
 export type ApproachContent = {
   heading: string;
   headingLevel: HeadingLevel;

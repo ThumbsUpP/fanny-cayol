@@ -61,10 +61,6 @@ export const experienceContent: ExperienceContent = {
   headingLevel: 'h1',
   description:
     "Initialement Kinésithérapeute diplômée d'État, j'ai enrichi ma pratique avec des formations complémentaires en massage et je suis devenue Ostéopathe afin de proposer un soin thérapeutique complet et de haute qualité.",
-  details: [
-    'Prise en charge globale, du drainage lymphatique aux techniques d’ostéopathie tissulaire.',
-    'Plusieurs années d’expérience entre la Guadeloupe et le Vercors pour des soins ancrés dans la douceur et la bienveillance.',
-  ],
 };
 
 export const aboutContent: AboutContent = {

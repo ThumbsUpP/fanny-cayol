@@ -31,7 +31,7 @@ const images = {
   drainage: '/images/drainage.jpeg',
   osteo: '/images/osteo.jpg',
   massage: '/images/massage.jpg',
-  reflexology: '/images/montagne-2.jpeg',
+  reflexology: '/images/plantaire.jpeg',
 } as const;
 
 export const heroContent: HeroContent = {
@@ -84,16 +84,11 @@ export const services: Service[] = [
   },
   {
     title: 'Massage bien-être',
-    duration: '1 h / 70 €',
+    duration: '30 min / 35 €<br />1 h / 70 €',
     description: 'Détente profonde pour un lâcher-prise total et une relaxation complète.',
-    image: images.massage,
+    image: images.massage,  
   },
-  {
-    title: 'Massage express',
-    duration: '30 min / 35 €',
-    description: 'La pause idéale pour relâcher les tensions du quotidien.',
-    image: images.expressMassage,
-  },
+
   {
     title: 'Drainage lymphatique',
     duration: '1 h / 70 €',

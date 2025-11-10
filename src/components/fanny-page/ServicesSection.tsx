@@ -26,7 +26,7 @@ const ServicesSection: React.FC<ServicesSectionProps> = ({ services }) => (
           </div>
           <div className="services__body">
             <h3>{title}</h3>
-            <span className="services__duration">{duration}</span>
+            <span className="services__duration" dangerouslySetInnerHTML={{ __html: duration }}></span>
             <p>{description}</p>
           </div>
         </article>

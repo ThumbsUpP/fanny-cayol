@@ -31,7 +31,7 @@ const images = {
   drainage: '/images/drainage.jpeg',
   osteo: '/images/osteo.jpg',
   massage: '/images/massage.jpg',
-  reflexology: '/images/montagne-2.jpeg',
+  reflexology: '/images/reflexology-service.svg',
 } as const;
 
 export const heroContent: HeroContent = {

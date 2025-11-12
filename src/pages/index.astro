@@ -31,6 +31,25 @@ import { FannyPage } from '../components';
       })(window as GTMWindow, document, 'GTM-KDXTDQX4');
     </script>
     <!-- End Google Tag Manager -->
+    <!-- Google tag (gtag.js) -->
+    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-P2CBWWEQJ9"></script>
+    <script>
+      type GtagArgs = [string, ...unknown[]];
+
+      interface GtagWindow extends Window {
+        dataLayer?: GtagArgs[];
+      }
+
+      const gtagWindow = window as GtagWindow;
+      const dataLayer = (gtagWindow.dataLayer ??= []);
+
+      function gtag(...args: GtagArgs) {
+        dataLayer.push(args);
+      }
+
+      gtag('js', new Date());
+      gtag('config', 'G-P2CBWWEQJ9');
+    </script>
     <meta
       name="description"
       content="Kinésithérapeute, ostéopathe et masseuse à Autrans-Méaudre. Prenez rendez-vous pour un moment de bien-être sur-mesure."

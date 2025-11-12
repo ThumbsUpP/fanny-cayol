@@ -99,7 +99,7 @@ export const services: Service[] = [
     title: 'Réflexologie plantaire',
     duration: '45 min / 60 €',
     description:
-      'La réflexologie plantaire utilise le massage et la pression sur des zones spécifiques du pied liées aux organes du corps. Elle apaise les tensions nerveuses, soutient le système immunitaire et rétablit l’équilibre énergétique (Qi). Parfaite pour la détente, la récupération sportive et l’apaisement des douleurs chroniques.',
+      "Réduit les tensions du corps par l'intermédiaire de pressions et massage des pieds.",
     image: images.reflexology,
   },
 ];
@@ -191,12 +191,6 @@ export const approachContent: ApproachContent = {
   headingLevel: 'h1',
   sections: [
     {
-      id: 'experience_professionnelle',
-      heading: 'Expérience professionnelle',
-      headingLevel: 'h2',
-      text: 'Initialement Kinésithérapeute diplômé d\'État, j\'ai enrichi ma pratique par des formations complémentaires en massage et je suis devenu Ostéopathe afin de proposer un soin thérapeutique complet et de haute qualité.',
-    },
-    {
       id: 'approche_personnalisee',
       heading: 'Approche Personnalisée',
       headingLevel: 'h2',
@@ -214,7 +208,7 @@ export const approachContent: ApproachContent = {
       id: 'formation_continue',
       heading: 'Formation Continue',
       headingLevel: 'h2',
-      text: 'Je suis constamment à la recherche de nouvelles techniques et de formations pour rester à la pointe de la kinésithérapie et de l\'ostéopathie, vous garantissant ainsi les meilleurs soins possibles.',
+      text: 'Initialement Kinésithérapeute diplômé d\'État, je suis constamment à la recherche de nouvelles techniques et de formations pour rester à la pointe de la kinésithérapie et de l\'ostéopathie, vous garantissant ainsi les meilleurs soins possibles.',
       icon: images.formation,
     },
     {

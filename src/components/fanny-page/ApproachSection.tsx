@@ -1,7 +1,8 @@
 import React from 'react';
 import SectionHeading from './SectionHeading';
-import './ApproachSection.scss';
 import type { ApproachContent } from './types';
+
+import './ApproachSection.scss';
 
 const ApproachSection: React.FC<ApproachContent> = ({
   heading,

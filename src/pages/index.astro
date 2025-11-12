@@ -9,16 +9,26 @@ import { FannyPage } from '../components';
     <title>Bienvenue chez Fanny Cayol-Peridon</title>
     <!-- Google Tag Manager -->
     <script>
-      (function (w, d, s, l, i) {
-        w[l] = w[l] || [];
-        w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
-        var f = d.getElementsByTagName(s)[0];
-        var j = d.createElement(s);
-        var dl = l != 'dataLayer' ? '&l=' + l : '';
-        j.async = true;
-        j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-        f.parentNode.insertBefore(j, f);
-      })(window, document, 'script', 'dataLayer', 'GTM-KDXTDQX4');
+      type DataLayerItem = Record<string, unknown>;
+
+      interface GTMWindow extends Window {
+        dataLayer?: DataLayerItem[];
+      }
+
+      (function loadGTM(w: GTMWindow, d: Document, i: string) {
+        const dataLayer = (w.dataLayer ??= []);
+        dataLayer.push({ 'gtm.start': Date.now(), event: 'gtm.js' });
+
+        const firstScript = d.getElementsByTagName('script')[0];
+        if (!firstScript || !firstScript.parentNode) {
+          return;
+        }
+
+        const gtmScript = d.createElement('script');
+        gtmScript.async = true;
+        gtmScript.src = `https://www.googletagmanager.com/gtm.js?id=${i}`;
+        firstScript.parentNode.insertBefore(gtmScript, firstScript);
+      })(window as GTMWindow, document, 'GTM-KDXTDQX4');
     </script>
     <!-- End Google Tag Manager -->
     <meta

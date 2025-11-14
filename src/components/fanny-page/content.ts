@@ -83,7 +83,7 @@ export const services: Service[] = [
     image: images.osteo,
   },
   {
-    title: 'Massage bien-être',
+    title: 'Massage thérapeutique',
     duration: '30 min / 35 €<br />1 h / 70 €',
     description: 'Détente profonde pour un lâcher-prise total et une relaxation complète.',
     image: images.massage,  

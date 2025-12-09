@@ -5,7 +5,7 @@ import ApproachSection from './ApproachSection';
 import AudiencesSection from './AudiencesSection';
 import ServicesSection from './ServicesSection';
 import BookingSection from './BookingSection';
-import GiftCardSection from './GiftCardSection';
+// import GiftCardSection from './GiftCardSection';
 import ContactSection from './ContactSection';
 import ContactFormSection from './ContactFormSection';
 import SiteFooter from './SiteFooter';
@@ -28,7 +28,7 @@ const FannyPage: React.FC = () => (
     <AudiencesSection {...audiencesContent} />
     <ServicesSection services={services} />
     <BookingSection {...bookingContent} />
-    <GiftCardSection {...giftCardContent} />
+    {/* <GiftCardSection {...giftCardContent} /> */}
     <ContactSection cards={contactCards} />
     <ContactFormSection {...contactFormContent} />
     <SiteFooter {...footerContent} />

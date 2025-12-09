@@ -35,7 +35,7 @@ const images = {
 } as const;
 
 export const heroContent: HeroContent = {
-  title: 'Ostéopathe & Masseuse à Autrans-Méaudre',
+  title: 'Ostéopathe à Autrans-Méaudre',
   description:
     'Fanny Cayol-Peridon vous accompagne avec une approche douce, personnalisée et ancrée dans la nature pour soulager vos tensions, rééquilibrer votre corps et retrouver votre bien-être.',
   image: images.hero,
@@ -82,13 +82,6 @@ export const services: Service[] = [
     description: 'Soulage les tensions profondes et rééquilibre votre corps en douceur.',
     image: images.osteo,
   },
-  {
-    title: 'Massage thérapeutique',
-    duration: '30 min / 35 €<br />1 h / 70 €',
-    description: 'Détente profonde pour un lâcher-prise total et une relaxation complète.',
-    image: images.massage,  
-  },
-
   {
     title: 'Drainage lymphatique',
     duration: '1 h / 70 €',

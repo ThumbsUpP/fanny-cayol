@@ -8,9 +8,15 @@ const AudiencesSection: React.FC<AudiencesContent> = ({
   headingLevel,
   categories,
 }) => {
+  const normalizedHeadingLevel = headingLevel === 'h1' ? 'h2' : headingLevel;
+
   return (
     <section className="audiences" id="publics_et_soins" aria-labelledby="publics-et-soins-heading">
-      <SectionHeading title={heading} titleTag={headingLevel} id="publics-et-soins-heading" />
+      <SectionHeading
+        title={heading}
+        titleTag={normalizedHeadingLevel}
+        id="publics-et-soins-heading"
+      />
       <div className="audiences__grid">
         {categories.map(({ id, heading: categoryHeading, headingLevel: categoryHeadingLevel, text }, index) => {
           return (

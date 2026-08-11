@@ -148,7 +148,7 @@ export const contactCards: ContactCard[] = [
   {
     icon: '📍',
     title: 'Adresse',
-    lines: ['12 impasse de la Molière', '38880 Autrans-Méaudre'],
+    lines: ['394 Rue de Puilboreau', '38880 Autrans-Méaudre-en-Vercors'],
   },
   {
     icon: '📞',
@@ -248,7 +248,7 @@ export const audiencesContent: AudiencesContent = {
 export const footerContent: FooterContent = {
   title: 'Fanny Cayol-Peridon',
   subtitle: 'Kinésithérapeute · Ostéopathe · Masseuse',
-  address: '12 impasse de la Molière, 38880 Autrans-Méaudre',
+  address: '394 Rue de Puilboreau, 38880 Autrans-Méaudre-en-Vercors',
   phoneLabel: '06 68 37 86 16',
   phoneHref: 'tel:0668378616',
   appointmentLabel: 'Doctolib',

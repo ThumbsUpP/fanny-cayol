@@ -10,8 +10,8 @@ type ContactSectionProps = {
 const ContactSection: React.FC<ContactSectionProps> = ({ cards }) => (
   <section className="contact">
     <SectionHeading
-      title="Me trouver à Autrans-Méaudre"
-      description="Le cabinet est situé au cœur du Vercors, facilement accessible et entouré de nature."
+      title="Cabinet d'ostéopathie à Autrans-Méaudre-en-Vercors"
+      description="Je vous reçois chez Naturasoi, au 394 rue de Puilboreau à Autrans, uniquement sur rendez-vous."
     />
     <div className="contact__grid">
       {cards.map(({ icon, title, lines, link }, index) => (

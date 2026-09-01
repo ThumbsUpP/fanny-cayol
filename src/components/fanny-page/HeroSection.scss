@@ -200,7 +200,7 @@
     }
 
     &__content {
-      order: 2;
+      order: 1;
       text-align: center;
       backdrop-filter: none;
       padding: clamp(1.5rem, 6vw, 2rem);
@@ -216,7 +216,7 @@
     }
 
     &__image {
-      order: 1;
+      order: 2;
       width: clamp(220px, 60vw, 320px);
       border: 2px solid rgba(255, 255, 255, 0.92);
       box-shadow: 0 20px 48px rgba(20, 37, 28, 0.16);

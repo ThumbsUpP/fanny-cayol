@@ -1,12 +1,98 @@
 ---
 import { FannyPage } from '../components';
+
+const title = 'Ostéopathe à Autrans | Fanny Cayol-Peridon';
+const description =
+  'Fanny Cayol-Peridon, ostéopathe D.O. à Autrans-Méaudre-en-Vercors. Consultations sur rendez-vous au 394 rue de Puilboreau.';
+const canonicalUrl = 'https://www.fanny-cayol-peridon.fr/';
+const imageUrl = 'https://www.fanny-cayol-peridon.fr/images/profile-picture.jpg';
+const doctolibUrl =
+  'https://www.doctolib.fr/osteopathe/autrans-meaudre-en-vercors/fanny-cayol-peridon-autrans-meaudre-en-vercors';
+
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'WebSite',
+      '@id': `${canonicalUrl}#website`,
+      url: canonicalUrl,
+      name: 'Fanny Cayol-Peridon',
+      inLanguage: 'fr-FR',
+    },
+    {
+      '@type': 'Person',
+      '@id': `${canonicalUrl}#fanny-cayol-peridon`,
+      name: 'Fanny Cayol-Peridon',
+      jobTitle: 'Ostéopathe D.O.',
+      image: imageUrl,
+      url: canonicalUrl,
+    },
+    {
+      '@type': ['MedicalBusiness', 'LocalBusiness'],
+      '@id': `${canonicalUrl}#cabinet`,
+      name: 'Ostéopathe Fanny Cayol-Peridon',
+      description,
+      url: canonicalUrl,
+      image: imageUrl,
+      telephone: '+33668378616',
+      priceRange: '€€',
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: '394 rue de Puilboreau',
+        postalCode: '38880',
+        addressLocality: 'Autrans-Méaudre-en-Vercors',
+        addressRegion: 'Auvergne-Rhône-Alpes',
+        addressCountry: 'FR',
+      },
+      founder: { '@id': `${canonicalUrl}#fanny-cayol-peridon` },
+      sameAs: [
+        doctolibUrl,
+        'https://www.vercors-experience.com/fanny-cayol-peridon-kinesitherapeute-osteopathe.html',
+      ],
+      hasOfferCatalog: {
+        '@type': 'OfferCatalog',
+        name: 'Consultations et soins proposés',
+        itemListElement: [
+          {
+            '@type': 'Offer',
+            itemOffered: { '@type': 'Service', name: "Consultation d'ostéopathie" },
+          },
+          {
+            '@type': 'Offer',
+            itemOffered: { '@type': 'Service', name: 'Drainage lymphatique' },
+          },
+          {
+            '@type': 'Offer',
+            itemOffered: { '@type': 'Service', name: 'Réflexologie plantaire' },
+          },
+        ],
+      },
+    },
+  ],
+};
 ---
 
 <html lang="fr">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Bienvenue chez Fanny Cayol-Peridon</title>
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="robots" content="index,follow,max-image-preview:large" />
+    <link rel="canonical" href={canonicalUrl} />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="fr_FR" />
+    <meta property="og:site_name" content="Fanny Cayol-Peridon" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={imageUrl} />
+    <meta property="og:image:alt" content="Portrait de Fanny Cayol-Peridon, ostéopathe à Autrans" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={imageUrl} />
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(structuredData)} />
     <!-- Google Tag Manager -->
     <script is:inline>
       (function (w, d, s, l, i) {
@@ -32,10 +118,6 @@ import { FannyPage } from '../components';
       gtag('js', new Date());
       gtag('config', 'G-P2CBWWEQJ9');
     </script>
-    <meta
-      name="description"
-      content="Kinésithérapeute, ostéopathe et masseuse à Autrans-Méaudre. Prenez rendez-vous pour un moment de bien-être sur-mesure."
-    />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -43,8 +125,7 @@ import { FannyPage } from '../components';
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap"
     />
-    <link rel="preload" as="image" href="/images/hero-bg.jpg" />
-    <link rel="preload" as="image" href="/images/profile-picture.jpeg" fetchpriority="high" />
+    <link rel="preload" as="image" href="/images/profile-picture.jpg" fetchpriority="high" />
   </head>
   <body>
     <!-- Google Tag Manager (noscript) -->

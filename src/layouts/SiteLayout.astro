@@ -144,6 +144,7 @@ const structuredData = { '@context': 'https://schema.org', '@graph': baseGraph }
     <meta name="theme-color" content="#4f7f6a" />
     <meta name="robots" content={noIndex ? 'noindex,follow' : 'index,follow,max-image-preview:large'} />
     <link rel="canonical" href={canonicalUrl} />
+    <link rel="preload" as="image" href="/images/hero-bg.jpg" fetchpriority="high" />
 
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="fr_FR" />

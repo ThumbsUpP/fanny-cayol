@@ -27,7 +27,7 @@ const NavigationLinks = ({ currentPath }: Props) => (
 const SiteHeader: React.FC<Props> = ({ currentPath }) => (
   <header className="site-header">
     <div className="site-header__inner">
-      <a className="site-header__brand" href="/" aria-label="Accueil — Fanny Cayol Peridon">
+      <a className="site-header__brand" href="/">
         <span className="site-header__monogram" aria-hidden="true">FC</span>
         <span>
           <strong>Fanny Cayol Peridon</strong>

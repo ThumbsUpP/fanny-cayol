@@ -1,0 +1,25 @@
+---
+import { site } from '../../data/site';
+
+type Props = {
+  title?: string;
+  text?: string;
+};
+
+const {
+  title = 'Envie de prendre rendez-vous ?',
+  text = 'Pour toute demande, vous pouvez me laisser un SMS. Je vous répondrai dès que possible.',
+} = Astro.props;
+---
+
+<section class="booking-cta section-shell" aria-labelledby="booking-cta-title">
+  <div>
+    <p class="eyebrow eyebrow--light">Au cabinet NATURASOI, à Autrans</p>
+    <h2 id="booking-cta-title">{title}</h2>
+    <p>{text}</p>
+  </div>
+  <div class="booking-cta__actions">
+    <a class="button button--light" href={site.smsHref}>Envoyer un SMS</a>
+    <a class="button button--outline-light" href={site.phoneHref}>Appeler le {site.phoneDisplay}</a>
+  </div>
+</section>

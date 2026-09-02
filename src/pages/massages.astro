@@ -1,0 +1,122 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import PageHero from '../components/site/PageHero.astro';
+import Breadcrumbs from '../components/site/Breadcrumbs.astro';
+import PhotoPlaceholder from '../components/site/PhotoPlaceholder.astro';
+import BookingCta from '../components/site/BookingCta.astro';
+import RelatedLinks from '../components/site/RelatedLinks.astro';
+import { createServiceStructuredData } from '../data/site';
+
+const title = 'Massage à Autrans | Fanny Cayol Peridon';
+const description =
+  'Massages à Autrans : relaxant, récupération sportive, ayurvédique ou ciblé. Durées de 30 à 75 minutes, au cabinet NATURASOI.';
+const serviceStructuredData = createServiceStructuredData({
+  name: 'Massage à Autrans',
+  description,
+  path: '/massages/',
+  offers: [
+    { name: 'Massage · 30 minutes', price: 45 },
+    { name: 'Massage · 45 minutes', price: 60 },
+    { name: 'Massage · 60 minutes', price: 75 },
+    { name: 'Massage · 75 minutes', price: 90 },
+  ],
+});
+---
+
+<SiteLayout title={title} description={description} canonicalPath="/massages/" extraStructuredData={serviceStructuredData}>
+  <Breadcrumbs items={[{ label: 'Accueil', href: '/' }, { label: 'Massages' }]} />
+  <PageHero
+    eyebrow="Détente & récupération"
+    title="Votre massage à Autrans"
+    intro="Dénouer les tensions, récupérer après l’effort ou simplement s’accorder une pause : nous choisissons ensemble le type de massage, les zones et la durée."
+    photoLabel="Ambiance chaleureuse d’un massage au cabinet"
+  >
+    <div slot="actions" class="actions">
+      <a class="button button--primary" href="/cabinet-tarifs-rendez-vous/">Voir les tarifs</a>
+    </div>
+  </PageHero>
+
+  <section class="section-shell section-space">
+    <div class="section-heading">
+      <p class="eyebrow">Quatre approches</p>
+      <h2>Trouver le massage qui vous convient</h2>
+      <p class="lead">
+        Chaque massage est ajusté avec vous. Il peut concerner le corps entier ou se concentrer sur
+        certaines zones, y compris les mains et les pieds lorsque cela répond à votre envie.
+      </p>
+    </div>
+    <div class="service-grid massage-grid">
+      <article class="service-card">
+        <span class="service-card__number" aria-hidden="true">01</span>
+        <p class="eyebrow">Lâcher-prise</p>
+        <h3>Massage relaxant</h3>
+        <p>
+          Un massage fluide pour relâcher le corps et le stress, complété si besoin par quelques
+          mobilisations ou étirements doux.
+        </p>
+      </article>
+      <article class="service-card">
+        <span class="service-card__number" aria-hidden="true">02</span>
+        <p class="eyebrow">Après ou avant l’effort</p>
+        <h3>Récupération sportive</h3>
+        <p>
+          Un travail ciblé sur les muscles, articulations ou membres sollicités, pour les sportifs
+          réguliers comme occasionnels.
+        </p>
+      </article>
+      <article class="service-card">
+        <span class="service-card__number" aria-hidden="true">03</span>
+        <p class="eyebrow">Tradition indienne</p>
+        <h3>Massage ayurvédique</h3>
+        <p>
+          Un massage rituel et enveloppant, inspiré de la tradition indienne, avec un travail profond
+          réparti sur plusieurs zones du corps.
+        </p>
+      </article>
+      <article class="service-card">
+        <span class="service-card__number" aria-hidden="true">04</span>
+        <p class="eyebrow">Zones tendues</p>
+        <h3>Massage ciblé</h3>
+        <p>
+          Massage, étirements, pressions techniques et travail de mobilité se combinent autour des
+          zones douloureuses ou tendues que vous souhaitez détendre.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section-shell section-space--tight">
+    <div class="split-layout split-layout--reverse">
+      <PhotoPlaceholder label="Détail d’une huile, de serviettes ou du geste de massage" format="landscape" />
+      <div class="split-layout__copy">
+        <p class="eyebrow">Choisir sa durée</p>
+        <h2>Des formats de 30 à 75 minutes</h2>
+        <div class="price-list">
+          <div class="price-row"><span>30 minutes</span><strong>45 €</strong></div>
+          <div class="price-row"><span>45 minutes</span><strong>60 €</strong></div>
+          <div class="price-row"><span>1 heure</span><strong>75 €</strong></div>
+          <div class="price-row"><span>1 heure 15</span><strong>90 €</strong></div>
+        </div>
+        <p class="massage-note">
+          Ces rendez-vous sont des prestations de massage et ne constituent pas des séances de
+          kinésithérapie.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <RelatedLinks
+    links={[
+      { title: 'Drainage lymphatique', description: 'Un soin manuel doux proposé en 60 ou 90 minutes.', href: '/drainage-lymphatique/' },
+      { title: 'Le parcours de Fanny', description: 'Deux formations et plus de vingt ans de pratique.', href: '/fanny-cayol-peridon/' },
+      { title: 'Tarifs et rendez-vous', description: 'Choisir une durée et préparer votre venue.', href: '/cabinet-tarifs-rendez-vous/' },
+    ]}
+  />
+
+  <BookingCta title="Accordez-vous un temps pour vous" text="Envoyez-moi un SMS avec le massage et la durée souhaités, ou décrivez simplement ce dont vous avez envie." />
+</SiteLayout>
+
+<style>
+  .massage-grid .service-card:first-child { grid-column: auto; min-height: 295px; }
+  .massage-note { margin-top: 1.25rem; font-size: 0.84rem; }
+</style>

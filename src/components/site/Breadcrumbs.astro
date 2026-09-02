@@ -1,0 +1,28 @@
+---
+type Item = { label: string; href?: string };
+type Props = { items: Item[] };
+const { items } = Astro.props;
+const baseUrl = Astro.site ?? new URL('https://www.fanny-cayol-peridon.fr');
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: items.map((item, index) => ({
+    '@type': 'ListItem',
+    position: index + 1,
+    name: item.label,
+    item: new URL(item.href ?? Astro.url.pathname, baseUrl).toString(),
+  })),
+};
+---
+
+<nav class="breadcrumbs section-shell" aria-label="Fil d’Ariane">
+  <ol>
+    {items.map((item, index) => (
+      <li>
+        {item.href ? <a href={item.href}>{item.label}</a> : <span aria-current="page">{item.label}</span>}
+        {index < items.length - 1 && <span aria-hidden="true">/</span>}
+      </li>
+    ))}
+  </ol>
+</nav>
+<script is:inline type="application/ld+json" set:html={JSON.stringify(structuredData)} />

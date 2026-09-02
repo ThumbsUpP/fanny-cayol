@@ -1,0 +1,119 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import Breadcrumbs from '../components/site/Breadcrumbs.astro';
+import PhotoPlaceholder from '../components/site/PhotoPlaceholder.astro';
+import BookingCta from '../components/site/BookingCta.astro';
+
+const title = 'Fanny Cayol Peridon, ostéopathe à Autrans | Parcours';
+const description =
+  'Découvrez le parcours de Fanny Cayol Peridon : masseuse-kinésithérapeute diplômée en 2004, ostéopathe diplômée en 2013 et praticienne à Autrans.';
+---
+
+<SiteLayout title={title} description={description} canonicalPath="/fanny-cayol-peridon/" pageType="ProfilePage">
+  <Breadcrumbs items={[{ label: 'Accueil', href: '/' }, { label: 'Fanny Cayol Peridon' }]} />
+  <section class="about-hero">
+    <div class="section-shell about-hero__inner">
+      <div class="about-hero__portrait">
+        <img
+          src="/images/fanny-cayol-peridon-osteopathe-autrans.webp"
+          alt="Portrait de Fanny Cayol Peridon, ostéopathe"
+          width="900"
+          height="900"
+          fetchpriority="high"
+        />
+      </div>
+      <div>
+        <p class="eyebrow">Votre praticienne</p>
+        <h1>Fanny Cayol Peridon</h1>
+        <p class="about-hero__role">Ostéopathe · Masseuse-kinésithérapeute diplômée d’État</p>
+        <p class="lead">
+          Passionnée par l’accompagnement et le soin manuel, je souhaite offrir à chaque personne une
+          prise en charge de qualité, personnalisée et profondément attentive à ce qu’elle traverse.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-shell section-space">
+    <div class="split-layout">
+      <div class="split-layout__copy">
+        <p class="eyebrow">Mon approche</p>
+        <h2>Une rencontre avant tout</h2>
+        <p>
+          La précision technique compte, mais elle ne suffit pas. J’accorde une place essentielle à
+          l’écoute, à la confiance et à la compréhension de votre contexte. Votre ressenti guide la
+          façon dont j’adapte la consultation.
+        </p>
+        <p>
+          Mon double regard d’ostéopathe et de masseuse-kinésithérapeute enrichit mon observation du
+          mouvement. Au cabinet NATURASOI, je vous reçois pour des consultations d’ostéopathie, des
+          drainages lymphatiques et des massages — pas pour des séances de kinésithérapie.
+        </p>
+      </div>
+      <PhotoPlaceholder label="Fanny dans son espace de soin à NATURASOI" format="landscape" />
+    </div>
+  </section>
+
+  <section class="section-shell section-space--tight">
+    <div class="section-heading">
+      <p class="eyebrow">Formation</p>
+      <h2>Un parcours nourri par plus de vingt ans de pratique</h2>
+    </div>
+    <ol class="timeline">
+      <li>
+        <strong>2004</strong>
+        <div><h3>Diplôme d’État de masseuse-kinésithérapeute</h3><p>IFMK de Montpellier, avec une première formation au drainage lymphatique.</p></div>
+      </li>
+      <li>
+        <strong>2013</strong>
+        <div><h3>Diplôme d’ostéopathe</h3><p>ATSA à Limonest.</p></div>
+      </li>
+      <li>
+        <strong>2019</strong>
+        <div><h3>Formation en ostéopathie du bébé</h3><p>Formation suivie à Vitry-sur-Seine.</p></div>
+      </li>
+      <li>
+        <strong>2026</strong>
+        <div><h3>Formation en pelvi-périnéologie</h3><p>Un approfondissement issu de mon parcours de kinésithérapeute, qui enrichit mon regard sur la santé de la femme.</p></div>
+      </li>
+    </ol>
+  </section>
+
+  <section class="section-shell section-space--tight">
+    <div class="content-grid">
+      <article class="content-card"><h3>Écoute</h3><p>Créer un espace où vous pouvez expliquer librement ce que vous ressentez.</p></article>
+      <article class="content-card"><h3>Adaptation</h3><p>Choisir les gestes selon votre âge, votre état du jour et vos préférences.</p></article>
+      <article class="content-card"><h3>Sécurité</h3><p>Reconnaître les limites de ma pratique et vous orienter lorsqu’un avis médical est nécessaire.</p></article>
+    </div>
+  </section>
+
+  <BookingCta title="Faisons connaissance au cabinet" />
+</SiteLayout>
+
+<style>
+  .about-hero {
+    padding: clamp(4rem, 9vw, 8rem) 0;
+    background: linear-gradient(135deg, rgba(228, 239, 233, 0.78), rgba(249, 251, 248, 0.86));
+  }
+  .about-hero__inner {
+    display: grid;
+    grid-template-columns: minmax(260px, 0.65fr) minmax(0, 1.2fr);
+    align-items: center;
+    gap: clamp(3rem, 8vw, 8rem);
+  }
+  .about-hero__portrait {
+    width: min(100%, 370px);
+    aspect-ratio: 4 / 5;
+    border-radius: 48% 52% 40% 60% / 38% 42% 58% 62%;
+    box-shadow: 0 26px 58px rgba(20, 37, 28, 0.16);
+    overflow: hidden;
+  }
+  .about-hero__portrait img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
+  .about-hero h1 { margin-bottom: 0.6rem; }
+  .about-hero__role { margin-bottom: 1.5rem; color: #4f7f6a; font-size: 0.95rem; font-weight: 700; }
+  @media (max-width: 760px) {
+    .about-hero__inner { grid-template-columns: 1fr; text-align: center; }
+    .about-hero__portrait { width: min(72vw, 320px); margin-inline: auto; }
+    .about-hero .eyebrow { justify-content: center; }
+  }
+</style>

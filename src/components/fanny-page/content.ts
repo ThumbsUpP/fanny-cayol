@@ -14,15 +14,13 @@ import type {
 
 const images = {
   hero: '/images/profile-picture.jpg',
-  about: '/images/maison-de-sante.jpeg',
+  about: '/images/cabinet.jpeg',
   osteopathy: '/images/cabinet.jpeg',
-  wellnessMassage: '/images/maison-de-sante.jpeg',
   expressMassage: '/images/montagne.jpeg',
   lymphatic: '/images/montagne-2.jpeg',
-  booking: '/images/maison-de-sante.jpeg',
   ambianceNature: '/images/montagne.jpeg',
   ambianceCabin: '/images/cabinet.jpeg',
-  ambianceCare: '/images/maison-de-sante.jpeg',
+  ambianceCare: '/images/cabinet.jpeg',
   contactForm: '/images/cabinet.jpeg',
   ecoute: '/images/ecoute.png',
   formation: '/images/formation.png',
@@ -99,8 +97,6 @@ export const services: Service[] = [
 ];
 
 export const bookingContent: BookingContent = {
-  image: images.booking,
-  imageAlt: "Client profitant d'un massage relaxant",
   title: "Prendre rendez-vous en ostéopathie à Autrans",
   description:
     'Réservez votre consultation en ligne sur Doctolib ou contactez-moi directement par téléphone.',

@@ -1,143 +1,328 @@
 ---
-import { FannyPage } from '../components';
+import SiteLayout from '../layouts/SiteLayout.astro';
+import PhotoPlaceholder from '../components/site/PhotoPlaceholder.astro';
+import BookingCta from '../components/site/BookingCta.astro';
+import { serviceLinks, site } from '../data/site';
 
-const title = 'Ostéopathe à Autrans | Fanny Cayol-Peridon';
+const title = 'Ostéopathe à Autrans | Fanny Cayol Peridon';
 const description =
-  'Fanny Cayol-Peridon, ostéopathe D.O. à Autrans-Méaudre-en-Vercors. Consultations sur rendez-vous au 394 rue de Puilboreau.';
-const canonicalUrl = 'https://www.fanny-cayol-peridon.fr/';
-const imageUrl = 'https://www.fanny-cayol-peridon.fr/images/profile-picture.jpg';
-const doctolibUrl =
-  'https://www.doctolib.fr/osteopathe/autrans-meaudre-en-vercors/fanny-cayol-peridon-autrans-meaudre-en-vercors';
+  'Fanny Cayol Peridon, ostéopathe et professionnelle de santé à Autrans-Méaudre-en-Vercors. Consultations sur rendez-vous au cabinet NATURASOI.';
 
-const structuredData = {
-  '@context': 'https://schema.org',
-  '@graph': [
-    {
-      '@type': 'WebSite',
-      '@id': `${canonicalUrl}#website`,
-      url: canonicalUrl,
-      name: 'Fanny Cayol-Peridon',
-      inLanguage: 'fr-FR',
-    },
-    {
-      '@type': 'Person',
-      '@id': `${canonicalUrl}#fanny-cayol-peridon`,
-      name: 'Fanny Cayol-Peridon',
-      jobTitle: 'Ostéopathe D.O.',
-      image: imageUrl,
-      url: canonicalUrl,
-    },
-    {
-      '@type': ['MedicalBusiness', 'LocalBusiness'],
-      '@id': `${canonicalUrl}#cabinet`,
-      name: 'Ostéopathe Fanny Cayol-Peridon',
-      description,
-      url: canonicalUrl,
-      image: imageUrl,
-      telephone: '+33668378616',
-      priceRange: '€€',
-      address: {
-        '@type': 'PostalAddress',
-        streetAddress: '394 rue de Puilboreau',
-        postalCode: '38880',
-        addressLocality: 'Autrans-Méaudre-en-Vercors',
-        addressRegion: 'Auvergne-Rhône-Alpes',
-        addressCountry: 'FR',
-      },
-      founder: { '@id': `${canonicalUrl}#fanny-cayol-peridon` },
-      sameAs: [
-        doctolibUrl,
-        'https://www.vercors-experience.com/fanny-cayol-peridon-kinesitherapeute-osteopathe.html',
-      ],
-      hasOfferCatalog: {
-        '@type': 'OfferCatalog',
-        name: 'Consultations et soins proposés',
-        itemListElement: [
-          {
-            '@type': 'Offer',
-            itemOffered: { '@type': 'Service', name: "Consultation d'ostéopathie" },
-          },
-          {
-            '@type': 'Offer',
-            itemOffered: { '@type': 'Service', name: 'Drainage lymphatique' },
-          },
-          {
-            '@type': 'Offer',
-            itemOffered: { '@type': 'Service', name: 'Réflexologie plantaire' },
-          },
-        ],
-      },
-    },
-  ],
+const servicesStructuredData = {
+  '@type': 'ItemList',
+  name: 'Prestations proposées par Fanny Cayol Peridon',
+  itemListElement: serviceLinks.map((service, index) => ({
+    '@type': 'ListItem',
+    position: index + 1,
+    url: new URL(service.href, site.url).toString(),
+    name: service.title,
+  })),
 };
 ---
 
-<html lang="fr">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{title}</title>
-    <meta name="description" content={description} />
-    <meta name="robots" content="index,follow,max-image-preview:large" />
-    <link rel="canonical" href={canonicalUrl} />
-    <meta property="og:type" content="website" />
-    <meta property="og:locale" content="fr_FR" />
-    <meta property="og:site_name" content="Fanny Cayol-Peridon" />
-    <meta property="og:title" content={title} />
-    <meta property="og:description" content={description} />
-    <meta property="og:url" content={canonicalUrl} />
-    <meta property="og:image" content={imageUrl} />
-    <meta property="og:image:alt" content="Portrait de Fanny Cayol-Peridon, ostéopathe à Autrans" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content={title} />
-    <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content={imageUrl} />
-    <script is:inline type="application/ld+json" set:html={JSON.stringify(structuredData)} />
-    <!-- Google Tag Manager -->
-    <script is:inline>
-      (function (w, d, s, l, i) {
-        w[l] = w[l] || [];
-        w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
-        const f = d.getElementsByTagName(s)[0];
-        if (!f || !f.parentNode) return;
-        const j = d.createElement(s);
-        const dl = l !== 'dataLayer' ? '&l=' + l : '';
-        j.async = true;
-        j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-        f.parentNode.insertBefore(j, f);
-      })(window, document, 'script', 'dataLayer', 'GTM-KDXTDQX4');
-    </script>
-    <!-- End Google Tag Manager -->
-    <!-- Google tag (gtag.js) -->
-    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-P2CBWWEQJ9"></script>
-    <script is:inline>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        window.dataLayer.push(arguments);
-      }
-      gtag('js', new Date());
-      gtag('config', 'G-P2CBWWEQJ9');
-    </script>
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap"
-    />
-    <link rel="preload" as="image" href="/images/profile-picture.jpg" fetchpriority="high" />
-  </head>
-  <body>
-    <!-- Google Tag Manager (noscript) -->
-    <noscript
-      ><iframe
-        src="https://www.googletagmanager.com/ns.html?id=GTM-KDXTDQX4"
-        height="0"
-        width="0"
-        style="display:none;visibility:hidden"
-      ></iframe
-    ></noscript>
-    <!-- End Google Tag Manager (noscript) -->
-    <FannyPage />
-  </body>
-</html>
+<SiteLayout
+  title={title}
+  description={description}
+  canonicalPath="/"
+  pageType="MedicalWebPage"
+  extraStructuredData={servicesStructuredData}
+>
+  <section class="home-hero">
+    <div class="home-hero__accent" aria-hidden="true"></div>
+    <div class="home-hero__inner">
+      <div class="home-hero__copy">
+        <p class="eyebrow">Fanny Cayol Peridon · Professionnelle de santé</p>
+        <h1><span class="home-hero__seo-title">Ostéopathe à Autrans</span> Retrouver du mouvement, en douceur.</h1>
+        <p class="home-hero__intro">
+          Je suis <strong>Fanny Cayol Peridon, ostéopathe à Autrans</strong>. Je vous accueille au
+          cabinet NATURASOI pour des consultations personnalisées, à l’écoute de votre corps et de
+          votre histoire.
+        </p>
+        <div class="actions">
+          <a class="button button--primary" href={site.smsHref}>Prendre rendez-vous par SMS</a>
+          <a class="button button--secondary" href="/osteopathie/">Découvrir l’ostéopathie</a>
+        </div>
+        <p class="home-hero__location">
+          <span aria-hidden="true">⌖</span> {site.place} · {site.addressLine}, Autrans
+        </p>
+      </div>
+      <div class="home-hero__portrait">
+        <div class="home-hero__portrait-frame">
+          <img
+            src="/images/fanny-cayol-peridon-osteopathe-autrans.webp"
+            alt="Fanny Cayol Peridon, ostéopathe à Autrans"
+            width="900"
+            height="900"
+            fetchpriority="high"
+          />
+        </div>
+        <p>
+          <strong>Fanny Cayol Peridon</strong>
+          Ostéopathe · Masseuse-kinésithérapeute D.E.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="home-facts" aria-label="Informations essentielles">
+    <div><strong>45 min</strong><span>Consultation d’ostéopathie</span></div>
+    <div><strong>Tous les âges</strong><span>Nourrissons, enfants, femmes et adultes</span></div>
+    <div><strong>Sur rendez-vous</strong><span>Demande par SMS au {site.phoneDisplay}</span></div>
+    <div><strong>Accès facile</strong><span>Rez-de-chaussée, parking gratuit et accès PMR</span></div>
+  </section>
+
+  <section class="section-shell section-space home-intro">
+    <div class="section-heading">
+      <p class="eyebrow">Une approche qui vous ressemble</p>
+      <h2>Écouter avant de traiter</h2>
+      <p class="lead">
+        Chaque consultation commence par un temps d’échange. Mon double parcours d’ostéopathe et
+        de masseuse-kinésithérapeute nourrit une lecture attentive de la mobilité, des tensions et
+        de votre quotidien, pour choisir les gestes les plus adaptés à votre situation.
+      </p>
+    </div>
+    <div class="content-grid">
+      <article class="content-card">
+        <span class="home-intro__icon" aria-hidden="true">01</span>
+        <h3>Une écoute attentive</h3>
+        <p>Votre motif, vos antécédents et votre ressenti orientent chaque étape de la séance.</p>
+      </article>
+      <article class="content-card">
+        <span class="home-intro__icon" aria-hidden="true">02</span>
+        <h3>Des techniques adaptées</h3>
+        <p>Gestes fonctionnels, structurels, tissulaires ou massages sont choisis avec mesure.</p>
+      </article>
+      <article class="content-card">
+        <span class="home-intro__icon" aria-hidden="true">03</span>
+        <h3>Un cadre rassurant</h3>
+        <p>Un espace pour poser vos questions et avancer à votre rythme, en toute sécurité.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section-shell section-space--tight">
+    <div class="section-heading">
+      <p class="eyebrow">Les accompagnements</p>
+      <h2>Des soins manuels, pensés pour chaque étape de vie</h2>
+    </div>
+    <div class="service-grid">
+      {serviceLinks.map((service) => (
+        <a class="service-card" href={service.href}>
+          <span class="service-card__number" aria-hidden="true">{service.number}</span>
+          <p class="eyebrow">{service.eyebrow}</p>
+          <h3>{service.title}</h3>
+          <p>{service.description}</p>
+          <span class="service-card__link">Découvrir →</span>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <section class="home-cabinet section-space">
+    <div class="section-shell split-layout">
+      <PhotoPlaceholder
+        label="Photo lumineuse de l’espace de soin NATURASOI"
+        format="landscape"
+      />
+      <div class="split-layout__copy">
+        <p class="eyebrow">NATURASOI · Autrans</p>
+        <h2>Un lieu calme au cœur du Vercors</h2>
+        <p>
+          Je vous reçois au 394 rue de Puilboreau, dans un espace imaginé comme une bulle de douceur
+          et de calme. Le cabinet est situé au rez-de-chaussée, accessible aux personnes à mobilité
+          réduite, avec un parking gratuit devant le bâtiment.
+        </p>
+        <a class="button button--secondary" href="/cabinet-tarifs-rendez-vous/">
+          Préparer votre venue
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-shell section-space--tight home-about">
+    <div class="split-layout split-layout--reverse">
+      <div class="home-about__portrait">
+        <img
+          src="/images/fanny-cayol-peridon-osteopathe-autrans.webp"
+          alt="Portrait de Fanny Cayol Peridon"
+          width="900"
+          height="900"
+          loading="lazy"
+        />
+      </div>
+      <div class="split-layout__copy">
+        <p class="eyebrow">Votre praticienne</p>
+        <h2>Deux formations, une même attention portée au corps</h2>
+        <p>
+          Diplômée masseuse-kinésithérapeute en 2004 puis ostéopathe en 2013, je m’appuie sur plus de
+          vingt ans d’expérience auprès de patients aux besoins très différents. Je continue à me
+          former pour proposer un accompagnement humain, précis et adapté.
+        </p>
+        <a class="button button--secondary" href="/fanny-cayol-peridon/">Découvrir mon parcours</a>
+      </div>
+    </div>
+  </section>
+
+  <BookingCta />
+</SiteLayout>
+
+<style>
+  .home-hero {
+    position: relative;
+    isolation: isolate;
+    min-height: 730px;
+    display: grid;
+    align-items: center;
+    padding: clamp(4rem, 8vw, 7rem) 0;
+    background:
+      linear-gradient(90deg, rgba(248, 251, 247, 0.96), rgba(244, 249, 245, 0.72)),
+      url('/images/hero-bg.jpg') center / cover;
+    overflow: hidden;
+  }
+
+  .home-hero::after {
+    content: '';
+    position: absolute;
+    right: -9rem;
+    bottom: -15rem;
+    width: 38rem;
+    height: 38rem;
+    border: 1px solid rgba(79, 127, 106, 0.12);
+    border-radius: 48% 52% 58% 42%;
+    z-index: -1;
+  }
+
+  .home-hero__accent {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background:
+      radial-gradient(circle at 8% 12%, rgba(159, 188, 164, 0.32), transparent 31%),
+      radial-gradient(circle at 86% 24%, rgba(138, 180, 157, 0.25), transparent 29%);
+  }
+
+  .home-hero__inner {
+    width: min(100% - 3rem, var(--page-width));
+    margin-inline: auto;
+    display: grid;
+    grid-template-columns: minmax(0, 1.25fr) minmax(290px, 0.65fr);
+    align-items: center;
+    gap: clamp(3rem, 8vw, 8rem);
+  }
+
+  .home-hero__copy { max-width: 760px; }
+  .home-hero h1 { max-width: 800px; margin-bottom: 1.5rem; }
+
+  .home-hero h1 span {
+    display: block;
+    margin-bottom: 1rem;
+    font-size: 0.23em;
+    font-weight: 700;
+    letter-spacing: 0.13em;
+    line-height: 1.4;
+    text-transform: uppercase;
+  }
+
+  .home-hero__intro {
+    max-width: 700px;
+    color: #4b6057;
+    font-size: clamp(1.08rem, 1.65vw, 1.3rem);
+  }
+
+  .home-hero__intro strong { color: #3f6655; font-weight: 600; }
+  .home-hero__location { margin: 1.65rem 0 0; font-size: 0.81rem; font-weight: 600; }
+
+  .home-hero__portrait {
+    width: min(100%, 350px);
+    justify-self: end;
+    text-align: center;
+  }
+
+  .home-hero__portrait-frame {
+    position: relative;
+    aspect-ratio: 4 / 5;
+    padding: 0.6rem;
+    border: 1px solid rgba(79, 127, 106, 0.14);
+    border-radius: 44% 56% 46% 54% / 35% 43% 57% 65%;
+    background: rgba(255, 255, 255, 0.63);
+    box-shadow: 0 28px 62px rgba(20, 37, 28, 0.17);
+    overflow: hidden;
+    transform: rotate(1.5deg);
+  }
+
+  .home-hero__portrait img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    border-radius: inherit;
+  }
+
+  .home-hero__portrait p { margin: 1.1rem 0 0; font-size: 0.74rem; line-height: 1.6; }
+  .home-hero__portrait strong { display: block; color: #4f7f6a; font-size: 0.9rem; }
+
+  .home-facts {
+    position: relative;
+    z-index: 2;
+    width: min(100% - 3rem, var(--page-width));
+    margin: -2rem auto 0;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border: 1px solid rgba(79, 127, 106, 0.1);
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.92);
+    box-shadow: 0 18px 44px rgba(20, 37, 28, 0.09);
+    backdrop-filter: blur(12px);
+  }
+
+  .home-facts div { padding: 1.5rem; }
+  .home-facts div + div { border-left: 1px solid rgba(79, 127, 106, 0.1); }
+  .home-facts strong, .home-facts span { display: block; }
+  .home-facts strong { margin-bottom: 0.35rem; color: #4f7f6a; font-size: 0.9rem; }
+  .home-facts span { color: #647169; font-size: 0.72rem; line-height: 1.5; }
+
+  .home-intro__icon {
+    display: inline-block;
+    margin-bottom: 2.8rem;
+    color: rgba(79, 127, 106, 0.32);
+    font-size: 2rem;
+    font-weight: 600;
+  }
+
+  .home-cabinet { margin-top: clamp(3rem, 7vw, 7rem); background: rgba(229, 239, 233, 0.55); }
+
+  .home-about__portrait {
+    width: min(100%, 390px);
+    justify-self: end;
+    aspect-ratio: 4 / 5;
+    border-radius: 24px 24px 46% 24px;
+    overflow: hidden;
+    box-shadow: 0 24px 54px rgba(20, 37, 28, 0.14);
+  }
+
+  .home-about__portrait img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+  }
+
+  @media (max-width: 900px) {
+    .home-hero { min-height: auto; }
+    .home-hero__inner { grid-template-columns: 1fr; text-align: center; }
+    .home-hero__copy { margin-inline: auto; }
+    .home-hero .eyebrow, .home-hero .actions { justify-content: center; }
+    .home-hero__portrait { width: min(65vw, 320px); justify-self: center; }
+    .home-facts { grid-template-columns: repeat(2, 1fr); }
+    .home-facts div:nth-child(3) { border-left: 0; border-top: 1px solid rgba(79, 127, 106, 0.1); }
+    .home-facts div:nth-child(4) { border-top: 1px solid rgba(79, 127, 106, 0.1); }
+    .home-about__portrait { justify-self: center; }
+  }
+
+  @media (max-width: 560px) {
+    .home-hero__inner, .home-facts { width: min(100% - 2rem, var(--page-width)); }
+    .home-hero { padding-top: 3.5rem; }
+    .home-facts { grid-template-columns: 1fr; margin-top: -1rem; }
+    .home-facts div + div, .home-facts div:nth-child(3) { border-top: 1px solid rgba(79, 127, 106, 0.1); border-left: 0; }
+  }
+</style>

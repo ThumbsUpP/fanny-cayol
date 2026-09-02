@@ -1,0 +1,184 @@
+---
+import SiteHeader from '../components/site/SiteHeader';
+import SiteFooter from '../components/site/SiteFooter.astro';
+import { areaServed, serviceLinks, site } from '../data/site';
+import '../styles/site.scss';
+
+type Props = {
+  title: string;
+  description: string;
+  canonicalPath: string;
+  noIndex?: boolean;
+  image?: string;
+  pageType?: 'WebPage' | 'AboutPage' | 'MedicalWebPage' | 'ProfilePage';
+  extraStructuredData?: Record<string, unknown> | Record<string, unknown>[];
+};
+
+const {
+  title,
+  description,
+  canonicalPath,
+  noIndex = false,
+  image = '/images/profile-picture.jpg',
+  pageType = 'WebPage',
+  extraStructuredData,
+} = Astro.props;
+
+const canonicalUrl = new URL(canonicalPath, Astro.site ?? site.url).toString();
+const imageUrl = new URL(image, Astro.site ?? site.url).toString();
+const extraNodes = extraStructuredData
+  ? Array.isArray(extraStructuredData)
+    ? extraStructuredData
+    : [extraStructuredData]
+  : [];
+const serviceNode = extraNodes.find((node) => node['@type'] === 'Service');
+const mainEntityId =
+  pageType === 'ProfilePage'
+    ? `${site.url}/#fanny-cayol-peridon`
+    : typeof serviceNode?.['@id'] === 'string'
+      ? serviceNode['@id']
+      : undefined;
+
+const baseGraph: Record<string, unknown>[] = [
+  {
+    '@type': 'WebSite',
+    '@id': `${site.url}/#website`,
+    url: `${site.url}/`,
+    name: site.name,
+    alternateName: site.alternateNames,
+    inLanguage: 'fr-FR',
+    publisher: { '@id': `${site.url}/#cabinet` },
+  },
+  {
+    '@type': 'Person',
+    '@id': `${site.url}/#fanny-cayol-peridon`,
+    name: site.name,
+    alternateName: site.alternateNames,
+    jobTitle: 'Ostéopathe',
+    description:
+      "Ostéopathe et masseuse-kinésithérapeute diplômée d'État, Fanny Cayol Peridon exerce à Autrans-Méaudre-en-Vercors.",
+    image: new URL('/images/fanny-cayol-peridon-osteopathe-autrans.webp', site.url).toString(),
+    url: `${site.url}/fanny-cayol-peridon/`,
+    knowsLanguage: 'fr-FR',
+    knowsAbout: [
+      'Ostéopathie',
+      'Ostéopathie pédiatrique',
+      'Ostéopathie de la femme',
+      'Drainage lymphatique',
+      'Massage',
+    ],
+    sameAs: Object.values(site.externalProfiles),
+    worksFor: { '@id': `${site.url}/#cabinet` },
+  },
+  {
+    '@type': ['MedicalBusiness', 'LocalBusiness'],
+    '@id': `${site.url}/#cabinet`,
+    name: `${site.name}, ostéopathe à Autrans`,
+    alternateName: site.alternateNames,
+    description: site.description,
+    url: `${site.url}/`,
+    image: new URL('/images/fanny-cayol-peridon-osteopathe-autrans.webp', site.url).toString(),
+    logo: new URL('/favicon.svg', site.url).toString(),
+    telephone: '+33668378616',
+    currenciesAccepted: 'EUR',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: site.addressLine,
+      postalCode: '38880',
+      addressLocality: 'Autrans-Méaudre-en-Vercors',
+      addressRegion: 'Isère',
+      addressCountry: 'FR',
+    },
+    geo: {
+      '@type': 'GeoCoordinates',
+      latitude: site.latitude,
+      longitude: site.longitude,
+    },
+    hasMap: site.mapUrl,
+    areaServed,
+    sameAs: Object.values(site.externalProfiles),
+    founder: { '@id': `${site.url}/#fanny-cayol-peridon` },
+    employee: { '@id': `${site.url}/#fanny-cayol-peridon` },
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: 'Soins et prestations',
+      itemListElement: serviceLinks.map((service) => ({
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: service.title,
+          url: new URL(service.href, site.url).toString(),
+        },
+      })),
+    },
+  },
+  {
+    '@type': pageType,
+    '@id': `${canonicalUrl}#webpage`,
+    url: canonicalUrl,
+    name: title,
+    description,
+    inLanguage: 'fr-FR',
+    isPartOf: { '@id': `${site.url}/#website` },
+    about: { '@id': `${site.url}/#cabinet` },
+    author: { '@id': `${site.url}/#fanny-cayol-peridon` },
+    primaryImageOfPage: imageUrl,
+    dateModified: '2026-09-02',
+    ...(mainEntityId ? { mainEntity: { '@id': mainEntityId } } : {}),
+  },
+];
+
+baseGraph.push(...extraNodes);
+
+const structuredData = { '@context': 'https://schema.org', '@graph': baseGraph };
+---
+
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="author" content={site.name} />
+    <meta name="theme-color" content="#4f7f6a" />
+    <meta name="robots" content={noIndex ? 'noindex,follow' : 'index,follow,max-image-preview:large'} />
+    <link rel="canonical" href={canonicalUrl} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="fr_FR" />
+    <meta property="og:site_name" content={site.name} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={imageUrl} />
+    <meta property="og:image:width" content="1254" />
+    <meta property="og:image:height" content="1254" />
+    <meta property="og:image:alt" content={`Portrait de ${site.name}, ostéopathe à Autrans`} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={imageUrl} />
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+    />
+  </head>
+  <body>
+    <a class="skip-link" href="#contenu">Aller au contenu</a>
+    <SiteHeader currentPath={Astro.url.pathname} />
+    <main id="contenu">
+      <slot />
+    </main>
+    <SiteFooter />
+    <aside class="mobile-contact-bar" aria-label="Prise de rendez-vous rapide">
+      <a href={site.smsHref}>Rendez-vous par SMS</a>
+      <a href={site.phoneHref} aria-label={`Appeler le ${site.phoneDisplay}`}>Appeler</a>
+    </aside>
+  </body>
+</html>

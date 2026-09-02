@@ -3,16 +3,11 @@ import './BookingSection.scss';
 import type { BookingContent } from './types';
 
 const BookingSection: React.FC<BookingContent> = ({
-  image,
-  imageAlt,
   title,
   description,
   actions,
 }) => (
   <section className="booking">
-    <div className="booking__media" data-animate="fade-up">
-      <img src={image} alt={imageAlt} loading="lazy" />
-    </div>
     <div className="booking__content" data-animate="fade-up" style={{ animationDelay: '0.12s' }}>
       <h2>{title}</h2>
       <p>{description}</p>

@@ -1,0 +1,221 @@
+@use '../fanny-page/styles/variables' as v;
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  border-bottom: 1px solid rgba(v.$primary-dark, 0.09);
+  background: rgba(249, 251, 248, 0.9);
+  box-shadow: 0 8px 30px rgba(31, 58, 46, 0.05);
+  backdrop-filter: blur(18px);
+
+  &__inner {
+    width: min(100% - 2rem, 1320px);
+    min-height: 76px;
+    margin-inline: auto;
+    display: flex;
+    align-items: center;
+    gap: clamp(1rem, 2vw, 2rem);
+  }
+
+  &__brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: v.$primary-dark;
+    flex: 0 0 auto;
+
+    strong,
+    small {
+      display: block;
+      line-height: 1.25;
+    }
+
+    strong {
+      font-size: 0.92rem;
+      letter-spacing: -0.01em;
+    }
+
+    small {
+      color: v.$muted-color;
+      font-size: 0.69rem;
+      margin-top: 0.16rem;
+    }
+  }
+
+  &__monogram {
+    display: grid;
+    width: 2.55rem;
+    height: 2.55rem;
+    place-items: center;
+    border: 1px solid rgba(v.$primary-dark, 0.2);
+    border-radius: 50% 46% 50% 43%;
+    background: rgba(255, 255, 255, 0.72);
+    font-size: 0.74rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+  }
+
+  &__desktop {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(0.75rem, 1.55vw, 1.45rem);
+    margin-left: auto;
+
+    a {
+      position: relative;
+      padding-block: 1.75rem;
+      color: #52645c;
+      font-size: clamp(0.73rem, 0.8vw, 0.87rem);
+      font-weight: 600;
+      white-space: nowrap;
+
+      &::after {
+        content: '';
+        position: absolute;
+        right: 0;
+        bottom: 1.3rem;
+        left: 0;
+        height: 2px;
+        border-radius: 999px;
+        background: v.$primary-color;
+        transform: scaleX(0);
+        transition: transform 0.25s ease;
+      }
+
+      &:hover,
+      &.is-current {
+        color: v.$primary-dark;
+
+        &::after {
+          transform: scaleX(1);
+        }
+      }
+    }
+  }
+
+  &__appointment,
+  &__mobile-appointment {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: v.$radius-pill;
+    background: linear-gradient(135deg, v.$primary-light, v.$primary-dark);
+    color: #fff !important;
+    font-size: 0.82rem;
+    font-weight: 700;
+    padding: 0.78rem 1.15rem;
+    box-shadow: 0 8px 22px rgba(v.$primary-dark, 0.17);
+    white-space: nowrap;
+  }
+
+  &__mobile {
+    display: none;
+  }
+}
+
+@media (max-width: 1120px) {
+  .site-header {
+    &__desktop,
+    &__appointment {
+      display: none;
+    }
+
+    &__mobile {
+      display: block;
+      margin-left: auto;
+      position: relative;
+
+      summary {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.7rem;
+        min-width: 4.75rem;
+        min-height: 2.75rem;
+        padding: 0.55rem 0;
+        cursor: pointer;
+        color: v.$primary-dark;
+        font-size: 0.82rem;
+        font-weight: 700;
+        list-style: none;
+
+        &::-webkit-details-marker {
+          display: none;
+        }
+      }
+
+      nav {
+        position: absolute;
+        top: calc(100% + 1.35rem);
+        right: 0;
+        width: min(82vw, 310px);
+        display: grid;
+        gap: 0.15rem;
+        padding: 0.85rem;
+        border: 1px solid rgba(v.$primary-dark, 0.12);
+        border-radius: 18px;
+        background: rgba(255, 255, 255, 0.98);
+        box-shadow: v.$shadow-hover;
+
+        a {
+          padding: 0.72rem 0.9rem;
+          border-radius: 10px;
+          color: v.$muted-color;
+          font-size: 0.9rem;
+          font-weight: 600;
+
+          &:hover,
+          &.is-current {
+            color: v.$primary-dark;
+            background: v.$soft-accent;
+          }
+        }
+      }
+    }
+
+    &__menu-icon {
+      position: relative;
+      display: block;
+      width: 1.25rem;
+      height: 0.75rem;
+      border-top: 2px solid currentColor;
+      border-bottom: 2px solid currentColor;
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: calc(50% - 1px);
+        right: 0;
+        left: 0;
+        border-top: 2px solid currentColor;
+      }
+    }
+  }
+}
+
+@media (max-width: 440px) {
+  .site-header {
+    &__inner {
+      min-height: 68px;
+    }
+
+    &__monogram {
+      width: 2.25rem;
+      height: 2.25rem;
+    }
+
+    &__brand strong {
+      font-size: 0.8rem;
+    }
+
+    &__brand small {
+      font-size: 0.63rem;
+    }
+
+    &__mobile nav {
+      top: calc(100% + 0.75rem);
+    }
+  }
+}

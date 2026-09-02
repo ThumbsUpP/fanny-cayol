@@ -1,0 +1,30 @@
+---
+import PhotoPlaceholder from './PhotoPlaceholder.astro';
+
+type Props = {
+  eyebrow: string;
+  title: string;
+  intro: string;
+  photoLabel?: string;
+  compact?: boolean;
+};
+
+const { eyebrow, title, intro, photoLabel, compact = false } = Astro.props;
+---
+
+<section class:list={['page-hero', compact && 'page-hero--compact']}>
+  <div class="page-hero__glow" aria-hidden="true"></div>
+  <div class="page-hero__inner">
+    <div class="page-hero__copy">
+      <p class="eyebrow">{eyebrow}</p>
+      <h1>{title}</h1>
+      <p class="page-hero__intro">{intro}</p>
+      <slot name="actions" />
+    </div>
+    {photoLabel && (
+      <div class="page-hero__visual">
+        <PhotoPlaceholder label={photoLabel} format="portrait" />
+      </div>
+    )}
+  </div>
+</section>

@@ -1,0 +1,185 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import PageHero from '../components/site/PageHero.astro';
+import Breadcrumbs from '../components/site/Breadcrumbs.astro';
+import PhotoPlaceholder from '../components/site/PhotoPlaceholder.astro';
+import { site } from '../data/site';
+
+const title = 'Cabinet, tarifs et rendez-vous | Ostéopathe à Autrans';
+const description =
+  'Adresse, accès, tarifs et prise de rendez-vous avec Fanny Cayol Peridon, ostéopathe au cabinet NATURASOI à Autrans.';
+
+const faq = [
+  {
+    question: 'Faut-il une ordonnance pour consulter un ostéopathe ?',
+    answer: 'Non, aucune ordonnance n’est nécessaire pour prendre rendez-vous en ostéopathie.',
+  },
+  {
+    question: 'L’ostéopathie est-elle remboursée ?',
+    answer:
+      'Certaines complémentaires santé remboursent tout ou partie d’une consultation, selon votre contrat. Renseignez-vous directement auprès de votre mutuelle.',
+  },
+  {
+    question: 'Comment modifier ou annuler un rendez-vous ?',
+    answer:
+      'Prévenez au moins 24 heures à l’avance, par SMS ou par téléphone, afin que le créneau puisse être proposé à une autre personne.',
+  },
+];
+
+const faqStructuredData = {
+  '@type': 'FAQPage',
+  mainEntity: faq.map(({ question, answer }) => ({
+    '@type': 'Question',
+    name: question,
+    acceptedAnswer: { '@type': 'Answer', text: answer },
+  })),
+};
+---
+
+<SiteLayout
+  title={title}
+  description={description}
+  canonicalPath="/cabinet-tarifs-rendez-vous/"
+  extraStructuredData={faqStructuredData}
+>
+  <Breadcrumbs items={[{ label: 'Accueil', href: '/' }, { label: 'Cabinet & rendez-vous' }]} />
+  <PageHero
+    eyebrow="NATURASOI · Autrans"
+    title="Cabinet d’ostéopathie à Autrans : préparer votre venue"
+    intro="Adresse, accès, tarifs et prise de rendez-vous : retrouvez ici l’essentiel avant votre consultation ou votre soin."
+    photoLabel="Façade ou entrée de NATURASOI à Autrans"
+  >
+    <div slot="actions" class="actions">
+      <a class="button button--primary" href={site.smsHref}>Demander un rendez-vous par SMS</a>
+      <a class="button button--secondary" href={site.phoneHref}>Appeler</a>
+    </div>
+  </PageHero>
+
+  <section class="section-shell section-space">
+    <div class="content-grid practical-grid">
+      <article class="content-card">
+        <p class="eyebrow">Adresse</p>
+        <h2>Cabinet NATURASOI</h2>
+        <p>{site.addressLine}<br />{site.locality}</p>
+        <p>Le cabinet est situé au rez-de-chaussée. Un parking gratuit se trouve juste devant.</p>
+        <a href={site.mapUrl} target="_blank" rel="noreferrer">Ouvrir l’itinéraire sur Google Maps →</a>
+      </article>
+      <article class="content-card">
+        <p class="eyebrow">Accessibilité</p>
+        <h2>Un accès simple</h2>
+        <p>
+          L’espace est accessible aux personnes à mobilité réduite. Si vous avez besoin d’une
+          indication particulière avant votre venue, laissez-moi un message.
+        </p>
+      </article>
+      <article class="content-card">
+        <p class="eyebrow">Horaires</p>
+        <h2>Sur rendez-vous</h2>
+        <p>
+          Les consultations sont proposées uniquement sur rendez-vous. Les créneaux précis seront
+          visibles sur la plateforme de réservation en ligne dès sa mise en service.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section-shell section-space--tight">
+    <div class="split-layout">
+      <div class="split-layout__copy">
+        <p class="eyebrow">Prendre rendez-vous</p>
+        <h2>Pour le moment, privilégiez le SMS</h2>
+        <p>
+          Vous pouvez me laisser un message au <a href={site.phoneHref}>{site.phoneDisplay}</a>, en
+          indiquant la prestation souhaitée et vos disponibilités. Je vous répondrai dès que possible.
+        </p>
+        <div class="actions">
+          <a class="button button--primary" href={site.smsHref}>Envoyer un SMS</a>
+          <span class="online-booking">Réservation Perfactive bientôt disponible</span>
+        </div>
+      </div>
+      <PhotoPlaceholder label="Salle de soin NATURASOI" format="landscape" />
+    </div>
+  </section>
+
+  <section class="section-shell section-space--tight">
+    <div class="section-heading">
+      <p class="eyebrow">Tarifs</p>
+      <h2>Drainage lymphatique et massages</h2>
+    </div>
+    <div class="content-grid price-columns">
+      <article class="content-card">
+        <h3>Drainage lymphatique</h3>
+        <div class="price-list">
+          <div class="price-row"><span>60 minutes</span><strong>70 €</strong></div>
+          <div class="price-row"><span>90 minutes</span><strong>100 €</strong></div>
+        </div>
+      </article>
+      <article class="content-card">
+        <h3>Massages</h3>
+        <div class="price-list">
+          <div class="price-row"><span>30 minutes</span><strong>45 €</strong></div>
+          <div class="price-row"><span>45 minutes</span><strong>60 €</strong></div>
+          <div class="price-row"><span>1 heure</span><strong>75 €</strong></div>
+          <div class="price-row"><span>1 heure 15</span><strong>90 €</strong></div>
+        </div>
+      </article>
+    </div>
+    <aside class="draft-note">
+      <strong>À compléter avant publication</strong>
+      <span>Tarif de la consultation d’ostéopathie.</span>
+    </aside>
+  </section>
+
+  <section class="section-shell section-space--tight">
+    <div class="section-heading">
+      <p class="eyebrow">Questions pratiques</p>
+      <h2>Avant votre rendez-vous</h2>
+    </div>
+    <div class="faq-list">
+      {faq.map(({ question, answer }) => (
+        <details>
+          <summary>{question}</summary>
+          <p>{answer}</p>
+        </details>
+      ))}
+    </div>
+  </section>
+</SiteLayout>
+
+<style>
+  .practical-grid .content-card h2 { font-size: clamp(1.35rem, 2.5vw, 1.75rem); }
+  .price-columns { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .online-booking {
+    display: inline-flex;
+    align-items: center;
+    min-height: 3.15rem;
+    padding: 0.8rem 1.25rem;
+    border: 1px dashed rgba(79, 127, 106, 0.35);
+    border-radius: 999px;
+    color: #56615a;
+    font-size: 0.78rem;
+    font-weight: 600;
+  }
+  .draft-note {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem 0.8rem;
+    margin-top: 1rem;
+    padding: 0.85rem 1rem;
+    border: 1px dashed rgba(164, 121, 65, 0.35);
+    border-radius: 12px;
+    color: #6f5c42;
+    background: rgba(250, 241, 225, 0.7);
+    font-size: 0.76rem;
+  }
+  .faq-list { border-top: 1px solid rgba(79, 127, 106, 0.15); }
+  .faq-list details { border-bottom: 1px solid rgba(79, 127, 106, 0.15); }
+  .faq-list summary {
+    padding: 1.35rem 0;
+    color: #4f7f6a;
+    cursor: pointer;
+    font-weight: 700;
+  }
+  .faq-list p { max-width: 800px; padding-bottom: 1.2rem; }
+  @media (max-width: 760px) { .price-columns { grid-template-columns: 1fr; } }
+</style>

@@ -1,0 +1,104 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import PageHero from '../components/site/PageHero.astro';
+import Breadcrumbs from '../components/site/Breadcrumbs.astro';
+import PhotoPlaceholder from '../components/site/PhotoPlaceholder.astro';
+import BookingCta from '../components/site/BookingCta.astro';
+import RelatedLinks from '../components/site/RelatedLinks.astro';
+import { commonMedicalNotice, createServiceStructuredData } from '../data/site';
+
+const title = 'Ostéopathie pédiatrique à Autrans | Fanny Cayol Peridon';
+const description =
+  'Consultations d’ostéopathie pour nourrissons et enfants à Autrans, avec des gestes doux et la présence du parent pendant toute la séance.';
+const serviceStructuredData = createServiceStructuredData({
+  name: 'Ostéopathie pédiatrique à Autrans',
+  description,
+  path: '/osteopathie-pediatrique/',
+});
+---
+
+<SiteLayout title={title} description={description} canonicalPath="/osteopathie-pediatrique/" pageType="MedicalWebPage" extraStructuredData={serviceStructuredData}>
+  <Breadcrumbs items={[{ label: 'Accueil', href: '/' }, { label: 'Ostéopathie pédiatrique' }]} />
+  <PageHero
+    eyebrow="Nourrissons & enfants"
+    title="Ostéopathie pédiatrique à Autrans"
+    intro="La consultation peut être proposée dès la sortie de la maternité. Le parent reste présent tout au long du rendez-vous, dans un cadre calme et rassurant."
+    photoLabel="Consultation douce avec un nourrisson et son parent"
+  >
+    <div slot="actions" class="actions">
+      <a class="button button--primary" href="/cabinet-tarifs-rendez-vous/">Prendre rendez-vous</a>
+    </div>
+  </PageHero>
+
+  <section class="section-shell section-space">
+    <div class="split-layout">
+      <div class="split-layout__copy">
+        <p class="eyebrow">La première consultation</p>
+        <h2>Un temps d’échange avec les parents</h2>
+        <p>
+          Nous commençons par reprendre le déroulement de la grossesse, de la naissance et le motif
+          qui vous amène. J’observe ensuite la mobilité de votre enfant et propose des tests et gestes
+          doux, toujours avec votre présence.
+        </p>
+        <p>
+          Après la séance, nous faisons le point ensemble. Je peux vous transmettre des conseils
+          simples, adaptés à ce qui a été observé et au suivi déjà en place.
+        </p>
+      </div>
+      <PhotoPlaceholder label="Échange entre Fanny et un parent au cabinet" format="square" />
+    </div>
+  </section>
+
+  <section class="section-shell section-space--tight">
+    <div class="section-heading">
+      <p class="eyebrow">Situations fréquemment évoquées</p>
+      <h2>Pourquoi les parents consultent-ils ?</h2>
+      <p class="lead">
+        Les motifs ci-dessous sont des raisons de consultation rapportées par les familles. Ils ne
+        constituent pas une promesse de traitement ni de résultat.
+      </p>
+    </div>
+    <div class="content-grid">
+      <article class="content-card">
+        <h3>Chez le nourrisson</h3>
+        <ul>
+          <li>pleurs fréquents ou inconfort ;</li>
+          <li>coliques rapportées par les parents ;</li>
+          <li>torticolis ou préférence de rotation ;</li>
+          <li>plagiocéphalie déjà évaluée médicalement.</li>
+        </ul>
+      </article>
+      <article class="content-card">
+        <h3>Au fil du développement</h3>
+        <ul>
+          <li>difficulté motrice observée ;</li>
+          <li>position assise qui tarde à s’installer ;</li>
+          <li>inconfort ou difficulté d’un membre ;</li>
+          <li>question autour de la mobilité globale.</li>
+        </ul>
+      </article>
+      <article class="content-card">
+        <h3>Un suivi coordonné</h3>
+        <p>
+          L’ostéopathie pédiatrique s’inscrit en complément du suivi par le pédiatre, le médecin et
+          les autres professionnels qui accompagnent votre enfant.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section-shell section-space--tight">
+    <div class="notice"><p>{commonMedicalNotice} Pour un bébé de moins de six mois, un suivi médical régulier est nécessaire avant la consultation.</p></div>
+  </section>
+
+  <RelatedLinks
+    title="Avant et après la naissance"
+    links={[
+      { title: 'Ostéopathie de la femme', description: 'Un accompagnement pendant la grossesse et le post-partum.', href: '/osteopathie-femme/' },
+      { title: 'La consultation d’ostéopathie', description: 'Comprendre les étapes et l’approche générale.', href: '/osteopathie/' },
+      { title: 'Préparer votre venue', description: 'Adresse, accès et prise de rendez-vous à Autrans.', href: '/cabinet-tarifs-rendez-vous/' },
+    ]}
+  />
+
+  <BookingCta title="Une question avant la consultation de votre enfant ?" text="Vous pouvez me laisser un SMS avec l’âge de votre enfant et votre motif de consultation. Je vous répondrai dès que possible." />
+</SiteLayout>

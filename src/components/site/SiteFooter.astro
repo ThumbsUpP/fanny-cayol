@@ -1,0 +1,43 @@
+---
+import { site, navigation } from '../../data/site';
+---
+
+<footer class="site-footer-v2">
+  <div class="site-footer-v2__inner">
+    <div class="site-footer-v2__identity">
+      <span class="site-footer-v2__monogram" aria-hidden="true">FC</span>
+      <div>
+        <strong>{site.name}</strong>
+        <p>{site.professionalLine}</p>
+      </div>
+    </div>
+
+    <div>
+      <h2>Au cabinet</h2>
+      <p>{site.place}<br />{site.addressLine}<br />{site.locality}</p>
+      <p>Rez-de-chaussée · Parking gratuit · Accès PMR</p>
+      <a href={site.mapUrl} target="_blank" rel="noreferrer">Voir l’itinéraire →</a>
+    </div>
+
+    <div>
+      <h2>Navigation</h2>
+      <nav aria-label="Navigation de pied de page">
+        {navigation.slice(1).map(({ label, href }) => <a href={href}>{label}</a>)}
+      </nav>
+    </div>
+
+    <div>
+      <h2>Prendre contact</h2>
+      <a class="site-footer-v2__phone" href={site.phoneHref}>{site.phoneDisplay}</a>
+      <p>Pour une demande de rendez-vous,<br />privilégiez le SMS.</p>
+      <a href="/cabinet-tarifs-rendez-vous/">Informations pratiques →</a>
+    </div>
+  </div>
+  <div class="site-footer-v2__bottom">
+    <span>© {new Date().getFullYear()} {site.name}</span>
+    <span>
+      <a href="/mentions-legales/">Mentions légales</a>
+      <a href="/politique-confidentialite/">Confidentialité</a>
+    </span>
+  </div>
+</footer>

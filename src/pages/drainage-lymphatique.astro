@@ -1,0 +1,107 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import PageHero from '../components/site/PageHero.astro';
+import Breadcrumbs from '../components/site/Breadcrumbs.astro';
+import PhotoPlaceholder from '../components/site/PhotoPlaceholder.astro';
+import BookingCta from '../components/site/BookingCta.astro';
+import RelatedLinks from '../components/site/RelatedLinks.astro';
+import { commonMedicalNotice, createServiceStructuredData } from '../data/site';
+
+const title = 'Drainage lymphatique à Autrans | Fanny Cayol Peridon';
+const description =
+  'Drainage lymphatique manuel à Autrans par Fanny Cayol Peridon : soin doux et progressif des jambes, du visage, de l’abdomen ou du bas du dos.';
+const serviceStructuredData = createServiceStructuredData({
+  name: 'Drainage lymphatique à Autrans',
+  description,
+  path: '/drainage-lymphatique/',
+  offers: [
+    { name: 'Drainage lymphatique · 60 minutes', price: 70 },
+    { name: 'Drainage lymphatique · 90 minutes', price: 100 },
+  ],
+});
+---
+
+<SiteLayout title={title} description={description} canonicalPath="/drainage-lymphatique/" pageType="MedicalWebPage" extraStructuredData={serviceStructuredData}>
+  <Breadcrumbs items={[{ label: 'Accueil', href: '/' }, { label: 'Drainage lymphatique' }]} />
+  <PageHero
+    eyebrow="Soin manuel doux"
+    title="Drainage lymphatique à Autrans"
+    intro="Une technique manuelle lente et progressive, proposée sur les jambes ou d’autres zones selon vos besoins et les précautions propres à votre situation."
+    photoLabel="Soin de drainage lymphatique manuel"
+  >
+    <div slot="actions" class="actions">
+      <a class="button button--primary" href="/cabinet-tarifs-rendez-vous/">Voir les tarifs</a>
+    </div>
+  </PageHero>
+
+  <section class="section-shell section-space">
+    <div class="split-layout">
+      <div class="split-layout__copy">
+        <p class="eyebrow">Une progression précise</p>
+        <h2>Comment se déroule le soin ?</h2>
+        <p>
+          La séance commence par un travail de respiration abdominale et de mobilité du diaphragme.
+          Les gestes se poursuivent près des principales zones ganglionnaires, puis progressent de
+          manière douce vers les régions choisies avec vous.
+        </p>
+        <p>
+          Les jambes sont fréquemment demandées, mais le drainage peut également concerner le visage,
+          l’abdomen ou le bas du dos. La durée est choisie selon le nombre de zones et votre objectif.
+        </p>
+      </div>
+      <PhotoPlaceholder label="Détail des mains pendant le drainage" format="square" />
+    </div>
+  </section>
+
+  <section class="section-shell section-space--tight">
+    <div class="content-grid">
+      <article class="content-card">
+        <h3>Une pratique issue de la kinésithérapie</h3>
+        <p>
+          J’ai découvert cette technique lors de ma formation de masseuse-kinésithérapeute, puis je
+          l’ai approfondie notamment auprès de Maryvonne Chardon-Bras et dans des services hospitaliers
+          spécialisés en lymphologie.
+        </p>
+      </article>
+      <article class="content-card">
+        <h3>Les sensations recherchées</h3>
+        <p>
+          Le soin est souvent choisi pour rechercher une sensation de jambes plus légères, davantage
+          de confort ou moins de gonflement ressenti. Les effets varient selon chaque personne.
+        </p>
+      </article>
+      <article class="content-card">
+        <h3>Après une grossesse</h3>
+        <p>
+          Un drainage peut être envisagé en post-partum lorsque la situation le permet, avec les
+          précautions nécessaires et en complément du suivi médical.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section-shell section-space--tight">
+    <div class="info-band">
+      <p class="eyebrow">Tarifs</p>
+      <h2>Choisir la durée du drainage</h2>
+      <div class="price-list">
+        <div class="price-row"><span>Drainage lymphatique · 60 min</span><strong>70 €</strong></div>
+        <div class="price-row"><span>Drainage lymphatique · 90 min</span><strong>100 €</strong></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-shell section-space--tight">
+    <div class="notice"><p>{commonMedicalNotice} En présence de signes évocateurs de phlébite, d’une douleur anormale ou de tout symptôme préoccupant, demandez un avis médical avant de réserver.</p></div>
+  </section>
+
+  <RelatedLinks
+    links={[
+      { title: 'Massages à Autrans', description: 'Relaxation, récupération sportive et massages ciblés.', href: '/massages/' },
+      { title: 'Découvrir Fanny', description: 'Mon parcours de masseuse-kinésithérapeute et d’ostéopathe.', href: '/fanny-cayol-peridon/' },
+      { title: 'Tarifs et rendez-vous', description: 'Retrouver les tarifs, l’accès et le contact.', href: '/cabinet-tarifs-rendez-vous/' },
+    ]}
+  />
+
+  <BookingCta title="Choisissons ensemble la durée adaptée" text="Indiquez-moi par SMS les zones que vous souhaitez travailler. Je pourrai vous orienter vers le format le plus approprié." />
+</SiteLayout>

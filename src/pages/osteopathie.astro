@@ -1,0 +1,110 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import PageHero from '../components/site/PageHero.astro';
+import Breadcrumbs from '../components/site/Breadcrumbs.astro';
+import PhotoPlaceholder from '../components/site/PhotoPlaceholder.astro';
+import BookingCta from '../components/site/BookingCta.astro';
+import RelatedLinks from '../components/site/RelatedLinks.astro';
+import { commonMedicalNotice, createServiceStructuredData } from '../data/site';
+
+const title = 'Ostéopathe à Autrans : la consultation | Fanny Cayol Peridon';
+const description =
+  'Découvrez le déroulement d’une consultation d’ostéopathie avec Fanny Cayol Peridon à Autrans : échange, tests, techniques adaptées et conseils.';
+const serviceStructuredData = createServiceStructuredData({
+  name: 'Consultation d’ostéopathie à Autrans',
+  description,
+  path: '/osteopathie/',
+});
+---
+
+<SiteLayout title={title} description={description} canonicalPath="/osteopathie/" pageType="MedicalWebPage" extraStructuredData={serviceStructuredData}>
+  <Breadcrumbs items={[{ label: 'Accueil', href: '/' }, { label: 'Ostéopathie' }]} />
+  <PageHero
+    eyebrow="Ostéopathie générale"
+    title="Votre consultation d’ostéopathie à Autrans"
+    intro="Nourrissons, enfants, femmes et adultes : je prends le temps de comprendre votre motif, d’observer la mobilité du corps et de choisir avec vous une approche manuelle adaptée."
+    photoLabel="Fanny en consultation d’ostéopathie"
+  >
+    <div slot="actions" class="actions">
+      <a class="button button--primary" href="/cabinet-tarifs-rendez-vous/">Prendre rendez-vous</a>
+    </div>
+  </PageHero>
+
+  <section class="section-shell section-space">
+    <div class="section-heading">
+      <p class="eyebrow">Le déroulement</p>
+      <h2>Comment se passe une première consultation ?</h2>
+      <p class="lead">La séance dure environ 45 minutes et se construit en plusieurs temps.</p>
+    </div>
+    <div class="content-grid">
+      <article class="content-card">
+        <h3>01 · Échanger</h3>
+        <p>
+          Nous revenons sur votre motif de consultation, vos antécédents, votre quotidien et ce que
+          vous ressentez. Ce temps d’écoute permet de préciser vos besoins.
+        </p>
+      </article>
+      <article class="content-card">
+        <h3>02 · Observer</h3>
+        <p>
+          J’effectue des tests de mobilité articulaire, viscérale et musculaire, toujours en tenant
+          compte de votre confort et de votre situation.
+        </p>
+      </article>
+      <article class="content-card">
+        <h3>03 · Accompagner</h3>
+        <p>
+          Le traitement associe, selon les besoins, des techniques douces, fonctionnelles,
+          structurelles, tissulaires ou du massage. La séance se termine par un échange et des conseils.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section-shell section-space--tight">
+    <div class="split-layout">
+      <div class="split-layout__copy">
+        <p class="eyebrow">Motifs de consultation</p>
+        <h2>Dans quelles situations consulter ?</h2>
+        <p>
+          Les personnes viennent notamment pour parler de douleurs ou d’inconforts du dos, des
+          lombaires, du cou, des épaules ou des membres inférieurs. Les genoux, chevilles, hanches et
+          coudes peuvent aussi motiver une consultation, tout comme certains inconforts abdominaux.
+        </p>
+        <p>
+          Ces motifs sont des situations fréquemment rencontrées : ils ne préjugent ni de leur cause,
+          ni du résultat d’une consultation. Si un avis médical est nécessaire, je vous oriente vers
+          le professionnel approprié.
+        </p>
+      </div>
+      <PhotoPlaceholder label="Geste manuel pendant une consultation" format="square" />
+    </div>
+  </section>
+
+  <section class="section-shell section-space--tight">
+    <div class="info-band">
+      <p class="eyebrow">Au-delà du geste</p>
+      <h2>Une approche globale et rassurante</h2>
+      <p class="lead">
+        Le corps ne se résume pas à une zone douloureuse. Votre sommeil, votre activité, votre stress
+        et votre vécu peuvent faire partie de notre échange, sans chercher à leur attribuer une cause
+        systématique. L’objectif est de vous offrir un cadre où vous pouvez vous exprimer librement.
+      </p>
+    </div>
+  </section>
+
+  <section class="section-shell section-space--tight">
+    <div class="notice"><p>{commonMedicalNotice}</p></div>
+  </section>
+
+  <RelatedLinks
+    title="Une ostéopathie adaptée à chaque étape de vie"
+    links={[
+      { title: 'Ostéopathie de la femme', description: 'Grossesse, post-partum et évolutions du corps féminin.', href: '/osteopathie-femme/' },
+      { title: 'Ostéopathie pédiatrique', description: 'Une consultation douce pour les nourrissons et les enfants.', href: '/osteopathie-pediatrique/' },
+      { title: 'Cabinet et rendez-vous', description: 'Adresse, accès et informations pratiques à Autrans.', href: '/cabinet-tarifs-rendez-vous/' },
+    ]}
+  />
+
+  <BookingCta title="Parlons de votre motif de consultation" />
+</SiteLayout>

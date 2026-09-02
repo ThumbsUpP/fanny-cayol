@@ -1,4 +1,6 @@
 ---
+import SiteLayout from './SiteLayout.astro';
+
 type Props = {
   title: string;
   description: string;
@@ -7,91 +9,16 @@ type Props = {
 };
 
 const { title, description, canonicalPath, noIndex = false } = Astro.props;
-const canonicalUrl = canonicalPath
-  ? new URL(canonicalPath, Astro.site ?? 'https://www.fanny-cayol-peridon.fr').toString()
-  : undefined;
 ---
 
-<!doctype html>
-<html lang="fr">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{title}</title>
-    <meta name="description" content={description} />
-    <meta name="robots" content={noIndex ? 'noindex,follow' : 'index,follow'} />
-    {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
-    />
-  </head>
-  <body>
-    <main class="document-page">
-      <a class="document-page__back" href="/">← Retour à l'accueil</a>
-      <slot />
-    </main>
-  </body>
-</html>
-
-<style is:global>
-  :root {
-    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    color: #24352f;
-    background: #f5f1e9;
-  }
-
-  * {
-    box-sizing: border-box;
-  }
-
-  body {
-    margin: 0;
-    min-height: 100vh;
-    background:
-      radial-gradient(circle at 10% 15%, rgba(182, 145, 98, 0.15), transparent 50%),
-      linear-gradient(180deg, #faf8f3, #f1ece2);
-  }
-
-  .document-page {
-    width: min(100% - 2rem, 780px);
-    margin: 0 auto;
-    padding: clamp(2rem, 7vw, 5rem) 0;
-    line-height: 1.7;
-  }
-
-  .document-page__back {
-    display: inline-block;
-    margin-bottom: 2rem;
-    color: #4e6a5e;
-    font-weight: 600;
-    text-decoration: none;
-  }
-
-  h1,
-  h2 {
-    color: #263e34;
-    line-height: 1.2;
-  }
-
-  h1 {
-    font-size: clamp(2rem, 6vw, 3.25rem);
-  }
-
-  h2 {
-    margin-top: 2.25rem;
-    font-size: clamp(1.3rem, 4vw, 1.75rem);
-  }
-
-  p,
-  li {
-    color: #53645d;
-  }
-
-  a {
-    color: #365c4b;
-  }
-</style>
+<SiteLayout
+  title={title}
+  description={description}
+  canonicalPath={canonicalPath ?? '/'}
+  noIndex={noIndex}
+>
+  <article class="document-page">
+    <a class="document-page__back" href="/">← Retour à l'accueil</a>
+    <slot />
+  </article>
+</SiteLayout>

@@ -1,0 +1,101 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import PageHero from '../components/site/PageHero.astro';
+import Breadcrumbs from '../components/site/Breadcrumbs.astro';
+import PhotoPlaceholder from '../components/site/PhotoPlaceholder.astro';
+import BookingCta from '../components/site/BookingCta.astro';
+import RelatedLinks from '../components/site/RelatedLinks.astro';
+import { commonMedicalNotice, createServiceStructuredData } from '../data/site';
+
+const title = 'Ostéopathie de la femme à Autrans | Fanny Cayol Peridon';
+const description =
+  'Ostéopathie pour les femmes à Autrans : accompagnement manuel adapté pendant la grossesse, en post-partum et à chaque étape de vie.';
+const serviceStructuredData = createServiceStructuredData({
+  name: 'Ostéopathie de la femme à Autrans',
+  description,
+  path: '/osteopathie-femme/',
+});
+---
+
+<SiteLayout title={title} description={description} canonicalPath="/osteopathie-femme/" pageType="MedicalWebPage" extraStructuredData={serviceStructuredData}>
+  <Breadcrumbs items={[{ label: 'Accueil', href: '/' }, { label: 'Ostéopathie femme' }]} />
+  <PageHero
+    eyebrow="À chaque étape de vie"
+    title="Ostéopathie de la femme à Autrans"
+    intro="Grossesse, post-partum ou autre période de transition : je propose un accompagnement manuel ajusté à vos besoins, dans un cadre d’écoute et de sécurité."
+    photoLabel="Portrait naturel ou consultation autour de la maternité"
+  >
+    <div slot="actions" class="actions">
+      <a class="button button--primary" href="/cabinet-tarifs-rendez-vous/">Prendre rendez-vous</a>
+    </div>
+  </PageHero>
+
+  <section class="section-shell section-space">
+    <div class="section-heading">
+      <p class="eyebrow">Un accompagnement personnalisé</p>
+      <h2>Prendre soin de soi au fil des changements</h2>
+      <p class="lead">
+        Chaque étape de vie peut modifier la mobilité, les appuis et les sensations corporelles. La
+        consultation offre un temps pour les nommer et adapter les gestes à votre situation du moment.
+      </p>
+    </div>
+    <div class="content-grid">
+      <article class="content-card">
+        <h3>Pendant la grossesse</h3>
+        <p>
+          Des techniques adaptées peuvent accompagner les douleurs et inconforts rencontrés pendant
+          la grossesse, en complément du suivi médical et obstétrical habituel.
+        </p>
+      </article>
+      <article class="content-card">
+        <h3>Après la naissance</h3>
+        <p>
+          Le post-partum peut être l’occasion de se reconnecter à son corps, de faire le point sur des
+          inconforts pelviens et d’envisager une évaluation globale.
+        </p>
+      </article>
+      <article class="content-card">
+        <h3>À tout âge</h3>
+        <p>
+          Je reçois les femmes à toutes les étapes de leur vie, avec la même attention portée au
+          confort, au consentement et au rythme de chacune.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section-shell section-space--tight">
+    <div class="split-layout split-layout--reverse">
+      <PhotoPlaceholder label="Détail du cabinet ou geste d’accompagnement doux" format="landscape" />
+      <div class="split-layout__copy">
+        <p class="eyebrow">Des gestes ajustés</p>
+        <h2>Douceur, mobilité et écoute</h2>
+        <p>
+          Selon vos besoins, la consultation peut associer des étirements doux, des mobilisations,
+          du massage et des techniques fonctionnelles ou tissulaires. Je vous explique les gestes
+          proposés afin que vous restiez actrice de la séance.
+        </p>
+        <p>
+          Ma formation de masseuse-kinésithérapeute et ma formation en pelvi-périnéologie enrichissent
+          mon regard clinique. Les rendez-vous à NATURASOI restent des consultations d’ostéopathie ou
+          des prestations de drainage et de massage, et non des séances de kinésithérapie.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-shell section-space--tight">
+    <div class="notice"><p>{commonMedicalNotice} Pendant la grossesse ou en cas de douleur inhabituelle, l’avis de votre médecin ou de votre sage-femme reste prioritaire.</p></div>
+  </section>
+
+  <RelatedLinks
+    title="Préparer un accompagnement adapté"
+    links={[
+      { title: 'Déroulement d’une consultation', description: 'Les étapes d’une séance d’ostéopathie au cabinet.', href: '/osteopathie/' },
+      { title: 'Ostéopathie pédiatrique', description: 'Découvrir la consultation des nourrissons et des enfants.', href: '/osteopathie-pediatrique/' },
+      { title: 'Cabinet à Autrans', description: 'Accès, tarifs et prise de rendez-vous.', href: '/cabinet-tarifs-rendez-vous/' },
+    ]}
+  />
+
+  <BookingCta title="Vous souhaitez échanger avant de réserver ?" text="Laissez-moi un SMS en précisant simplement votre demande. Nous verrons ensemble si la consultation est adaptée." />
+</SiteLayout>

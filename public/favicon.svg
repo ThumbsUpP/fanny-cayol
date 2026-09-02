@@ -1,30 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-label="Fanny Cayol Peridon">
   <defs>
-    <linearGradient id="sky" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#84c1fa" />
-      <stop offset="100%" stop-color="#f7f3ee" />
-    </linearGradient>
-    <linearGradient id="mountain" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#1e3063" />
-      <stop offset="100%" stop-color="#4964b8" />
-    </linearGradient>
-    <linearGradient id="peak" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.9" />
-      <stop offset="100%" stop-color="#e0ecff" stop-opacity="0.6" />
+    <linearGradient id="fond" x1="80" y1="40" x2="440" y2="472" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#8fb39f" />
+      <stop offset="1" stop-color="#3f6957" />
     </linearGradient>
   </defs>
-  <rect width="64" height="64" rx="12" fill="url(#sky)" />
-  <path
-    d="M10 48 L28 20 L36 28 L44 18 L54 48 Z"
-    fill="url(#mountain)"
-    stroke="#112042"
-    stroke-width="1.5"
-    stroke-linejoin="round"
-  />
-  <path
-    d="M36 28 L44 18 L52 40 Z"
-    fill="url(#peak)"
-    opacity="0.85"
-  />
-  <circle cx="18" cy="18" r="5" fill="#fff4d6" opacity="0.85" />
+  <rect width="512" height="512" rx="150" fill="#eef4ef" />
+  <path d="M87 278C87 146 174 71 293 71c92 0 150 58 132 143-22 103-100 227-217 227-74 0-121-61-121-163Z" fill="url(#fond)" />
+  <path d="M359 100c-7 105-61 212-174 302" fill="none" stroke="#dce9df" stroke-width="13" stroke-linecap="round" opacity=".72" />
+  <text x="256" y="302" fill="#fff" font-family="Arial, sans-serif" font-size="145" font-weight="700" text-anchor="middle" letter-spacing="-9">FC</text>
 </svg>

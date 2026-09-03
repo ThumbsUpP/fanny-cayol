@@ -5,7 +5,7 @@ import Breadcrumbs from '../components/site/Breadcrumbs.astro';
 import PhotoPlaceholder from '../components/site/PhotoPlaceholder.astro';
 import BookingCta from '../components/site/BookingCta.astro';
 import RelatedLinks from '../components/site/RelatedLinks.astro';
-import { commonMedicalNotice, createServiceStructuredData } from '../data/site';
+import { createServiceStructuredData } from '../data/site';
 
 const title = 'Ostéopathie de la femme à Autrans | Fanny Cayol Peridon';
 const description =
@@ -43,15 +43,17 @@ const serviceStructuredData = createServiceStructuredData({
       <article class="content-card">
         <h3>Pendant la grossesse</h3>
         <p>
-          Des techniques adaptées peuvent accompagner les douleurs et inconforts rencontrés pendant
-          la grossesse, en complément du suivi médical et obstétrical habituel.
+          Des mobilisations et étirements doux, des massages ainsi que des techniques fonctionnelles
+          ou tissulaires peuvent accompagner les douleurs et gênes rencontrées pendant la grossesse.
+          L’approche reste toujours adaptée à votre état et à vos besoins.
         </p>
       </article>
       <article class="content-card">
         <h3>Après la naissance</h3>
         <p>
-          Le post-partum peut être l’occasion de se reconnecter à son corps, de faire le point sur des
-          inconforts pelviens et d’envisager une évaluation globale.
+          Après les neuf mois de grossesse et les sollicitations physiques de cette période, je vous
+          propose un petit check-up du corps. Ce temps peut prendre en compte les douleurs du bassin,
+          les changements corporels et la période qui suit l’accouchement.
         </p>
       </article>
       <article class="content-card">
@@ -76,16 +78,14 @@ const serviceStructuredData = createServiceStructuredData({
           proposés afin que vous restiez actrice de la séance.
         </p>
         <p>
-          Ma formation de masseuse-kinésithérapeute et ma formation en pelvi-périnéologie enrichissent
-          mon regard clinique. Les rendez-vous à NATURASOI restent des consultations d’ostéopathie ou
-          des prestations de drainage et de massage, et non des séances de kinésithérapie.
+          Mon diplôme d’État de masseur-kinésithérapeute et ma formation en pelvi-périnéologie,
+          terminée en mai 2026, enrichissent mon regard clinique et constituent une spécificité
+          rassurante de mon parcours. Les rendez-vous à NATURASOI restent des consultations
+          d’ostéopathie ou des prestations de drainage et de massage, et non des séances de
+          kinésithérapie.
         </p>
       </div>
     </div>
-  </section>
-
-  <section class="section-shell section-space--tight">
-    <div class="notice"><p>{commonMedicalNotice} Pendant la grossesse ou en cas de douleur inhabituelle, l’avis de votre médecin ou de votre sage-femme reste prioritaire.</p></div>
   </section>
 
   <RelatedLinks

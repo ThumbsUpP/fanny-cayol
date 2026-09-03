@@ -5,11 +5,11 @@ import Breadcrumbs from '../components/site/Breadcrumbs.astro';
 import PhotoPlaceholder from '../components/site/PhotoPlaceholder.astro';
 import BookingCta from '../components/site/BookingCta.astro';
 import RelatedLinks from '../components/site/RelatedLinks.astro';
-import { commonMedicalNotice, createServiceStructuredData } from '../data/site';
+import { createServiceStructuredData } from '../data/site';
 
 const title = 'Drainage lymphatique à Autrans | Fanny Cayol Peridon';
 const description =
-  'Drainage lymphatique manuel à Autrans par Fanny Cayol Peridon : soin doux et progressif des jambes, du visage, de l’abdomen ou du bas du dos.';
+  'Drainage lymphatique doux ou dynamique à Autrans par Fanny Cayol Peridon : jambes, chevilles, visage, cou, ventre et bas du dos.';
 const serviceStructuredData = createServiceStructuredData({
   name: 'Drainage lymphatique à Autrans',
   description,
@@ -24,9 +24,9 @@ const serviceStructuredData = createServiceStructuredData({
 <SiteLayout title={title} description={description} canonicalPath="/drainage-lymphatique/" pageType="MedicalWebPage" extraStructuredData={serviceStructuredData}>
   <Breadcrumbs items={[{ label: 'Accueil', href: '/' }, { label: 'Drainage lymphatique' }]} />
   <PageHero
-    eyebrow="Soin manuel doux"
+    eyebrow="Deux approches personnalisées"
     title="Drainage lymphatique à Autrans"
-    intro="Une technique manuelle lente et progressive, proposée sur les jambes ou d’autres zones selon vos besoins et les précautions propres à votre situation."
+    intro="Drainage doux ou dynamique : je choisis avec vous le rythme, la profondeur et les zones travaillées selon vos besoins et la sensation recherchée."
     photoLabel="Soin de drainage lymphatique manuel"
   >
     <div slot="actions" class="actions">
@@ -37,16 +37,16 @@ const serviceStructuredData = createServiceStructuredData({
   <section class="section-shell section-space">
     <div class="split-layout">
       <div class="split-layout__copy">
-        <p class="eyebrow">Une progression précise</p>
-        <h2>Comment se déroule le soin ?</h2>
+        <p class="eyebrow">Une compétence de masseur-kinésithérapeute</p>
+        <h2>Une formation spécialisée</h2>
         <p>
-          La séance commence par un travail de respiration abdominale et de mobilité du diaphragme.
-          Les gestes se poursuivent près des principales zones ganglionnaires, puis progressent de
-          manière douce vers les régions choisies avec vous.
+          J’ai développé cette compétence dans le cadre de ma formation en masso-kinésithérapie,
+          auprès de Maryvonne Chardon-Bras, spécialiste internationale du drainage lymphatique.
         </p>
         <p>
-          Les jambes sont fréquemment demandées, mais le drainage peut également concerner le visage,
-          l’abdomen ou le bas du dos. La durée est choisie selon le nombre de zones et votre objectif.
+          Je l’ai également approfondie au contact de services hospitaliers spécialisés en
+          lymphologie. Les soins proposés aujourd’hui à NATURASOI ne sont pas des consultations de
+          kinésithérapie.
         </p>
       </div>
       <PhotoPlaceholder label="Détail des mains pendant le drainage" format="square" />
@@ -54,29 +54,76 @@ const serviceStructuredData = createServiceStructuredData({
   </section>
 
   <section class="section-shell section-space--tight">
+    <div class="section-heading">
+      <p class="eyebrow">Doux ou dynamique</p>
+      <h2>Deux types de drainage lymphatique</h2>
+    </div>
     <div class="content-grid">
       <article class="content-card">
-        <h3>Une pratique issue de la kinésithérapie</h3>
+        <h3>Drainage lymphatique doux</h3>
         <p>
-          J’ai découvert cette technique lors de ma formation de masseuse-kinésithérapeute, puis je
-          l’ai approfondie notamment auprès de Maryvonne Chardon-Bras et dans des services hospitaliers
-          spécialisés en lymphologie.
+          Des pressions légères et des mouvements lents et précis accompagnent naturellement la
+          circulation de la lymphe. Cette approche est particulièrement appréciée pour contribuer à
+          réduire la rétention d’eau et les sensations de gonflement, notamment au niveau des jambes
+          et des chevilles, tout en procurant une sensation de légèreté et de bien-être.
         </p>
       </article>
       <article class="content-card">
-        <h3>Les sensations recherchées</h3>
+        <h3>Drainage lymphatique dynamique</h3>
         <p>
-          Le soin est souvent choisi pour rechercher une sensation de jambes plus légères, davantage
-          de confort ou moins de gonflement ressenti. Les effets varient selon chaque personne.
+          Plus rythmé et plus profond, ce massage circulatoire stimule la circulation lymphatique. Il
+          peut contribuer à diminuer l’aspect de la cellulite, à raffermir la peau et à réduire le
+          volume des zones travaillées. Il convient aux personnes qui recherchent un travail plus
+          tonique sans renoncer au bien-être.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section-shell section-space--tight">
+    <div class="content-grid">
+      <article class="content-card">
+        <h3>Zones travaillées</h3>
+        <p>
+          Le drainage peut concerner les jambes, les chevilles, le visage, le cou, le ventre, le bas
+          du dos et plus largement différentes zones du corps selon vos besoins. Les jambes et les
+          chevilles sont particulièrement mises en avant pour rechercher une sensation de légèreté.
         </p>
       </article>
       <article class="content-card">
-        <h3>Après une grossesse</h3>
+        <h3>Des effets recherchés, sans garantie</h3>
         <p>
-          Un drainage peut être envisagé en post-partum lorsque la situation le permet, avec les
-          précautions nécessaires et en complément du suivi médical.
+          Selon la personne et la zone, le drainage peut contribuer à diminuer le gonflement, à
+          réduire le volume des zones travaillées — notamment les jambes ou le cou —, à apporter une
+          sensation de légèreté ou à améliorer l’aspect de la cellulite. Les effets varient d’une
+          personne à l’autre.
         </p>
       </article>
+      <article class="content-card">
+        <h3>Après un accouchement</h3>
+        <p>
+          Un drainage peut aussi être proposé après un accouchement lorsque la situation le permet.
+          En cas de signes pouvant évoquer une phlébite ou de douleurs anormales, consultez d’abord
+          un médecin avant de venir.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section-shell section-space--tight">
+    <div class="info-band">
+      <p class="eyebrow">Bons cadeaux</p>
+      <h2>Un cadeau de naissance tout en douceur</h2>
+      <p class="lead">
+        Offrez à une jeune maman un moment de bien-être auprès d’une professionnelle de santé
+        qualifiée, attentive et à l’écoute. Les bons cadeaux sont personnalisés selon la durée et le
+        soin choisis.
+      </p>
+      <div class="actions">
+        <a class="button button--secondary" href="mailto:fcayolperidon@gmail.com?subject=Je%20souhaite%20offrir%20un%20bon%20cadeau">
+          Demander un bon cadeau
+        </a>
+      </div>
     </div>
   </section>
 
@@ -91,14 +138,10 @@ const serviceStructuredData = createServiceStructuredData({
     </div>
   </section>
 
-  <section class="section-shell section-space--tight">
-    <div class="notice"><p>{commonMedicalNotice} En présence de signes évocateurs de phlébite, d’une douleur anormale ou de tout symptôme préoccupant, demandez un avis médical avant de réserver.</p></div>
-  </section>
-
   <RelatedLinks
     links={[
-      { title: 'Massages à Autrans', description: 'Relaxation, récupération sportive et massages ciblés.', href: '/massages/' },
-      { title: 'Découvrir Fanny', description: 'Mon parcours de masseuse-kinésithérapeute et d’ostéopathe.', href: '/fanny-cayol-peridon/' },
+      { title: 'Massages à Autrans', description: 'Détente, récupération sportive, ayurvédique et massage thérapeutique.', href: '/massages/' },
+      { title: 'Découvrir Fanny', description: 'Mon parcours de masseur-kinésithérapeute et d’ostéopathe.', href: '/fanny-cayol-peridon/' },
       { title: 'Tarifs et rendez-vous', description: 'Retrouver les tarifs, l’accès et le contact.', href: '/cabinet-tarifs-rendez-vous/' },
     ]}
   />

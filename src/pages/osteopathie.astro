@@ -5,7 +5,7 @@ import Breadcrumbs from '../components/site/Breadcrumbs.astro';
 import PhotoPlaceholder from '../components/site/PhotoPlaceholder.astro';
 import BookingCta from '../components/site/BookingCta.astro';
 import RelatedLinks from '../components/site/RelatedLinks.astro';
-import { commonMedicalNotice, createServiceStructuredData } from '../data/site';
+import { createServiceStructuredData } from '../data/site';
 
 const title = 'Ostéopathe à Autrans : la consultation | Fanny Cayol Peridon';
 const description =
@@ -54,8 +54,29 @@ const serviceStructuredData = createServiceStructuredData({
       <article class="content-card">
         <h3>03 · Accompagner</h3>
         <p>
-          Le traitement associe, selon les besoins, des techniques douces, fonctionnelles,
-          structurelles, tissulaires ou du massage. La séance se termine par un échange et des conseils.
+          Le traitement est adapté à vos besoins et à vos préférences. Il peut associer des techniques
+          douces, fonctionnelles ou structurelles, des levées de tensions et des massages.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section-shell section-space--tight">
+    <div class="content-grid">
+      <article class="content-card">
+        <p class="eyebrow">En fin de consultation</p>
+        <h2>Des repères pour le quotidien</h2>
+        <p>
+          Selon votre situation, je vous propose quelques conseils simples autour de l’activité
+          physique, de la forme générale, du sommeil, de la gestion du stress ou de l’alimentation.
+        </p>
+      </article>
+      <article class="content-card">
+        <p class="eyebrow">Pour qui ?</p>
+        <h2>À tous les âges</h2>
+        <p>
+          Je reçois les bébés, les enfants, les femmes et les adultes de tous âges, avec une approche
+          adaptée à chaque personne.
         </p>
       </article>
     </div>
@@ -84,17 +105,15 @@ const serviceStructuredData = createServiceStructuredData({
   <section class="section-shell section-space--tight">
     <div class="info-band">
       <p class="eyebrow">Au-delà du geste</p>
-      <h2>Une approche globale et rassurante</h2>
+      <h2>Une approche globale et humaine</h2>
       <p class="lead">
-        Le corps ne se résume pas à une zone douloureuse. Votre sommeil, votre activité, votre stress
-        et votre vécu peuvent faire partie de notre échange, sans chercher à leur attribuer une cause
-        systématique. L’objectif est de vous offrir un cadre où vous pouvez vous exprimer librement.
+        Je ne m’intéresse pas uniquement à la dimension technique ou manuelle. J’accorde aussi une
+        place importante à ce que vous vivez, à vos émotions, à votre ressenti et à votre sentiment
+        de bien-être et de sécurité. Nous pouvons échanger sur ce qui vous semble parfois « bloqué »
+        et sur ce que vous avez besoin d’exprimer. Mon approche associe écoute, douceur, travail
+        manuel et prise en compte de la personne dans sa globalité.
       </p>
     </div>
-  </section>
-
-  <section class="section-shell section-space--tight">
-    <div class="notice"><p>{commonMedicalNotice}</p></div>
   </section>
 
   <RelatedLinks

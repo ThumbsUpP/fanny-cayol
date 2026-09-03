@@ -17,12 +17,16 @@ const faq = [
   {
     question: 'L’ostéopathie est-elle remboursée ?',
     answer:
-      'Certaines complémentaires santé remboursent tout ou partie d’une consultation, selon votre contrat. Renseignez-vous directement auprès de votre mutuelle.',
+      'Certaines mutuelles prennent en charge plusieurs séances d’ostéopathie par an, selon les garanties du contrat.',
   },
   {
     question: 'Comment modifier ou annuler un rendez-vous ?',
     answer:
       'Prévenez au moins 24 heures à l’avance, par SMS ou par téléphone, afin que le créneau puisse être proposé à une autre personne.',
+  },
+  {
+    question: 'Quels moyens de paiement sont acceptés ?',
+    answer: 'Tous les moyens de paiement sont acceptés.',
   },
 ];
 
@@ -61,23 +65,23 @@ const faqStructuredData = {
         <p class="eyebrow">Adresse</p>
         <h2>Cabinet NATURASOI</h2>
         <p>{site.addressLine}<br />{site.locality}</p>
-        <p>Le cabinet est situé au rez-de-chaussée. Un parking gratuit se trouve juste devant.</p>
+        <p>Je vous y reçois depuis le 1er septembre 2026. Le cabinet est situé au rez-de-chaussée et un parking gratuit se trouve juste devant.</p>
         <a href={site.mapUrl} target="_blank" rel="noreferrer">Ouvrir l’itinéraire sur Google Maps →</a>
       </article>
       <article class="content-card">
         <p class="eyebrow">Accessibilité</p>
         <h2>Un accès simple</h2>
         <p>
-          L’espace est accessible aux personnes à mobilité réduite. Si vous avez besoin d’une
-          indication particulière avant votre venue, laissez-moi un message.
+          L’espace est accessible aux personnes à mobilité réduite, y compris aux personnes en
+          fauteuil roulant. Aucune consigne particulière n’est nécessaire pour l’entrée.
         </p>
       </article>
       <article class="content-card">
         <p class="eyebrow">Horaires</p>
         <h2>Sur rendez-vous</h2>
         <p>
-          Les consultations sont proposées uniquement sur rendez-vous. Les créneaux précis seront
-          visibles sur la plateforme de réservation en ligne dès sa mise en service.
+          Les consultations sont proposées sur rendez-vous entre 8h30 et 19h. Les jours exacts
+          d’ouverture seront précisés prochainement.
         </p>
       </article>
     </div>
@@ -87,14 +91,16 @@ const faqStructuredData = {
     <div class="split-layout">
       <div class="split-layout__copy">
         <p class="eyebrow">Prendre rendez-vous</p>
-        <h2>Pour le moment, privilégiez le SMS</h2>
+        <h2>Par SMS, téléphone ou en ligne</h2>
         <p>
-          Vous pouvez me laisser un message au <a href={site.phoneHref}>{site.phoneDisplay}</a>, en
-          indiquant la prestation souhaitée et vos disponibilités. Je vous répondrai dès que possible.
+          Vous pouvez me laisser de préférence un SMS au <a href={site.smsHref}>{site.phoneDisplay}</a>,
+          en indiquant la prestation souhaitée et vos disponibilités, ou m’appeler. La réservation en
+          ligne passe par Perfactive ; les prestations qui y seront précisément accessibles restent à
+          confirmer.
         </p>
         <div class="actions">
           <a class="button button--primary" href={site.smsHref}>Envoyer un SMS</a>
-          <span class="online-booking">Réservation Perfactive bientôt disponible</span>
+          <span class="online-booking">Réservation en ligne via Perfactive</span>
         </div>
       </div>
       <PhotoPlaceholder label="Salle de soin NATURASOI" format="landscape" />
@@ -124,10 +130,6 @@ const faqStructuredData = {
         </div>
       </article>
     </div>
-    <aside class="draft-note">
-      <strong>À compléter avant publication</strong>
-      <span>Tarif de la consultation d’ostéopathie.</span>
-    </aside>
   </section>
 
   <section class="section-shell section-space--tight">
@@ -159,18 +161,6 @@ const faqStructuredData = {
     color: #56615a;
     font-size: 0.78rem;
     font-weight: 600;
-  }
-  .draft-note {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.45rem 0.8rem;
-    margin-top: 1rem;
-    padding: 0.85rem 1rem;
-    border: 1px dashed rgba(164, 121, 65, 0.35);
-    border-radius: 12px;
-    color: #6f5c42;
-    background: rgba(250, 241, 225, 0.7);
-    font-size: 0.76rem;
   }
   .faq-list { border-top: 1px solid rgba(79, 127, 106, 0.15); }
   .faq-list details { border-bottom: 1px solid rgba(79, 127, 106, 0.15); }

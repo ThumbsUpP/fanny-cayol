@@ -1,21 +1,21 @@
 export const site = {
   name: 'Fanny Cayol Peridon',
-  alternateNames: ['Fanny Cayol-Peridon'],
+  alternateNames: [],
   role: 'Ostéopathe',
   description:
-    "Cabinet d'ostéopathie de Fanny Cayol Peridon à Autrans-Méaudre-en-Vercors, au sein de NATURASOI.",
-  professionalLine: "Ostéopathe · Masseuse-kinésithérapeute diplômée d'État",
+    "Cabinet d'ostéopathie de Fanny Cayol Peridon à Autrans, au sein de NATURASOI.",
+  professionalLine: "Ostéopathe · Diplômée d'État de masseur-kinésithérapeute",
   url: 'https://www.fanny-cayol-peridon.fr',
   phoneDisplay: '06 68 37 86 16',
   phoneHref: 'tel:+33668378616',
   smsHref: 'sms:+33668378616',
-  addressLine: '394 rue de Puilboreau',
-  locality: '38880 Autrans-Méaudre-en-Vercors',
+  addressLine: '394 rue Puilboreau',
+  locality: '38880 Autrans',
   place: 'NATURASOI',
   latitude: 45.17392,
   longitude: 5.544935,
   mapUrl:
-    'https://www.google.com/maps/dir/?api=1&destination=394+rue+de+Puilboreau+38880+Autrans-M%C3%A9audre-en-Vercors',
+    'https://www.google.com/maps/dir/?api=1&destination=394+rue+Puilboreau+38880+Autrans',
   externalProfiles: {
     vercorsExperience:
       'https://www.vercors-experience.com/fanny-cayol-peridon-kinesitherapeute-osteopathe.html',
@@ -63,10 +63,10 @@ export const serviceLinks = [
     number: '03',
   },
   {
-    eyebrow: 'Légèreté & détente',
+    eyebrow: 'Doux ou dynamique',
     title: 'Drainage lymphatique',
     description:
-      'Un soin manuel doux et progressif, proposé sur une ou plusieurs zones selon vos besoins.',
+      'Deux approches personnalisées pour accompagner la circulation, la légèreté et le bien-être.',
     href: '/drainage-lymphatique/',
     number: '04',
   },
@@ -79,9 +79,6 @@ export const serviceLinks = [
     number: '05',
   },
 ] as const;
-
-export const commonMedicalNotice =
-  "Ces prestations ne remplacent ni un diagnostic, ni un avis, ni un suivi médical. En cas de doute ou de situation qui sort de mon champ de pratique, je vous invite à consulter votre médecin.";
 
 export const createServiceStructuredData = ({
   name,

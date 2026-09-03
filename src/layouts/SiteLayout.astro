@@ -56,7 +56,7 @@ const baseGraph: Record<string, unknown>[] = [
     alternateName: site.alternateNames,
     jobTitle: 'Ostéopathe',
     description:
-      "Ostéopathe et masseuse-kinésithérapeute diplômée d'État, Fanny Cayol Peridon exerce à Autrans-Méaudre-en-Vercors.",
+      "Professionnelle de santé, ostéopathe et diplômée d'État de masseur-kinésithérapeute, Fanny Cayol Peridon exerce à Autrans.",
     image: new URL('/images/fanny-cayol-peridon-osteopathe-autrans.webp', site.url).toString(),
     url: `${site.url}/fanny-cayol-peridon/`,
     knowsLanguage: 'fr-FR',
@@ -81,6 +81,7 @@ const baseGraph: Record<string, unknown>[] = [
     logo: new URL('/favicon.svg', site.url).toString(),
     telephone: '+33668378616',
     currenciesAccepted: 'EUR',
+    paymentAccepted: 'Tous moyens de paiement',
     address: {
       '@type': 'PostalAddress',
       streetAddress: site.addressLine,
@@ -123,7 +124,7 @@ const baseGraph: Record<string, unknown>[] = [
     about: { '@id': `${site.url}/#cabinet` },
     author: { '@id': `${site.url}/#fanny-cayol-peridon` },
     primaryImageOfPage: imageUrl,
-    dateModified: '2026-09-02',
+    dateModified: '2026-09-03',
     ...(mainEntityId ? { mainEntity: { '@id': mainEntityId } } : {}),
   },
 ];

@@ -11,7 +11,7 @@ const ContactSection: React.FC<ContactSectionProps> = ({ cards }) => (
   <section className="contact">
     <SectionHeading
       title="Cabinet d'ostéopathie à Autrans-Méaudre-en-Vercors"
-      description="Je vous reçois chez Naturasoi, au 394 rue de Puilboreau à Autrans, uniquement sur rendez-vous."
+      description="Je vous reçois chez Naturasoi, au 394 rue Puilboreau à Autrans, uniquement sur rendez-vous."
     />
     <div className="contact__grid">
       {cards.map(({ icon, title, lines, link }, index) => (

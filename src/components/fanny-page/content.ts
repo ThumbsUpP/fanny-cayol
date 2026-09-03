@@ -33,11 +33,11 @@ const images = {
 } as const;
 
 export const heroContent: HeroContent = {
-  title: 'Fanny Cayol-Peridon, ostéopathe à Autrans',
+  title: 'Fanny Cayol Peridon, ostéopathe à Autrans',
   description:
-    "Ostéopathe D.O. et diplômée d'État en kinésithérapie, je vous reçois sur rendez-vous au cabinet Naturasoi pour une consultation adaptée à votre âge, votre activité et vos besoins.",
+    "Professionnelle de santé, ostéopathe et diplômée d'État de masseur-kinésithérapeute, je vous reçois sur rendez-vous au cabinet Naturasoi pour des soins personnalisés et de qualité.",
   image: images.hero,
-  imageAlt: 'Portrait de Fanny Cayol-Peridon',
+  imageAlt: 'Portrait de Fanny Cayol Peridon',
   buttons: [
     {
       label: 'Appeler maintenant',
@@ -47,7 +47,7 @@ export const heroContent: HeroContent = {
     },
     {
       label: 'Prendre rendez-vous',
-      href: 'https://www.doctolib.fr/osteopathe/autrans-meaudre-en-vercors/fanny-cayol-peridon-autrans-meaudre-en-vercors',
+      href: '/cabinet-tarifs-rendez-vous/',
       variant: 'secondary',
     },
   ],
@@ -58,7 +58,7 @@ export const aboutContent: AboutContent = {
   imageAlt: 'Massage professionnel dans un cadre naturel',
   title: 'Ostéopathe D.O. à Autrans',
   description:
-    "Formée et inspirée par plusieurs années d'exercice en Guadeloupe, j'ai appris l'importance de la douceur et du lien avec la nature. Aujourd'hui, je vous accueille dans un cadre calme et bienveillant où chaque soin est une invitation au lâcher-prise.",
+    "Attentive aux autres et passionnée par mon métier, je vous accueille dans un cadre calme et bienveillant où l'écoute, la douceur et le travail manuel prennent en compte la personne dans sa globalité.",
   highlights: [
     {
       title: 'Expérience holistique',
@@ -76,7 +76,7 @@ export const aboutContent: AboutContent = {
 export const services: Service[] = [
   {
     title: 'Ostéopathie',
-    duration: '45 min / 60 €',
+    duration: 'Environ 45 min',
     description:
       "Une consultation personnalisée fondée sur l'écoute, l'examen clinique et des techniques manuelles adaptées.",
     image: images.osteo,
@@ -88,18 +88,18 @@ export const services: Service[] = [
     image: images.drainage,
   },
   {
-    title: 'Réflexologie plantaire',
-    duration: '45 min / 60 €',
+    title: 'Massages',
+    duration: 'De 30 min à 1 h 15',
     description:
-      "Réduit les tensions du corps par l'intermédiaire de pressions et massage des pieds.",
-    image: images.reflexology,
+      'Massage détente, récupération sportive, ayurvédique ou thérapeutique, personnalisé selon vos besoins.',
+    image: images.massage,
   },
 ];
 
 export const bookingContent: BookingContent = {
   title: "Prendre rendez-vous en ostéopathie à Autrans",
   description:
-    'Réservez votre consultation en ligne sur Doctolib ou contactez-moi directement par téléphone.',
+    'Prenez rendez-vous par SMS, par téléphone ou retrouvez les informations de réservation Perfactive.',
   actions: [
     {
       label: '06 68 37 86 16',
@@ -107,8 +107,8 @@ export const bookingContent: BookingContent = {
       variant: 'primary',
     },
     {
-      label: 'Doctolib',
-      href: 'https://www.doctolib.fr/osteopathe/autrans-meaudre-en-vercors/fanny-cayol-peridon-autrans-meaudre-en-vercors',
+      label: 'Réservation Perfactive',
+      href: '/cabinet-tarifs-rendez-vous/',
       variant: 'secondary',
     },
   ],
@@ -125,8 +125,8 @@ export const giftCardContent: GiftCardContent = {
 
 export const ambianceCards: AmbianceCard[] = [
   {
-    title: 'Inspiration tropicale',
-    description: 'Mon parcours en Guadeloupe nourrit une approche douce et naturelle.',
+    title: 'Connexion à la nature',
+    description: 'Le cadre du Vercors nourrit une approche douce, chaleureuse et naturelle.',
     image: images.ambianceNature,
   },
   {
@@ -145,7 +145,7 @@ export const contactCards: ContactCard[] = [
   {
     icon: '📍',
     title: 'Adresse',
-    lines: ['Chez Naturasoi', '394 rue de Puilboreau', '38880 Autrans-Méaudre-en-Vercors'],
+    lines: ['Chez Naturasoi', '394 rue Puilboreau', '38880 Autrans'],
   },
   {
     icon: '📞',
@@ -156,13 +156,13 @@ export const contactCards: ContactCard[] = [
   {
     icon: '🕓',
     title: 'Horaires',
-    lines: ['Sur rendez-vous uniquement', 'Du lundi au samedi'],
+    lines: ['Sur rendez-vous uniquement', '8h30 – 19h · Jours à confirmer'],
   },
   {
     icon: '💻',
     title: 'Réservation en ligne',
-    lines: ['Doctolib'],
-    link: 'https://www.doctolib.fr/osteopathe/autrans-meaudre-en-vercors/fanny-cayol-peridon-autrans-meaudre-en-vercors',
+    lines: ['Perfactive'],
+    link: '/cabinet-tarifs-rendez-vous/',
   },
 ];
 
@@ -198,7 +198,7 @@ export const approachContent: ApproachContent = {
       id: 'formation_continue',
       heading: 'Formation et expérience',
       headingLevel: 'h3',
-      text: "Ostéopathe D.O. diplômée en 2013 et masseuse-kinésithérapeute diplômée d'État en 2004, je poursuis régulièrement des formations qui enrichissent ma pratique d'ostéopathe.",
+      text: "Ostéopathe D.O. diplômée en 2013 et diplômée d'État de masseur-kinésithérapeute en 2004, je poursuis régulièrement des formations qui enrichissent ma pratique d'ostéopathe.",
       icon: images.formation,
     },
     {
@@ -243,13 +243,13 @@ export const audiencesContent: AudiencesContent = {
 };
 
 export const footerContent: FooterContent = {
-  title: 'Fanny Cayol-Peridon',
-  subtitle: "Ostéopathe D.O. · Diplômée d'État en kinésithérapie",
-  address: 'Chez Naturasoi · 394 rue de Puilboreau, 38880 Autrans-Méaudre-en-Vercors',
+  title: 'Fanny Cayol Peridon',
+  subtitle: "Ostéopathe D.O. · Diplômée d'État de masseur-kinésithérapeute",
+  address: 'Chez Naturasoi · 394 rue Puilboreau, 38880 Autrans',
   phoneLabel: '06 68 37 86 16',
   phoneHref: 'tel:0668378616',
-  appointmentLabel: 'Doctolib',
-  appointmentHref: 'https://www.doctolib.fr/osteopathe/autrans-meaudre-en-vercors/fanny-cayol-peridon-autrans-meaudre-en-vercors',
+  appointmentLabel: 'Perfactive',
+  appointmentHref: '/cabinet-tarifs-rendez-vous/',
   links: [
     { label: 'Mentions légales', href: '/mentions-legales/' },
     { label: 'Politique de confidentialité', href: '/politique-confidentialite/' },

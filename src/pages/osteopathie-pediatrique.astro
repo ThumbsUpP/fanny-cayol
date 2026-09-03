@@ -5,7 +5,7 @@ import Breadcrumbs from '../components/site/Breadcrumbs.astro';
 import PhotoPlaceholder from '../components/site/PhotoPlaceholder.astro';
 import BookingCta from '../components/site/BookingCta.astro';
 import RelatedLinks from '../components/site/RelatedLinks.astro';
-import { commonMedicalNotice, createServiceStructuredData } from '../data/site';
+import { createServiceStructuredData } from '../data/site';
 
 const title = 'Ostéopathie pédiatrique à Autrans | Fanny Cayol Peridon';
 const description =
@@ -36,9 +36,9 @@ const serviceStructuredData = createServiceStructuredData({
         <p class="eyebrow">La première consultation</p>
         <h2>Un temps d’échange avec les parents</h2>
         <p>
-          Nous commençons par reprendre le déroulement de la grossesse, de la naissance et le motif
-          qui vous amène. J’observe ensuite la mobilité de votre enfant et propose des tests et gestes
-          doux, toujours avec votre présence.
+          Nous commençons par reprendre le déroulement de la grossesse, de la naissance, les symptômes
+          observés et le motif qui vous amène. J’observe ensuite la mobilité de votre enfant et propose
+          des tests et gestes doux, toujours avec votre présence.
         </p>
         <p>
           Après la séance, nous faisons le point ensemble. Je peux vous transmettre des conseils
@@ -65,16 +65,16 @@ const serviceStructuredData = createServiceStructuredData({
           <li>pleurs fréquents ou inconfort ;</li>
           <li>coliques rapportées par les parents ;</li>
           <li>torticolis ou préférence de rotation ;</li>
-          <li>plagiocéphalie déjà évaluée médicalement.</li>
+          <li>plagiocéphalie.</li>
         </ul>
       </article>
       <article class="content-card">
         <h3>Au fil du développement</h3>
         <ul>
           <li>difficulté motrice observée ;</li>
-          <li>position assise qui tarde à s’installer ;</li>
-          <li>inconfort ou difficulté d’un membre ;</li>
-          <li>question autour de la mobilité globale.</li>
+          <li>un bébé qui ne tient pas encore assis ;</li>
+          <li>problématique concernant les membres inférieurs ;</li>
+          <li>problématique concernant les membres supérieurs.</li>
         </ul>
       </article>
       <article class="content-card">
@@ -88,7 +88,7 @@ const serviceStructuredData = createServiceStructuredData({
   </section>
 
   <section class="section-shell section-space--tight">
-    <div class="notice"><p>{commonMedicalNotice} Pour un bébé de moins de six mois, un suivi médical régulier est nécessaire avant la consultation.</p></div>
+    <div class="notice"><p>Un suivi médical régulier est nécessaire avant toute consultation ostéopathique.</p></div>
   </section>
 
   <RelatedLinks

@@ -30,6 +30,9 @@ const serviceStructuredData = createServiceStructuredData({
     title="Votre massage à Autrans"
     intro="Dénouer les tensions, récupérer après l’effort ou simplement s’accorder une pause : nous choisissons ensemble le type de massage, les zones et la durée."
     photoLabel="Ambiance chaleureuse d’un massage au cabinet"
+    photoSrc="/images/fanny-cayol-peridon-massage-dos.jpg"
+    photoAlt="Massage du dos réalisé par Fanny Cayol Peridon au cabinet"
+    photoPosition="center 48%"
   >
     <div slot="actions" class="actions">
       <a class="button button--primary" href={site.bookingUrl} target="_blank" rel="noreferrer">Réserver en ligne</a>
@@ -91,7 +94,13 @@ const serviceStructuredData = createServiceStructuredData({
 
   <section class="section-shell section-space--tight">
     <div class="split-layout split-layout--reverse">
-      <PhotoPlaceholder label="Détail d’une huile, de serviettes ou du geste de massage" format="landscape" />
+      <PhotoPlaceholder
+        label="Ambiance douce du cabinet"
+        format="square"
+        src="/images/ambiance-cabinet-lampe-sel-hibiscus.jpg"
+        alt="Lampe de sel et fleur d’hibiscus dans le cabinet NATURASOI"
+        objectPosition="center 58%"
+      />
       <div class="split-layout__copy">
         <p class="eyebrow">Choisir sa durée</p>
         <h2>Des formats de 30 à 75 minutes</h2>

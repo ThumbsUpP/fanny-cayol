@@ -6,10 +6,22 @@ type Props = {
   title: string;
   intro: string;
   photoLabel?: string;
+  photoSrc?: string;
+  photoAlt?: string;
+  photoPosition?: string;
   compact?: boolean;
 };
 
-const { eyebrow, title, intro, photoLabel, compact = false } = Astro.props;
+const {
+  eyebrow,
+  title,
+  intro,
+  photoLabel,
+  photoSrc,
+  photoAlt,
+  photoPosition,
+  compact = false,
+} = Astro.props;
 ---
 
 <section class:list={['page-hero', compact && 'page-hero--compact']}>
@@ -23,7 +35,14 @@ const { eyebrow, title, intro, photoLabel, compact = false } = Astro.props;
     </div>
     {photoLabel && (
       <div class="page-hero__visual">
-        <PhotoPlaceholder label={photoLabel} format="portrait" />
+        <PhotoPlaceholder
+          label={photoLabel}
+          format="portrait"
+          src={photoSrc}
+          alt={photoAlt}
+          objectPosition={photoPosition}
+          loading="eager"
+        />
       </div>
     )}
   </div>

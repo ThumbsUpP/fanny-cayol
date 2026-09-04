@@ -96,6 +96,10 @@ const baseGraph: Record<string, unknown>[] = [
       longitude: site.longitude,
     },
     hasMap: site.mapUrl,
+    potentialAction: {
+      '@type': 'ReserveAction',
+      target: site.bookingUrl,
+    },
     areaServed,
     sameAs: Object.values(site.externalProfiles),
     founder: { '@id': `${site.url}/#fanny-cayol-peridon` },
@@ -124,7 +128,7 @@ const baseGraph: Record<string, unknown>[] = [
     about: { '@id': `${site.url}/#cabinet` },
     author: { '@id': `${site.url}/#fanny-cayol-peridon` },
     primaryImageOfPage: imageUrl,
-    dateModified: '2026-09-03',
+    dateModified: '2026-09-04',
     ...(mainEntityId ? { mainEntity: { '@id': mainEntityId } } : {}),
   },
 ];
@@ -178,9 +182,18 @@ const structuredData = { '@context': 'https://schema.org', '@graph': baseGraph }
       <slot />
     </main>
     <SiteFooter />
+    <a
+      class="floating-booking"
+      href={site.bookingUrl}
+      target="_blank"
+      rel="noreferrer"
+      aria-label="Réserver un rendez-vous en ligne sur Perfactive"
+    >
+      <span>Réserver en ligne</span>
+    </a>
     <aside class="mobile-contact-bar" aria-label="Prise de rendez-vous rapide">
-      <a href={site.smsHref}>Rendez-vous par SMS</a>
-      <a href={site.phoneHref} aria-label={`Appeler le ${site.phoneDisplay}`}>Appeler</a>
+      <a href={site.bookingUrl} target="_blank" rel="noreferrer">Réserver en ligne</a>
+      <a href={site.smsHref}>SMS</a>
     </aside>
   </body>
 </html>

@@ -11,6 +11,7 @@ import type {
   HeroContent,
   Service,
 } from './types';
+import { site } from '../../data/site';
 
 const images = {
   hero: '/images/profile-picture.jpg',
@@ -47,7 +48,7 @@ export const heroContent: HeroContent = {
     },
     {
       label: 'Prendre rendez-vous',
-      href: '/cabinet-tarifs-rendez-vous/',
+      href: site.bookingUrl,
       variant: 'secondary',
     },
   ],
@@ -108,7 +109,7 @@ export const bookingContent: BookingContent = {
     },
     {
       label: 'Réservation Perfactive',
-      href: '/cabinet-tarifs-rendez-vous/',
+      href: site.bookingUrl,
       variant: 'secondary',
     },
   ],
@@ -162,7 +163,7 @@ export const contactCards: ContactCard[] = [
     icon: '💻',
     title: 'Réservation en ligne',
     lines: ['Perfactive'],
-    link: '/cabinet-tarifs-rendez-vous/',
+    link: site.bookingUrl,
   },
 ];
 
@@ -249,7 +250,7 @@ export const footerContent: FooterContent = {
   phoneLabel: '06 68 37 86 16',
   phoneHref: 'tel:0668378616',
   appointmentLabel: 'Perfactive',
-  appointmentHref: '/cabinet-tarifs-rendez-vous/',
+  appointmentHref: site.bookingUrl,
   links: [
     { label: 'Mentions légales', href: '/mentions-legales/' },
     { label: 'Politique de confidentialité', href: '/politique-confidentialite/' },

@@ -1,5 +1,5 @@
 import React from 'react';
-import { navigation } from '../../data/site';
+import { navigation, site } from '../../data/site';
 import './SiteHeader.scss';
 
 type Props = {
@@ -39,8 +39,13 @@ const SiteHeader: React.FC<Props> = ({ currentPath }) => (
         <NavigationLinks currentPath={currentPath} />
       </nav>
 
-      <a className="site-header__appointment" href="/cabinet-tarifs-rendez-vous/">
-        Rendez-vous
+      <a
+        className="site-header__appointment"
+        href={site.bookingUrl}
+        target="_blank"
+        rel="noreferrer"
+      >
+        Réserver en ligne
       </a>
 
       <details className="site-header__mobile">
@@ -50,9 +55,15 @@ const SiteHeader: React.FC<Props> = ({ currentPath }) => (
         </summary>
         <nav aria-label="Navigation mobile">
           <NavigationLinks currentPath={currentPath} />
-          <a className="site-header__mobile-appointment" href="/cabinet-tarifs-rendez-vous/">
-            Cabinet & rendez-vous
+          <a
+            className="site-header__mobile-appointment"
+            href={site.bookingUrl}
+            target="_blank"
+            rel="noreferrer"
+          >
+            Réserver en ligne
           </a>
+          <a href="/cabinet-tarifs-rendez-vous/">Informations pratiques</a>
         </nav>
       </details>
     </div>

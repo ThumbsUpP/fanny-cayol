@@ -54,8 +54,10 @@ const faqStructuredData = {
     photoLabel="Façade ou entrée de NATURASOI à Autrans"
   >
     <div slot="actions" class="actions">
-      <a class="button button--primary" href={site.smsHref}>Demander un rendez-vous par SMS</a>
-      <a class="button button--secondary" href={site.phoneHref}>Appeler</a>
+      <a class="button button--primary" href={site.bookingUrl} target="_blank" rel="noreferrer">
+        Réserver en ligne
+      </a>
+      <a class="button button--secondary" href={site.smsHref}>Envoyer un SMS</a>
     </div>
   </PageHero>
 
@@ -94,13 +96,14 @@ const faqStructuredData = {
         <h2>Par SMS, téléphone ou en ligne</h2>
         <p>
           Vous pouvez me laisser de préférence un SMS au <a href={site.smsHref}>{site.phoneDisplay}</a>,
-          en indiquant la prestation souhaitée et vos disponibilités, ou m’appeler. La réservation en
-          ligne passe par Perfactive ; les prestations qui y seront précisément accessibles restent à
-          confirmer.
+          en indiquant la prestation souhaitée et vos disponibilités, ou m’appeler. Pour réserver
+          immédiatement, consultez les prestations et les créneaux disponibles sur Perfactive.
         </p>
         <div class="actions">
-          <a class="button button--primary" href={site.smsHref}>Envoyer un SMS</a>
-          <span class="online-booking">Réservation en ligne via Perfactive</span>
+          <a class="button button--primary" href={site.bookingUrl} target="_blank" rel="noreferrer">
+            Réserver en ligne sur Perfactive
+          </a>
+          <a class="button button--secondary" href={site.smsHref}>Envoyer un SMS</a>
         </div>
       </div>
       <PhotoPlaceholder label="Salle de soin NATURASOI" format="landscape" />
@@ -151,17 +154,6 @@ const faqStructuredData = {
 <style>
   .practical-grid .content-card h2 { font-size: clamp(1.35rem, 2.5vw, 1.75rem); }
   .price-columns { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .online-booking {
-    display: inline-flex;
-    align-items: center;
-    min-height: 3.15rem;
-    padding: 0.8rem 1.25rem;
-    border: 1px dashed rgba(79, 127, 106, 0.35);
-    border-radius: 999px;
-    color: #56615a;
-    font-size: 0.78rem;
-    font-weight: 600;
-  }
   .faq-list { border-top: 1px solid rgba(79, 127, 106, 0.15); }
   .faq-list details { border-bottom: 1px solid rgba(79, 127, 106, 0.15); }
   .faq-list summary {

@@ -9,6 +9,7 @@ export const site = {
   phoneDisplay: '06 68 37 86 16',
   phoneHref: 'tel:+33668378616',
   smsHref: 'sms:+33668378616',
+  bookingUrl: 'https://perfactive.fr/fanny-cayol-peridon/book',
   addressLine: '394 rue Puilboreau',
   locality: '38880 Autrans',
   place: 'NATURASOI',

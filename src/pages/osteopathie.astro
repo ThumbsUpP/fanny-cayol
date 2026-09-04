@@ -5,7 +5,7 @@ import Breadcrumbs from '../components/site/Breadcrumbs.astro';
 import PhotoPlaceholder from '../components/site/PhotoPlaceholder.astro';
 import BookingCta from '../components/site/BookingCta.astro';
 import RelatedLinks from '../components/site/RelatedLinks.astro';
-import { createServiceStructuredData } from '../data/site';
+import { createServiceStructuredData, site } from '../data/site';
 
 const title = 'Ostéopathe à Autrans : la consultation | Fanny Cayol Peridon';
 const description =
@@ -26,7 +26,7 @@ const serviceStructuredData = createServiceStructuredData({
     photoLabel="Fanny en consultation d’ostéopathie"
   >
     <div slot="actions" class="actions">
-      <a class="button button--primary" href="/cabinet-tarifs-rendez-vous/">Prendre rendez-vous</a>
+      <a class="button button--primary" href={site.bookingUrl} target="_blank" rel="noreferrer">Prendre rendez-vous en ligne</a>
     </div>
   </PageHero>
 

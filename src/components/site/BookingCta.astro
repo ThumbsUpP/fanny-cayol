@@ -8,7 +8,7 @@ type Props = {
 
 const {
   title = 'Envie de prendre rendez-vous ?',
-  text = 'Pour toute demande, vous pouvez me laisser un SMS. Je vous répondrai dès que possible.',
+  text = 'Choisissez votre prestation et votre créneau directement sur Perfactive. Pour toute question, vous pouvez aussi me laisser un SMS.',
 } = Astro.props;
 ---
 
@@ -19,7 +19,9 @@ const {
     <p>{text}</p>
   </div>
   <div class="booking-cta__actions">
-    <a class="button button--light" href={site.smsHref}>Envoyer un SMS</a>
-    <a class="button button--outline-light" href={site.phoneHref}>Appeler le {site.phoneDisplay}</a>
+    <a class="button button--light" href={site.bookingUrl} target="_blank" rel="noreferrer">
+      Réserver en ligne
+    </a>
+    <a class="button button--outline-light" href={site.smsHref}>Poser une question par SMS</a>
   </div>
 </section>

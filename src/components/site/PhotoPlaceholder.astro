@@ -3,20 +3,49 @@ type Props = {
   label: string;
   format?: 'landscape' | 'portrait' | 'square';
   note?: string;
+  src?: string;
+  alt?: string;
+  objectPosition?: string;
+  loading?: 'eager' | 'lazy';
 };
 
-const { label, format = 'landscape', note = 'Photo à venir' } = Astro.props;
+const {
+  label,
+  format = 'landscape',
+  note = 'Photo à venir',
+  src,
+  alt = label,
+  objectPosition = 'center',
+  loading = 'lazy',
+} = Astro.props;
 ---
 
-<div class:list={['photo-placeholder', `photo-placeholder--${format}`]} role="img" aria-label={`${note} : ${label}`}>
-  <span class="photo-placeholder__leaf" aria-hidden="true"></span>
-  <span class="photo-placeholder__icon" aria-hidden="true">
-    <svg viewBox="0 0 48 48" fill="none">
-      <rect x="6" y="9" width="36" height="30" rx="5" stroke="currentColor" stroke-width="1.6" />
-      <circle cx="17" cy="19" r="4" stroke="currentColor" stroke-width="1.6" />
-      <path d="m9 34 9-8 7 6 5-5 9 7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
-    </svg>
-  </span>
-  <strong>{note}</strong>
-  <small>{label}</small>
+<div
+  class:list={['photo-placeholder', `photo-placeholder--${format}`, src && 'photo-placeholder--image']}
+  role={src ? undefined : 'img'}
+  aria-label={src ? undefined : `${note} : ${label}`}
+>
+  {src ? (
+    <img
+      class="photo-placeholder__image"
+      src={src}
+      alt={alt}
+      loading={loading}
+      decoding="async"
+      style={`object-position: ${objectPosition}`}
+    />
+  ) : (
+    <>
+      <span class="photo-placeholder__leaf" aria-hidden="true"></span>
+      <span class="photo-placeholder__icon" aria-hidden="true">
+        <svg viewBox="0 0 48 48" fill="none">
+          <rect x="6" y="9" width="36" height="30" rx="5" stroke="currentColor" stroke-width="1.6" />
+          <circle cx="17" cy="19" r="4" stroke="currentColor" stroke-width="1.6" />
+          <path d="m9 34 9-8 7 6 5-5 9 7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </span>
+      <strong>{note}</strong>
+      <small>{label}</small>
+    </>
+  )}
 </div>

@@ -121,11 +121,27 @@ const servicesStructuredData = {
     </div>
   </section>
 
+  <figure class="home-nature">
+    <img
+      src="/images/paysage-vercors.jpg"
+      alt="Falaises et forêt du Vercors sous un ciel bleu"
+      width="960"
+      height="1280"
+      loading="lazy"
+    />
+    <figcaption>
+      <span>Au cœur du Vercors</span>
+      <strong>Un cadre naturel, calme et ressourçant.</strong>
+    </figcaption>
+  </figure>
+
   <section class="home-cabinet section-space">
     <div class="section-shell split-layout">
       <PhotoPlaceholder
-        label="Photo lumineuse de l’espace de soin NATURASOI"
+        label="Façade du cabinet NATURASOI à Autrans"
         format="landscape"
+        src="/images/naturasoi-facade-autrans.jpg"
+        alt="Façade du cabinet NATURASOI à Autrans sous un ciel bleu"
       />
       <div class="split-layout__copy">
         <p class="eyebrow">NATURASOI · Autrans</p>
@@ -310,6 +326,57 @@ const servicesStructuredData = {
     font-weight: 600;
   }
 
+  .home-nature {
+    position: relative;
+    width: min(100% - 3rem, var(--page-width));
+    aspect-ratio: 16 / 7;
+    margin: clamp(3rem, 7vw, 7rem) auto 0;
+    border-radius: 34px 34px 80px 34px;
+    box-shadow: 0 28px 64px rgba(20, 37, 28, 0.16);
+    overflow: hidden;
+  }
+
+  .home-nature::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 38%, rgba(20, 37, 28, 0.72));
+  }
+
+  .home-nature img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 48%;
+  }
+
+  .home-nature figcaption {
+    position: absolute;
+    left: clamp(1.5rem, 4vw, 3rem);
+    bottom: clamp(1.5rem, 4vw, 3rem);
+    z-index: 1;
+    color: #fff;
+  }
+
+  .home-nature figcaption span,
+  .home-nature figcaption strong {
+    display: block;
+  }
+
+  .home-nature figcaption span {
+    margin-bottom: 0.45rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .home-nature figcaption strong {
+    font-size: clamp(1.6rem, 3.3vw, 2.7rem);
+    font-weight: 600;
+    line-height: 1.08;
+  }
+
   .home-cabinet { margin-top: clamp(3rem, 7vw, 7rem); background: rgba(229, 239, 233, 0.55); }
 
   .home-about__portrait {
@@ -345,5 +412,11 @@ const servicesStructuredData = {
     .home-hero { padding-top: 3.5rem; }
     .home-facts { grid-template-columns: 1fr; margin-top: -1rem; }
     .home-facts div + div, .home-facts div:nth-child(3) { border-top: 1px solid rgba(79, 127, 106, 0.1); border-left: 0; }
+    .home-nature {
+      width: calc(100% - 2rem);
+      aspect-ratio: 4 / 5;
+      border-radius: 24px 24px 56px 24px;
+    }
+    .home-nature img { object-position: center; }
   }
 </style>

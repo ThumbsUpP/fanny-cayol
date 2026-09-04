@@ -23,7 +23,10 @@ const serviceStructuredData = createServiceStructuredData({
     eyebrow="À chaque étape de vie"
     title="Ostéopathie de la femme à Autrans"
     intro="Grossesse, post-partum ou autre période de transition : je propose un accompagnement manuel ajusté à vos besoins, dans un cadre d’écoute et de sécurité."
-    photoLabel="Portrait naturel ou consultation autour de la maternité"
+    photoLabel="Accompagnement manuel pendant la grossesse"
+    photoSrc="/images/osteopathie-femme-grossesse.jpg"
+    photoAlt="Geste manuel doux au niveau du ventre d’une femme enceinte"
+    photoPosition="62% center"
   >
     <div slot="actions" class="actions">
       <a class="button button--primary" href={site.bookingUrl} target="_blank" rel="noreferrer">Prendre rendez-vous en ligne</a>
@@ -68,7 +71,13 @@ const serviceStructuredData = createServiceStructuredData({
 
   <section class="section-shell section-space--tight">
     <div class="split-layout split-layout--reverse">
-      <PhotoPlaceholder label="Détail du cabinet ou geste d’accompagnement doux" format="landscape" />
+      <PhotoPlaceholder
+        label="Mobilisation douce pendant une consultation"
+        format="landscape"
+        src="/images/osteopathie-femme-mobilisation-douce.jpg"
+        alt="Mobilisation douce de l’épaule d’une patiente allongée sur le côté"
+        objectPosition="center 48%"
+      />
       <div class="split-layout__copy">
         <p class="eyebrow">Des gestes ajustés</p>
         <h2>Douceur, mobilité et écoute</h2>

@@ -24,6 +24,9 @@ const serviceStructuredData = createServiceStructuredData({
     title="Ostéopathie pédiatrique à Autrans"
     intro="La consultation peut être proposée dès la sortie de la maternité. Le parent reste présent tout au long du rendez-vous, dans un cadre calme et rassurant."
     photoLabel="Consultation douce avec un nourrisson et son parent"
+    photoSrc="/images/osteopathie-pediatrique-bebe-parent.jpg"
+    photoAlt="Nourrisson accompagné par un parent pendant une consultation manuelle"
+    photoPosition="center 46%"
   >
     <div slot="actions" class="actions">
       <a class="button button--primary" href={site.bookingUrl} target="_blank" rel="noreferrer">Prendre rendez-vous en ligne</a>
@@ -45,7 +48,13 @@ const serviceStructuredData = createServiceStructuredData({
           simples, adaptés à ce qui a été observé et au suivi déjà en place.
         </p>
       </div>
-      <PhotoPlaceholder label="Échange entre Fanny et un parent au cabinet" format="square" />
+      <PhotoPlaceholder
+        label="Échange avec un enfant et son parent au cabinet"
+        format="square"
+        src="/images/osteopathie-pediatrique-echange-parent-enfant.jpg"
+        alt="Temps d’échange entre une praticienne, un jeune enfant et son parent"
+        objectPosition="center"
+      />
     </div>
   </section>
 
@@ -88,7 +97,22 @@ const serviceStructuredData = createServiceStructuredData({
   </section>
 
   <section class="section-shell section-space--tight">
-    <div class="notice"><p>Un suivi médical régulier est nécessaire avant toute consultation ostéopathique.</p></div>
+    <div class="split-layout split-layout--reverse">
+      <PhotoPlaceholder
+        label="Geste manuel doux auprès d’un nourrisson"
+        format="square"
+        src="/images/osteopathie-pediatrique-geste-doux-bebe.jpg"
+        alt="Geste manuel doux au niveau de la tête d’un nourrisson"
+        objectPosition="center 46%"
+      />
+      <div class="split-layout__copy">
+        <p class="eyebrow">Avant la consultation</p>
+        <h2>Un suivi médical régulier</h2>
+        <div class="notice">
+          <p>Un suivi médical régulier est nécessaire avant toute consultation ostéopathique.</p>
+        </div>
+      </div>
+    </div>
   </section>
 
   <RelatedLinks

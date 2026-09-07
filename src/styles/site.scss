@@ -148,6 +148,13 @@ h3 {
   line-height: 1.8;
 }
 
+p strong,
+li strong,
+blockquote strong {
+  color: v.$primary-dark;
+  font-weight: 700;
+}
+
 .home-hero__seo-title {
   display: block;
   margin-bottom: 1rem;

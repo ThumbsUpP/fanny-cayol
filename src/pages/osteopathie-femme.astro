@@ -1,0 +1,112 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import PageHero from '../components/site/PageHero.astro';
+import Breadcrumbs from '../components/site/Breadcrumbs.astro';
+import PhotoPlaceholder from '../components/site/PhotoPlaceholder.astro';
+import BookingCta from '../components/site/BookingCta.astro';
+import RelatedLinks from '../components/site/RelatedLinks.astro';
+import { createServiceStructuredData, site } from '../data/site';
+
+const title = 'Ostéopathie de la femme à Autrans | Fanny Cayol Peridon';
+const description =
+  'Ostéopathie pour les femmes à Autrans : accompagnement manuel adapté pendant la grossesse, en post-partum et à chaque étape de vie.';
+const serviceStructuredData = createServiceStructuredData({
+  name: 'Ostéopathie de la femme à Autrans',
+  description,
+  path: '/osteopathie-femme/',
+});
+---
+
+<SiteLayout title={title} description={description} canonicalPath="/osteopathie-femme/" pageType="MedicalWebPage" extraStructuredData={serviceStructuredData}>
+  <Breadcrumbs items={[{ label: 'Accueil', href: '/' }, { label: 'Ostéopathie femme' }]} />
+  <PageHero
+    eyebrow="À chaque étape de vie"
+    title="Ostéopathie de la femme à Autrans"
+    intro="Grossesse, post-partum ou autre période de transition : je propose un accompagnement manuel ajusté à vos besoins, dans un cadre d’écoute et de sécurité."
+    photoLabel="Accompagnement manuel pendant la grossesse"
+    photoSrc="/images/osteopathie-femme-grossesse.jpg"
+    photoAlt="Geste manuel doux au niveau du ventre d’une femme enceinte"
+    photoPosition="62% center"
+  >
+    <div slot="actions" class="actions">
+      <a class="button button--primary" href={site.bookingUrl} target="_blank" rel="noreferrer">Prendre rendez-vous en ligne</a>
+    </div>
+  </PageHero>
+
+  <section class="section-shell section-space">
+    <div class="section-heading">
+      <p class="eyebrow">Un accompagnement personnalisé</p>
+      <h2>Prendre soin de soi au fil des changements</h2>
+      <p class="lead">
+        Chaque étape de vie peut modifier <strong>la mobilité, les appuis et les sensations
+        corporelles</strong>. La consultation offre un temps pour les nommer et adapter les gestes à
+        votre situation du moment.
+      </p>
+    </div>
+    <div class="content-grid">
+      <article class="content-card">
+        <h3>Pendant la grossesse</h3>
+        <p>
+          Des <strong>mobilisations et étirements doux</strong>, des massages ainsi que des techniques
+          fonctionnelles ou tissulaires peuvent accompagner les douleurs et gênes rencontrées pendant
+          la grossesse. L’approche reste toujours adaptée à votre état et à vos besoins.
+        </p>
+      </article>
+      <article class="content-card">
+        <h3>Après la naissance</h3>
+        <p>
+          Après les neuf mois de grossesse et les sollicitations physiques de cette période, je vous
+          propose un <strong>petit check-up du corps</strong>. Ce temps peut prendre en compte les
+          <strong>douleurs du bassin et les changements corporels</strong> liés à la période qui suit
+          l’accouchement.
+        </p>
+      </article>
+      <article class="content-card">
+        <h3>À tout âge</h3>
+        <p>
+          Je reçois les femmes <strong>à toutes les étapes de leur vie</strong>, avec la même attention
+          portée au <strong>confort, au consentement et au rythme de chacune</strong>.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section-shell section-space--tight">
+    <div class="split-layout split-layout--reverse">
+      <PhotoPlaceholder
+        label="Mobilisation douce pendant une consultation"
+        format="landscape"
+        src="/images/osteopathie-femme-mobilisation-douce.jpg"
+        alt="Mobilisation douce de l’épaule d’une patiente allongée sur le côté"
+        objectPosition="center 48%"
+      />
+      <div class="split-layout__copy">
+        <p class="eyebrow">Des gestes ajustés</p>
+        <h2>Douceur, mobilité et écoute</h2>
+        <p>
+          Selon vos besoins, la consultation peut associer des <strong>étirements doux, des
+          mobilisations, du massage et des techniques fonctionnelles ou tissulaires</strong>. Je vous
+          explique les gestes proposés afin que vous restiez actrice de la séance.
+        </p>
+        <p>
+          Mon <strong>diplôme d’État de masseur-kinésithérapeute</strong> et ma
+          <strong>formation en pelvi-périnéologie</strong>, terminée en mai 2026, enrichissent mon
+          regard clinique et constituent une <strong>spécificité rassurante de mon parcours</strong>.
+          Les rendez-vous à NATURASOI restent des consultations d’ostéopathie ou des prestations de
+          drainage et de massage, et non des séances de kinésithérapie.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <RelatedLinks
+    title="Préparer un accompagnement adapté"
+    links={[
+      { title: 'Déroulement d’une consultation', description: 'Les étapes d’une séance d’ostéopathie au cabinet.', href: '/osteopathie/' },
+      { title: 'Ostéopathie pédiatrique', description: 'Découvrir la consultation des nourrissons et des enfants.', href: '/osteopathie-pediatrique/' },
+      { title: 'Cabinet à Autrans', description: 'Accès, tarifs et prise de rendez-vous.', href: '/cabinet-tarifs-rendez-vous/' },
+    ]}
+  />
+
+  <BookingCta title="Vous souhaitez échanger avant de réserver ?" text="Laissez-moi un SMS en précisant simplement votre demande. Nous verrons ensemble si la consultation est adaptée." />
+</SiteLayout>

@@ -1,0 +1,176 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import PageHero from '../components/site/PageHero.astro';
+import Breadcrumbs from '../components/site/Breadcrumbs.astro';
+import PhotoPlaceholder from '../components/site/PhotoPlaceholder.astro';
+import { site } from '../data/site';
+
+const title = 'Cabinet, tarifs et rendez-vous | Ostéopathe à Autrans';
+const description =
+  'Adresse, accès, tarifs et prise de rendez-vous avec Fanny Cayol Peridon, ostéopathe au cabinet NATURASOI à Autrans.';
+
+const faq = [
+  {
+    question: 'Faut-il une ordonnance pour consulter un ostéopathe ?',
+    answer: 'Non, aucune ordonnance n’est nécessaire pour prendre rendez-vous en ostéopathie.',
+  },
+  {
+    question: 'L’ostéopathie est-elle remboursée ?',
+    answer:
+      'Certaines mutuelles prennent en charge plusieurs séances d’ostéopathie par an, selon les garanties du contrat.',
+  },
+  {
+    question: 'Comment modifier ou annuler un rendez-vous ?',
+    answer:
+      'Prévenez au moins 24 heures à l’avance, par SMS ou par téléphone, afin que le créneau puisse être proposé à une autre personne.',
+  },
+  {
+    question: 'Quels moyens de paiement sont acceptés ?',
+    answer: 'Tous les moyens de paiement sont acceptés.',
+  },
+];
+
+const faqStructuredData = {
+  '@type': 'FAQPage',
+  mainEntity: faq.map(({ question, answer }) => ({
+    '@type': 'Question',
+    name: question,
+    acceptedAnswer: { '@type': 'Answer', text: answer },
+  })),
+};
+---
+
+<SiteLayout
+  title={title}
+  description={description}
+  canonicalPath="/cabinet-tarifs-rendez-vous/"
+  extraStructuredData={faqStructuredData}
+>
+  <Breadcrumbs items={[{ label: 'Accueil', href: '/' }, { label: 'Cabinet & rendez-vous' }]} />
+  <PageHero
+    eyebrow="NATURASOI · Autrans"
+    title="Cabinet d’ostéopathie à Autrans : préparer votre venue"
+    intro="Adresse, accès, tarifs et prise de rendez-vous : retrouvez ici l’essentiel avant votre consultation ou votre soin."
+    photoLabel="Façade de NATURASOI à Autrans"
+    photoSrc="/images/naturasoi-facade-autrans.jpg"
+    photoAlt="Entrée du cabinet NATURASOI à Autrans"
+    photoPosition="72% center"
+  >
+    <div slot="actions" class="actions">
+      <a class="button button--primary" href={site.bookingUrl} target="_blank" rel="noreferrer">
+        Réserver en ligne
+      </a>
+      <a class="button button--secondary" href={site.smsHref}>Envoyer un SMS</a>
+    </div>
+  </PageHero>
+
+  <section class="section-shell section-space">
+    <div class="content-grid practical-grid">
+      <article class="content-card">
+        <p class="eyebrow">Adresse</p>
+        <h2>Cabinet NATURASOI</h2>
+        <p>{site.addressLine}<br />{site.locality}</p>
+        <p>Je vous y reçois depuis le 1er septembre 2026. Le cabinet est situé au <strong>rez-de-chaussée</strong> et un <strong>parking gratuit</strong> se trouve juste devant.</p>
+        <a href={site.mapUrl} target="_blank" rel="noreferrer">Ouvrir l’itinéraire sur Google Maps →</a>
+      </article>
+      <article class="content-card">
+        <p class="eyebrow">Accessibilité</p>
+        <h2>Un accès simple</h2>
+        <p>
+          L’espace est <strong>accessible aux personnes à mobilité réduite</strong>, y compris aux
+          personnes en fauteuil roulant. Aucune consigne particulière n’est nécessaire pour l’entrée.
+        </p>
+      </article>
+      <article class="content-card">
+        <p class="eyebrow">Horaires</p>
+        <h2>Sur rendez-vous</h2>
+        <p>
+          Les consultations sont proposées <strong>sur rendez-vous entre 8h30 et 19h</strong>. Les
+          jours exacts d’ouverture seront précisés prochainement.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section-shell section-space--tight">
+    <div class="split-layout">
+      <div class="split-layout__copy">
+        <p class="eyebrow">Prendre rendez-vous</p>
+        <h2>Par SMS, téléphone ou en ligne</h2>
+        <p>
+          Vous pouvez me laisser de préférence <strong>un SMS au <a
+          href={site.smsHref}>{site.phoneDisplay}</a></strong>, en indiquant la prestation souhaitée
+          et vos disponibilités, ou m’appeler. Pour réserver immédiatement, consultez les
+          <strong>prestations et créneaux disponibles sur Perfactive</strong>.
+        </p>
+        <div class="actions">
+          <a class="button button--primary" href={site.bookingUrl} target="_blank" rel="noreferrer">
+            Réserver en ligne sur Perfactive
+          </a>
+          <a class="button button--secondary" href={site.smsHref}>Envoyer un SMS</a>
+        </div>
+      </div>
+      <PhotoPlaceholder
+        label="Salle de soin NATURASOI"
+        format="landscape"
+        src="/images/cabinet-naturasoi-autrans.jpg"
+        alt="Salle de soin du cabinet NATURASOI avec table de consultation"
+      />
+    </div>
+  </section>
+
+  <section class="section-shell section-space--tight">
+    <div class="section-heading">
+      <p class="eyebrow">Tarifs</p>
+      <h2>Drainage lymphatique et massages</h2>
+    </div>
+    <div class="content-grid price-columns">
+      <article class="content-card">
+        <h3>Drainage lymphatique</h3>
+        <div class="price-list">
+          <div class="price-row"><span>60 minutes</span><strong>70 €</strong></div>
+          <div class="price-row"><span>90 minutes</span><strong>100 €</strong></div>
+        </div>
+      </article>
+      <article class="content-card">
+        <h3>Massages</h3>
+        <div class="price-list">
+          <div class="price-row"><span>30 minutes</span><strong>45 €</strong></div>
+          <div class="price-row"><span>45 minutes</span><strong>60 €</strong></div>
+          <div class="price-row"><span>1 heure</span><strong>75 €</strong></div>
+          <div class="price-row"><span>1 heure 15</span><strong>90 €</strong></div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section-shell section-space--tight">
+    <div class="section-heading">
+      <p class="eyebrow">Questions pratiques</p>
+      <h2>Avant votre rendez-vous</h2>
+    </div>
+    <div class="faq-list">
+      {faq.map(({ question, answer }) => (
+        <details>
+          <summary>{question}</summary>
+          <p>{answer}</p>
+        </details>
+      ))}
+    </div>
+  </section>
+</SiteLayout>
+
+<style>
+  .practical-grid .content-card h2 { font-size: clamp(1.35rem, 2.5vw, 1.75rem); }
+  .price-columns { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .faq-list { border-top: 1px solid rgba(79, 127, 106, 0.15); }
+  .faq-list details { border-bottom: 1px solid rgba(79, 127, 106, 0.15); }
+  .faq-list summary {
+    padding: 1.35rem 0;
+    color: #4f7f6a;
+    cursor: pointer;
+    font-weight: 700;
+  }
+  .faq-list p { max-width: 800px; padding-bottom: 1.2rem; }
+  @media (max-width: 760px) { .price-columns { grid-template-columns: 1fr; } }
+</style>

@@ -16,7 +16,6 @@ import {
   contactCards,
   contactFormContent,
   footerContent,
-  giftCardContent,
   heroContent,
   services,
 } from './content';

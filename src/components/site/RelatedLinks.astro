@@ -1,0 +1,32 @@
+---
+type Link = {
+  title: string;
+  description: string;
+  href: string;
+};
+
+type Props = {
+  title?: string;
+  links: Link[];
+};
+
+const { title = 'Pour aller plus loin', links } = Astro.props;
+---
+
+<section class="related-links section-shell section-space--tight" aria-labelledby="related-links-title">
+  <div class="section-heading">
+    <p class="eyebrow">À découvrir aussi</p>
+    <h2 id="related-links-title">{title}</h2>
+  </div>
+  <div class="related-links__grid">
+    {links.map((link) => (
+      <a href={link.href}>
+        <span>
+          <strong>{link.title}</strong>
+          <small>{link.description}</small>
+        </span>
+        <span aria-hidden="true">→</span>
+      </a>
+    ))}
+  </div>
+</section>

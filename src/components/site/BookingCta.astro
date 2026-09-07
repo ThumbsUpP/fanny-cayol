@@ -1,0 +1,27 @@
+---
+import { site } from '../../data/site';
+
+type Props = {
+  title?: string;
+  text?: string;
+};
+
+const {
+  title = 'Envie de prendre rendez-vous ?',
+  text = 'Choisissez votre prestation et votre créneau directement sur Perfactive. Pour toute question, vous pouvez aussi me laisser un SMS.',
+} = Astro.props;
+---
+
+<section class="booking-cta section-shell" aria-labelledby="booking-cta-title">
+  <div>
+    <p class="eyebrow eyebrow--light">Au cabinet NATURASOI, à Autrans</p>
+    <h2 id="booking-cta-title">{title}</h2>
+    <p>{text}</p>
+  </div>
+  <div class="booking-cta__actions">
+    <a class="button button--light" href={site.bookingUrl} target="_blank" rel="noreferrer">
+      Réserver en ligne
+    </a>
+    <a class="button button--outline-light" href={site.smsHref}>Poser une question par SMS</a>
+  </div>
+</section>

@@ -1,0 +1,137 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import PageHero from '../components/site/PageHero.astro';
+import Breadcrumbs from '../components/site/Breadcrumbs.astro';
+import PhotoPlaceholder from '../components/site/PhotoPlaceholder.astro';
+import BookingCta from '../components/site/BookingCta.astro';
+import RelatedLinks from '../components/site/RelatedLinks.astro';
+import { createServiceStructuredData, site } from '../data/site';
+
+const title = 'Ostéopathe à Autrans : la consultation | Fanny Cayol Peridon';
+const description =
+  'Découvrez le déroulement d’une consultation d’ostéopathie avec Fanny Cayol Peridon à Autrans : échange, tests, techniques adaptées et conseils.';
+const serviceStructuredData = createServiceStructuredData({
+  name: 'Consultation d’ostéopathie à Autrans',
+  description,
+  path: '/osteopathie/',
+});
+---
+
+<SiteLayout title={title} description={description} canonicalPath="/osteopathie/" pageType="MedicalWebPage" extraStructuredData={serviceStructuredData}>
+  <Breadcrumbs items={[{ label: 'Accueil', href: '/' }, { label: 'Ostéopathie' }]} />
+  <PageHero
+    eyebrow="Ostéopathie générale"
+    title="Votre consultation d’ostéopathie à Autrans"
+    intro="Nourrissons, enfants, femmes et adultes : je prends le temps de comprendre votre motif, d’observer la mobilité du corps et de choisir avec vous une approche manuelle adaptée."
+    photoLabel="Fanny en consultation d’ostéopathie"
+    photoSrc="/images/fanny-cayol-peridon-consultation-osteopathie.jpg"
+    photoAlt="Fanny Cayol Peridon pendant une consultation d’ostéopathie"
+    photoPosition="58% center"
+  >
+    <div slot="actions" class="actions">
+      <a class="button button--primary" href={site.bookingUrl} target="_blank" rel="noreferrer">Prendre rendez-vous en ligne</a>
+    </div>
+  </PageHero>
+
+  <section class="section-shell section-space">
+    <div class="section-heading">
+      <p class="eyebrow">Le déroulement</p>
+      <h2>Comment se passe une première consultation ?</h2>
+      <p class="lead">La séance dure <strong>environ 45 minutes</strong> et se construit en plusieurs temps.</p>
+    </div>
+    <div class="content-grid">
+      <article class="content-card">
+        <h3>01 · Échanger</h3>
+        <p>
+          Nous revenons sur <strong>votre motif de consultation, vos antécédents, votre quotidien et
+          ce que vous ressentez</strong>. Ce <strong>temps d’écoute</strong> permet de préciser vos besoins.
+        </p>
+      </article>
+      <article class="content-card">
+        <h3>02 · Observer</h3>
+        <p>
+          J’effectue des <strong>tests de mobilité articulaire, viscérale et musculaire</strong>,
+          toujours en tenant compte de votre confort et de votre situation.
+        </p>
+      </article>
+      <article class="content-card">
+        <h3>03 · Traiter</h3>
+        <p>
+          Le traitement est <strong>adapté à vos besoins et à vos préférences</strong>. Il peut
+          associer des techniques douces, fonctionnelles ou structurelles, des levées de tensions et
+          des massages.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section-shell section-space--tight">
+    <div class="content-grid">
+      <article class="content-card">
+        <p class="eyebrow">En fin de consultation</p>
+        <h2>Des repères pour le quotidien</h2>
+        <p>
+          Selon votre situation, je vous propose quelques conseils simples autour de
+          <strong>l’activité physique, de la forme générale, du sommeil, de la gestion du stress ou
+          de l’alimentation</strong>.
+        </p>
+      </article>
+      <article class="content-card">
+        <p class="eyebrow">Pour qui ?</p>
+        <h2>À tous les âges</h2>
+        <p>
+          Je reçois <strong>les bébés, les enfants, les femmes et les adultes de tous âges</strong>,
+          avec une approche adaptée à chaque personne.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section-shell section-space--tight">
+    <div class="split-layout">
+      <div class="split-layout__copy">
+        <p class="eyebrow">Motifs de consultation</p>
+        <h2>Dans quelles situations consulter ?</h2>
+        <p>
+          Vous pouvez notamment venir consulter pour des <strong>douleurs du dos, des lombaires, du
+          cou ou des épaules</strong>. Les douleurs des genoux, des chevilles, des hanches ou des
+          coudes, ainsi que les maux de ventre et les inconforts abdominaux, font également partie des
+          motifs de consultation fréquemment rencontrés.
+        </p>
+      </div>
+      <PhotoPlaceholder
+        label="Geste manuel pendant une consultation"
+        format="square"
+        src="/images/fanny-cayol-peridon-massage-dos.jpg"
+        alt="Fanny Cayol Peridon réalisant un geste manuel au niveau du dos"
+        objectPosition="center 35%"
+      />
+    </div>
+  </section>
+
+  <section class="section-shell section-space--tight">
+    <div class="info-band">
+      <p class="eyebrow">Au-delà du geste</p>
+      <h2>Une approche globale et humaine</h2>
+      <p class="lead">
+        Je ne m’intéresse pas uniquement à la dimension technique ou manuelle. J’accorde aussi une
+        place importante à <strong>ce que vous vivez, à vos émotions, à votre ressenti et à votre
+        sentiment de bien-être et de sécurité</strong>.
+        Nous pouvons échanger sur ce qui vous semble parfois « bloqué » et sur ce que vous avez besoin
+        d’exprimer. Mon approche associe <strong>écoute, douceur, travail manuel et prise en compte de
+        la personne dans sa globalité</strong>.
+      </p>
+    </div>
+  </section>
+
+  <RelatedLinks
+    title="Une ostéopathie adaptée à chaque étape de vie"
+    links={[
+      { title: 'Ostéopathie de la femme', description: 'Grossesse, post-partum et évolutions du corps féminin.', href: '/osteopathie-femme/' },
+      { title: 'Ostéopathie pédiatrique', description: 'Une consultation douce pour les nourrissons et les enfants.', href: '/osteopathie-pediatrique/' },
+      { title: 'Cabinet et rendez-vous', description: 'Adresse, accès et informations pratiques à Autrans.', href: '/cabinet-tarifs-rendez-vous/' },
+    ]}
+  />
+
+  <BookingCta title="Parlons de votre motif de consultation" />
+</SiteLayout>

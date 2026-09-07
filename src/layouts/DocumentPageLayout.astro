@@ -1,0 +1,24 @@
+---
+import SiteLayout from './SiteLayout.astro';
+
+type Props = {
+  title: string;
+  description: string;
+  canonicalPath?: string;
+  noIndex?: boolean;
+};
+
+const { title, description, canonicalPath, noIndex = false } = Astro.props;
+---
+
+<SiteLayout
+  title={title}
+  description={description}
+  canonicalPath={canonicalPath ?? '/'}
+  noIndex={noIndex}
+>
+  <article class="document-page">
+    <a class="document-page__back" href="/">← Retour à l'accueil</a>
+    <slot />
+  </article>
+</SiteLayout>

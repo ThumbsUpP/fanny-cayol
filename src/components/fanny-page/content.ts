@@ -11,18 +11,17 @@ import type {
   HeroContent,
   Service,
 } from './types';
+import { site } from '../../data/site';
 
 const images = {
   hero: '/images/profile-picture.jpg',
-  about: '/images/maison-de-sante.jpeg',
+  about: '/images/cabinet.jpeg',
   osteopathy: '/images/cabinet.jpeg',
-  wellnessMassage: '/images/maison-de-sante.jpeg',
   expressMassage: '/images/montagne.jpeg',
   lymphatic: '/images/montagne-2.jpeg',
-  booking: '/images/maison-de-sante.jpeg',
   ambianceNature: '/images/montagne.jpeg',
   ambianceCabin: '/images/cabinet.jpeg',
-  ambianceCare: '/images/maison-de-sante.jpeg',
+  ambianceCare: '/images/cabinet.jpeg',
   contactForm: '/images/cabinet.jpeg',
   ecoute: '/images/ecoute.png',
   formation: '/images/formation.png',
@@ -35,11 +34,11 @@ const images = {
 } as const;
 
 export const heroContent: HeroContent = {
-  title: 'Ostéopathe à Autrans-Méaudre',
+  title: 'Fanny Cayol Peridon, ostéopathe à Autrans',
   description:
-    'Fanny Cayol-Peridon vous accompagne avec une approche douce, personnalisée et ancrée dans la nature pour soulager vos tensions, rééquilibrer votre corps et retrouver votre bien-être.',
+    "Professionnelle de santé, ostéopathe et diplômée d'État de masseur-kinésithérapeute, je vous reçois sur rendez-vous au cabinet Naturasoi pour des soins personnalisés et de qualité.",
   image: images.hero,
-  imageAlt: 'Portrait de Fanny Cayol-Peridon',
+  imageAlt: 'Portrait de Fanny Cayol Peridon',
   buttons: [
     {
       label: 'Appeler maintenant',
@@ -49,7 +48,7 @@ export const heroContent: HeroContent = {
     },
     {
       label: 'Prendre rendez-vous',
-      href: 'https://www.doctolib.fr/osteopathe/autrans-meaudre-en-vercors/fanny-cayol-peridon-autrans-meaudre-en-vercors',
+      href: site.bookingUrl,
       variant: 'secondary',
     },
   ],
@@ -58,19 +57,19 @@ export const heroContent: HeroContent = {
 export const aboutContent: AboutContent = {
   image: images.about,
   imageAlt: 'Massage professionnel dans un cadre naturel',
-  title: 'Kinésithérapeute, Ostéopathe & Masseuse',
+  title: 'Ostéopathe D.O. à Autrans',
   description:
-    "Formée et inspirée par plusieurs années d'exercice en Guadeloupe, j'ai appris l'importance de la douceur et du lien avec la nature. Aujourd'hui, je vous accueille dans un cadre calme et bienveillant où chaque soin est une invitation au lâcher-prise.",
+    "Attentive aux autres et passionnée par mon métier, je vous accueille dans un cadre calme et bienveillant où l'écoute, la douceur et le travail manuel prennent en compte la personne dans sa globalité.",
   highlights: [
     {
       title: 'Expérience holistique',
       description:
-        "Une double casquette de kinésithérapeute et d'ostéopathe pour des soins adaptés à chaque besoin.",
+        "Mon diplôme d'État en kinésithérapie enrichit aujourd'hui ma pratique d'ostéopathe.",
     },
     {
       title: 'Ancrée dans la nature',
       description:
-        'Une pratique inspirée par la Guadeloupe et pensée pour votre bien-être à Autrans-Méaudre.',
+        'Une pratique personnalisée, au cœur du Vercors, à Autrans-Méaudre-en-Vercors.',
     },
   ],
 };
@@ -78,31 +77,30 @@ export const aboutContent: AboutContent = {
 export const services: Service[] = [
   {
     title: 'Ostéopathie',
-    duration: '45 min / 60 €',
-    description: 'Soulage les tensions profondes et rééquilibre votre corps en douceur.',
+    duration: 'Environ 45 min',
+    description:
+      "Une consultation personnalisée fondée sur l'écoute, l'examen clinique et des techniques manuelles adaptées.",
     image: images.osteo,
   },
   {
     title: 'Drainage lymphatique',
     duration: '1 h / 70 €',
-    description: 'Stimule la circulation et apporte une sensation de légèreté.',
+    description: 'Un soin manuel destiné à favoriser une sensation de légèreté et de détente.',
     image: images.drainage,
   },
   {
-    title: 'Réflexologie plantaire',
-    duration: '45 min / 60 €',
+    title: 'Massages',
+    duration: 'De 30 min à 1 h 15',
     description:
-      "Réduit les tensions du corps par l'intermédiaire de pressions et massage des pieds.",
-    image: images.reflexology,
+      'Massage détente, récupération sportive, ayurvédique ou thérapeutique, personnalisé selon vos besoins.',
+    image: images.massage,
   },
 ];
 
 export const bookingContent: BookingContent = {
-  image: images.booking,
-  imageAlt: "Client profitant d'un massage relaxant",
-  title: 'Réservez votre moment de bien-être',
+  title: "Prendre rendez-vous en ostéopathie à Autrans",
   description:
-    'Deux façons simples et rapides de prendre rendez-vous selon votre préférence. Chaque séance est programmée sur-mesure, dans une atmosphère apaisante.',
+    'Prenez rendez-vous par SMS, par téléphone ou retrouvez les informations de réservation Perfactive.',
   actions: [
     {
       label: '06 68 37 86 16',
@@ -110,8 +108,8 @@ export const bookingContent: BookingContent = {
       variant: 'primary',
     },
     {
-      label: 'Doctolib',
-      href: 'https://www.doctolib.fr/osteopathe/autrans-meaudre-en-vercors/fanny-cayol-peridon-autrans-meaudre-en-vercors',
+      label: 'Réservation Perfactive',
+      href: site.bookingUrl,
       variant: 'secondary',
     },
   ],
@@ -128,8 +126,8 @@ export const giftCardContent: GiftCardContent = {
 
 export const ambianceCards: AmbianceCard[] = [
   {
-    title: 'Inspiration tropicale',
-    description: 'Mon parcours en Guadeloupe nourrit une approche douce et naturelle.',
+    title: 'Connexion à la nature',
+    description: 'Le cadre du Vercors nourrit une approche douce, chaleureuse et naturelle.',
     image: images.ambianceNature,
   },
   {
@@ -148,7 +146,7 @@ export const contactCards: ContactCard[] = [
   {
     icon: '📍',
     title: 'Adresse',
-    lines: ['394 Rue de Puilboreau', '38880 Autrans-Méaudre-en-Vercors'],
+    lines: ['Chez Naturasoi', '394 rue Puilboreau', '38880 Autrans'],
   },
   {
     icon: '📞',
@@ -159,13 +157,13 @@ export const contactCards: ContactCard[] = [
   {
     icon: '🕓',
     title: 'Horaires',
-    lines: ['Sur rendez-vous uniquement', 'Du lundi au samedi'],
+    lines: ['Sur rendez-vous uniquement', '8h30 – 19h · Jours à confirmer'],
   },
   {
     icon: '💻',
     title: 'Réservation en ligne',
-    lines: ['Doctolib'],
-    link: 'https://www.doctolib.fr/osteopathe/autrans-meaudre-en-vercors/fanny-cayol-peridon-autrans-meaudre-en-vercors',
+    lines: ['Perfactive'],
+    link: site.bookingUrl,
   },
 ];
 
@@ -187,28 +185,28 @@ export const approachContent: ApproachContent = {
       id: 'approche_personnalisee',
       heading: 'Approche Personnalisée',
       headingLevel: 'h3',
-      text: 'Chaque patient est unique. Je m\'engage à fournir des soins sur mesure, adaptés à vos besoins personnels et à votre condition physique.',
+      text: "Chaque patient est unique. J'adapte la consultation à votre histoire, à vos besoins et à votre condition physique.",
       icon: images.perso,
     },
     {
       id: 'ecoute_attentive',
       heading: 'Écoute Attentive',
       headingLevel: 'h3',
-      text: 'L\'écoute est la première étape de tout traitement efficace. Vous serez toujours entendu, et vos préoccupations, pleinement comprises.',
+      text: "L'écoute guide chaque consultation afin de comprendre votre motif, vos antécédents et vos attentes.",
       icon: images.ecoute,
     },
     {
       id: 'formation_continue',
-      heading: 'Formation Continue',
+      heading: 'Formation et expérience',
       headingLevel: 'h3',
-      text: 'Initialement Kinésithérapeute diplômé d\'État, je suis constamment à la recherche de nouvelles techniques et de formations pour rester à la pointe de la kinésithérapie et de l\'ostéopathie, vous garantissant ainsi les meilleurs soins possibles.',
+      text: "Ostéopathe D.O. diplômée en 2013 et diplômée d'État de masseur-kinésithérapeute en 2004, je poursuis régulièrement des formations qui enrichissent ma pratique d'ostéopathe.",
       icon: images.formation,
     },
     {
       id: 'bien_etre_holistique',
-      heading: 'Bien-être Holistique',
+      heading: 'Approche globale',
       headingLevel: 'h3',
-      text: 'Ma vision de la santé est holistique, cherchant à optimiser votre bien-être général, pas seulement à traiter les symptômes. Les techniques douces sont au coeur de cette approche tissulaire et psycho-émotionnelle.',
+      text: "Mon approche prend en compte l'ensemble du corps et votre contexte de vie, avec des techniques manuelles choisies selon votre situation.",
       icon: images.hollistic,
     },
   ],
@@ -222,39 +220,39 @@ export const audiencesContent: AudiencesContent = {
       id: 'nourrissons_enfants',
       heading: 'Nourrissons & enfants',
       headingLevel: 'h3',
-      text: 'Dans mon cabinet, les plus jeunes bénéficient de soins adaptés qui respectent leur développement et leur croissance. La kinésithérapie et l’ostéopathie pour les nourrissons et les enfants visent à corriger les déséquilibres précoces, soutenir le développement moteur et traiter les troubles spécifiques de la petite enfance (coliques, troubles du sommeil, problèmes posturaux…).',
+      text: "Je reçois les nourrissons et les enfants avec des gestes doux, adaptés à leur âge et à leur développement. La consultation d'ostéopathie ne remplace pas le suivi du pédiatre ou du médecin.",
     },
     {
       id: 'adultes',
       heading: 'Adultes',
       headingLevel: 'h3',
-      text: 'Que ce soit pour des douleurs de dos, des troubles musculo-squelettiques ou simplement pour un bien-être général, mon approche en kinésithérapie et ostéopathie aide les adultes de tous âges. Les traitements sont personnalisés pour répondre aux besoins individuels, favorisant une récupération optimale et un maintien de la santé corporelle.',
+      text: "La consultation est adaptée à votre quotidien, qu'il s'agisse de tensions, d'inconforts musculo-squelettiques ou d'un besoin d'accompagnement manuel.",
     },
     {
       id: 'sportifs',
       heading: 'Sportifs',
       headingLevel: 'h3',
-      text: 'Je propose des services de kinésithérapie et d’ostéopathie qui ciblent la prévention des blessures, le traitement des affections sportives et l’amélioration de la performance. Les soins sont conçus pour accélérer la récupération et optimiser la fonction physique, essentielle à toute activité sportive.',
+      text: "Ski nordique, trail, randonnée ou vélo : l'ostéopathie peut accompagner votre mobilité, votre préparation et votre récupération, en complément du suivi médical lorsqu'il est nécessaire.",
     },
     {
       id: 'personnes_agees',
       heading: 'Personnes âgées',
       headingLevel: 'h3',
-      text: 'Mon cabinet offre des soins spécialement conçus pour les personnes âgées, visant à améliorer leur mobilité et à réduire leurs douleurs. Les techniques de kinésithérapie et d’ostéopathie adaptées aux besoins des seniors aident à maintenir l’autonomie et à améliorer la qualité de vie générale.',
+      text: "Les techniques sont adaptées avec attention au confort, à la mobilité et aux antécédents de chacun, en coordination avec le parcours de soins habituel.",
     },
   ],
 };
 
 export const footerContent: FooterContent = {
-  title: 'Fanny Cayol-Peridon',
-  subtitle: 'Kinésithérapeute · Ostéopathe · Masseuse',
-  address: '394 Rue de Puilboreau, 38880 Autrans-Méaudre-en-Vercors',
+  title: 'Fanny Cayol Peridon',
+  subtitle: "Ostéopathe D.O. · Diplômée d'État de masseur-kinésithérapeute",
+  address: 'Chez Naturasoi · 394 rue Puilboreau, 38880 Autrans',
   phoneLabel: '06 68 37 86 16',
   phoneHref: 'tel:0668378616',
-  appointmentLabel: 'Doctolib',
-  appointmentHref: 'https://www.doctolib.fr/osteopathe/autrans-meaudre-en-vercors/fanny-cayol-peridon-autrans-meaudre-en-vercors',
+  appointmentLabel: 'Perfactive',
+  appointmentHref: site.bookingUrl,
   links: [
-    { label: 'Mentions légales', href: '#' },
-    { label: 'Politique de confidentialité', href: '#' },
+    { label: 'Mentions légales', href: '/mentions-legales/' },
+    { label: 'Politique de confidentialité', href: '/politique-confidentialite/' },
   ],
 };

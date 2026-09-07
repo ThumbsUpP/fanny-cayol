@@ -40,8 +40,6 @@ export type BookingAction = {
 };
 
 export type BookingContent = {
-  image: string;
-  imageAlt: string;
   title: string;
   description: string;
   actions: BookingAction[];

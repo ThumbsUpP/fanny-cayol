@@ -1,0 +1,130 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import PageHero from '../components/site/PageHero.astro';
+import Breadcrumbs from '../components/site/Breadcrumbs.astro';
+import PhotoPlaceholder from '../components/site/PhotoPlaceholder.astro';
+import BookingCta from '../components/site/BookingCta.astro';
+import RelatedLinks from '../components/site/RelatedLinks.astro';
+import { createServiceStructuredData, site } from '../data/site';
+
+const title = 'Ostéopathie pédiatrique à Autrans | Fanny Cayol Peridon';
+const description =
+  'Consultations d’ostéopathie pour nourrissons et enfants à Autrans, avec des gestes doux et la présence du parent pendant toute la séance.';
+const serviceStructuredData = createServiceStructuredData({
+  name: 'Ostéopathie pédiatrique à Autrans',
+  description,
+  path: '/osteopathie-pediatrique/',
+});
+---
+
+<SiteLayout title={title} description={description} canonicalPath="/osteopathie-pediatrique/" pageType="MedicalWebPage" extraStructuredData={serviceStructuredData}>
+  <Breadcrumbs items={[{ label: 'Accueil', href: '/' }, { label: 'Ostéopathie pédiatrique' }]} />
+  <PageHero
+    eyebrow="Nourrissons & enfants"
+    title="Ostéopathie pédiatrique à Autrans"
+    intro="La consultation peut être proposée dès la sortie de la maternité. Le parent reste présent tout au long du rendez-vous, dans un cadre calme et rassurant."
+    photoLabel="Consultation douce avec un nourrisson et son parent"
+    photoSrc="/images/osteopathie-pediatrique-bebe-parent.jpg"
+    photoAlt="Nourrisson accompagné par un parent pendant une consultation manuelle"
+    photoPosition="center 46%"
+  >
+    <div slot="actions" class="actions">
+      <a class="button button--primary" href={site.bookingUrl} target="_blank" rel="noreferrer">Prendre rendez-vous en ligne</a>
+    </div>
+  </PageHero>
+
+  <section class="section-shell section-space">
+    <div class="split-layout">
+      <div class="split-layout__copy">
+        <p class="eyebrow">La première consultation</p>
+        <h2>Un temps d’échange avec les parents</h2>
+        <p>
+          Nous commençons par reprendre <strong>la grossesse, la naissance, les symptômes observés et
+          le motif de consultation</strong>. J’observe ensuite la mobilité de votre enfant et propose
+          des <strong>tests et gestes doux</strong>, toujours avec votre présence.
+        </p>
+        <p>
+          Après la séance, <strong>nous faisons le point ensemble</strong>. Je peux vous transmettre des
+          conseils simples, adaptés à ce qui a été observé et au suivi déjà en place.
+        </p>
+      </div>
+      <PhotoPlaceholder
+        label="Échange avec un enfant et son parent au cabinet"
+        format="square"
+        src="/images/osteopathie-pediatrique-echange-parent-enfant.jpg"
+        alt="Temps d’échange entre une praticienne, un jeune enfant et son parent"
+        objectPosition="center"
+      />
+    </div>
+  </section>
+
+  <section class="section-shell section-space--tight">
+    <div class="section-heading">
+      <p class="eyebrow">Situations fréquemment évoquées</p>
+      <h2>Pourquoi les parents consultent-ils ?</h2>
+      <p class="lead">
+        Les parents peuvent notamment consulter pour les motifs suivants.
+      </p>
+    </div>
+    <div class="content-grid pediatric-reasons">
+      <article class="content-card">
+        <h3>Chez le nourrisson</h3>
+        <ul>
+          <li><strong>pleurs fréquents ou inconfort</strong> ;</li>
+          <li><strong>coliques</strong> rapportées par les parents ;</li>
+          <li><strong>torticolis ou préférence de rotation</strong> ;</li>
+          <li><strong>plagiocéphalie</strong>.</li>
+        </ul>
+      </article>
+      <article class="content-card">
+        <h3>Au fil du développement</h3>
+        <ul>
+          <li><strong>difficulté motrice observée</strong> ;</li>
+          <li><strong>un bébé qui ne tient pas encore assis</strong> ;</li>
+          <li><strong>problématique concernant les membres inférieurs</strong> ;</li>
+          <li><strong>problématique concernant les membres supérieurs</strong>.</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <section class="section-shell section-space--tight">
+    <div class="split-layout split-layout--reverse">
+      <PhotoPlaceholder
+        label="Geste manuel doux auprès d’un nourrisson"
+        format="square"
+        src="/images/osteopathie-pediatrique-geste-doux-bebe.jpg"
+        alt="Geste manuel doux au niveau de la tête d’un nourrisson"
+        objectPosition="center 46%"
+      />
+      <div class="split-layout__copy">
+        <p class="eyebrow">Avant la consultation</p>
+        <h2>Un suivi médical régulier</h2>
+        <div class="notice">
+          <p><strong>Un suivi médical régulier est nécessaire</strong> avant toute consultation ostéopathique.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <RelatedLinks
+    title="Avant et après la naissance"
+    links={[
+      { title: 'Ostéopathie de la femme', description: 'Un accompagnement pendant la grossesse et le post-partum.', href: '/osteopathie-femme/' },
+      { title: 'La consultation d’ostéopathie', description: 'Comprendre les étapes et l’approche générale.', href: '/osteopathie/' },
+      { title: 'Préparer votre venue', description: 'Adresse, accès et prise de rendez-vous à Autrans.', href: '/cabinet-tarifs-rendez-vous/' },
+    ]}
+  />
+
+  <BookingCta title="Une question avant la consultation de votre enfant ?" text="Vous pouvez me laisser un SMS avec l’âge de votre enfant et votre motif de consultation. Je vous répondrai dès que possible." />
+</SiteLayout>
+
+<style>
+  .pediatric-reasons {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  @media (max-width: 760px) {
+    .pediatric-reasons { grid-template-columns: 1fr; }
+  }
+</style>

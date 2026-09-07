@@ -1,0 +1,225 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import PageHero from '../components/site/PageHero.astro';
+import Breadcrumbs from '../components/site/Breadcrumbs.astro';
+import PhotoPlaceholder from '../components/site/PhotoPlaceholder.astro';
+import BookingCta from '../components/site/BookingCta.astro';
+import RelatedLinks from '../components/site/RelatedLinks.astro';
+import { createServiceStructuredData, site } from '../data/site';
+
+const title = 'Drainage lymphatique à Autrans | Fanny Cayol Peridon';
+const description =
+  'Drainage lymphatique doux ou dynamique à Autrans par Fanny Cayol Peridon : jambes, chevilles, visage, cou, ventre et bas du dos.';
+const serviceStructuredData = createServiceStructuredData({
+  name: 'Drainage lymphatique à Autrans',
+  description,
+  path: '/drainage-lymphatique/',
+  offers: [
+    { name: 'Drainage lymphatique · 60 minutes', price: 70 },
+    { name: 'Drainage lymphatique · 90 minutes', price: 100 },
+  ],
+});
+---
+
+<SiteLayout title={title} description={description} canonicalPath="/drainage-lymphatique/" pageType="MedicalWebPage" extraStructuredData={serviceStructuredData}>
+  <Breadcrumbs items={[{ label: 'Accueil', href: '/' }, { label: 'Drainage lymphatique' }]} />
+  <PageHero
+    eyebrow="Légèreté · silhouette · bien-être"
+    title="Drainage lymphatique à Autrans"
+    intro="Envie de jambes légères ? De réduire le volume d’une zone ? D’agir sur votre cellulite ou de prendre soin de votre corps ? J’ai une solution : un drainage efficace à vous proposer."
+    photoLabel="Soin de drainage lymphatique manuel"
+    photoSrc="/images/fanny-cayol-peridon-drainage-lymphatique.jpg"
+    photoAlt="Fanny Cayol Peridon réalisant un drainage lymphatique manuel"
+    photoPosition="center 42%"
+  >
+    <div slot="actions" class="actions">
+      <a class="button button--primary" href={site.bookingUrl} target="_blank" rel="noreferrer">Réserver en ligne</a>
+    </div>
+  </PageHero>
+
+  <section class="section-shell section-space">
+    <div class="split-layout">
+      <div class="split-layout__copy">
+        <p class="eyebrow">Les bienfaits du soin</p>
+        <h2>Retrouver légèreté et confort</h2>
+        <p>
+          Le drainage lymphatique est un soin qui vous aide à retrouver des
+          <strong>jambes plus légères</strong>, une <strong>silhouette plus affinée</strong> et une
+          <strong>sensation de bien-être immédiate</strong>. Il peut contribuer à
+          <strong>diminuer les gonflements et le volume de la zone travaillée</strong>, à
+          <strong>affiner les jambes</strong> et à <strong>réduire l’aspect de la cellulite</strong>.
+          Il peut également être réalisé sur différentes zones du corps, notamment
+          <strong>le visage, le cou, le ventre, les bras, les jambes ou le bas du dos</strong>, selon
+          vos besoins.
+        </p>
+      </div>
+      <PhotoPlaceholder
+        label="Détail des mains pendant le drainage"
+        format="square"
+        src="/images/fanny-cayol-peridon-drainage-jambe.jpg"
+        alt="Mains de Fanny Cayol Peridon pendant un drainage manuel de la jambe"
+        objectPosition="center 58%"
+      />
+    </div>
+  </section>
+
+  <section class="section-shell section-space--tight">
+    <div class="content-grid drainage-details">
+      <article class="content-card">
+        <p class="eyebrow">Une technique adaptée à vos besoins</p>
+        <h2>Deux approches personnalisées</h2>
+        <p>
+          Grâce à des <strong>gestes précis qui stimulent la circulation lymphatique</strong>, le
+          drainage favorise <strong>l’élimination des excès de liquides</strong> et permet de
+          retrouver des <strong>contours plus harmonieux</strong> et une
+          <strong>sensation de légèreté</strong>. Le soin peut être réalisé selon deux approches : un
+          <strong>drainage doux</strong>, avec des mouvements lents et précis, ou un
+          <strong>drainage plus dynamique</strong>, plus rythmé et tonique, notamment recherché pour
+          travailler la silhouette et l’aspect de la peau.
+        </p>
+      </article>
+      <article class="content-card">
+        <p class="eyebrow">Une expertise spécialisée</p>
+        <h2>Une formation exigeante</h2>
+        <p>
+          Pour vous proposer un soin de qualité, j’ai développé cette expertise au cours de ma
+          <strong>formation en masso-kinésithérapie</strong> auprès de
+          <strong>Maryvonne Chardon-Bras</strong>, spécialiste internationale du drainage
+          lymphatique, puis je l’ai approfondie au contact de
+          <strong>services hospitaliers spécialisés en lymphologie</strong>.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section-shell section-space--tight">
+    <div class="content-grid drainage-details">
+      <article class="content-card">
+        <p class="eyebrow">Un objectif de mieux-être</p>
+        <h3>Un soin construit avec vous</h3>
+        <p>
+          L’objectif : vous offrir un <strong>véritable mieux-être</strong>, avec un
+          <strong>corps moins gonflé</strong>, des <strong>zones travaillées visiblement plus
+          affinées</strong> et une <strong>sensation de légèreté retrouvée</strong>. Chaque soin est
+          adapté à vos besoins pour vous apporter le meilleur bénéfice possible.
+        </p>
+      </article>
+      <article class="content-card">
+        <h3>Après un accouchement</h3>
+        <p>
+          Un drainage peut aussi être proposé <strong>après un accouchement</strong> lorsque la
+          situation le permet. En cas de signes pouvant évoquer une phlébite ou de douleurs anormales,
+          <strong>consultez d’abord un médecin</strong> avant de venir.
+        </p>
+      </article>
+    </div>
+    <p class="practice-note">
+      Les soins proposés aujourd’hui à NATURASOI ne sont pas des consultations de kinésithérapie.
+    </p>
+  </section>
+
+  <section class="section-shell section-space--tight testimonials-section">
+    <div class="section-heading">
+      <p class="eyebrow">Elles partagent leur expérience</p>
+      <h2>Paroles de patientes</h2>
+    </div>
+    <div class="testimonial-grid">
+      <figure class="content-card testimonial-card">
+        <blockquote>
+          « Après le drainage chez Fanny, j’ai senti mes <strong>jambes toutes légères</strong> et mes
+          <strong>chevilles affinées</strong>. Je suis super contente, je le recommande !! »
+        </blockquote>
+        <figcaption>Sabrina L.</figcaption>
+      </figure>
+      <figure class="content-card testimonial-card">
+        <blockquote>
+          « Après mon accouchement, j’ai eu besoin que l’on prenne soin de moi, de me sentir
+          <strong>plus légère et moins gonflée</strong>. Madame Cayol Peridon m’a fait deux drainages
+          qui m’ont fait énormément de bien ! »
+        </blockquote>
+        <figcaption>Claire S.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="section-shell section-space--tight">
+    <div class="info-band">
+      <p class="eyebrow">Bons cadeaux</p>
+      <h2>Un cadeau de naissance tout en douceur</h2>
+      <p class="lead">
+        Offrez à une jeune maman un <strong>moment de bien-être</strong> auprès d’une
+        <strong>professionnelle de santé qualifiée</strong>, attentive et à l’écoute. Les bons cadeaux
+        sont personnalisés selon la durée et le soin choisis.
+      </p>
+      <div class="actions">
+        <a class="button button--secondary" href="mailto:fcayolperidon@gmail.com?subject=Je%20souhaite%20offrir%20un%20bon%20cadeau">
+          Demander un bon cadeau
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-shell section-space--tight">
+    <div class="info-band">
+      <p class="eyebrow">Tarifs</p>
+      <h2>Choisir la durée du drainage</h2>
+      <div class="price-list">
+        <div class="price-row"><span>Drainage lymphatique · 60 min</span><strong>70 €</strong></div>
+        <div class="price-row"><span>Drainage lymphatique · 90 min</span><strong>100 €</strong></div>
+      </div>
+    </div>
+  </section>
+
+  <RelatedLinks
+    links={[
+      { title: 'Massages à Autrans', description: 'Détente, récupération sportive, ayurvédique et massage thérapeutique.', href: '/massages/' },
+      { title: 'Découvrir Fanny', description: 'Mon parcours de masseur-kinésithérapeute et d’ostéopathe.', href: '/fanny-cayol-peridon/' },
+      { title: 'Tarifs et rendez-vous', description: 'Retrouver les tarifs, l’accès et le contact.', href: '/cabinet-tarifs-rendez-vous/' },
+    ]}
+  />
+
+  <BookingCta title="Choisissons ensemble la durée adaptée" text="Indiquez-moi par SMS les zones que vous souhaitez travailler. Je pourrai vous orienter vers le format le plus approprié." />
+</SiteLayout>
+
+<style>
+  .drainage-details {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .drainage-details .content-card h2 {
+    font-size: clamp(1.5rem, 3vw, 2.15rem);
+  }
+
+  .practice-note {
+    margin: 1.25rem 0 0;
+    font-size: 0.78rem;
+  }
+
+  .testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+  }
+
+  .testimonial-card {
+    margin: 0;
+  }
+
+  .testimonial-card blockquote {
+    margin: 0 0 1.5rem;
+    color: #354c42;
+    font-size: clamp(1rem, 1.5vw, 1.15rem);
+    line-height: 1.75;
+  }
+
+  .testimonial-card figcaption {
+    color: #4f7f6a;
+    font-size: 0.82rem;
+    font-weight: 700;
+  }
+
+  @media (max-width: 760px) {
+    .drainage-details,
+    .testimonial-grid { grid-template-columns: 1fr; }
+  }
+</style>

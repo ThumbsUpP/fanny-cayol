@@ -1,0 +1,153 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import Breadcrumbs from '../components/site/Breadcrumbs.astro';
+import PhotoPlaceholder from '../components/site/PhotoPlaceholder.astro';
+import BookingCta from '../components/site/BookingCta.astro';
+
+const title = 'Fanny Cayol Peridon, ostéopathe à Autrans | Parcours';
+const description =
+  'Découvrez le parcours de Fanny Cayol Peridon : diplômée d’État de masseur-kinésithérapeute en 2004, ostéopathe diplômée en 2013 et professionnelle de santé à Autrans.';
+---
+
+<SiteLayout title={title} description={description} canonicalPath="/fanny-cayol-peridon/" pageType="ProfilePage">
+  <Breadcrumbs items={[{ label: 'Accueil', href: '/' }, { label: 'Fanny Cayol Peridon' }]} />
+  <section class="about-hero">
+    <div class="section-shell about-hero__inner">
+      <div class="about-hero__portrait">
+        <img
+          src="/images/fanny-cayol-peridon-osteopathe-autrans.webp"
+          alt="Portrait de Fanny Cayol Peridon, ostéopathe"
+          width="900"
+          height="900"
+          fetchpriority="high"
+        />
+      </div>
+      <div>
+        <p class="eyebrow">Votre praticienne</p>
+        <h1>Fanny Cayol Peridon</h1>
+        <p class="about-hero__role">Ostéopathe · Diplômée d’État de masseur-kinésithérapeute</p>
+        <p class="lead">
+          Je suis une <strong>professionnelle de santé</strong>, attentive aux autres et passionnée
+          par mon métier. Grâce à ma <strong>double compétence d’ostéopathe et de
+          kinésithérapeute</strong>, je peux vous offrir des soins personnalisés et de qualité.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-shell section-space">
+    <div class="split-layout">
+      <div class="split-layout__copy">
+        <p class="eyebrow">Mon approche</p>
+        <h2>Une rencontre avant tout</h2>
+        <p>
+          La précision technique compte, mais elle ne suffit pas. J’accorde une place essentielle à
+          <strong>l’écoute, à la confiance et à la compréhension de votre contexte</strong>. Votre
+          ressenti guide la façon dont j’adapte la consultation.
+        </p>
+        <p>
+          Mon <strong>double regard d’ostéopathe et de masseur-kinésithérapeute</strong> enrichit mon
+          observation du mouvement. Au cabinet NATURASOI, je vous reçois pour des consultations
+          d’ostéopathie, des drainages lymphatiques et des massages — <strong>pas pour des séances de
+          kinésithérapie</strong>.
+        </p>
+      </div>
+      <PhotoPlaceholder
+        label="Espace de soin de Fanny à NATURASOI"
+        format="landscape"
+        src="/images/cabinet-naturasoi-autrans.jpg"
+        alt="Cabinet de Fanny Cayol Peridon à NATURASOI"
+      />
+    </div>
+  </section>
+
+  <section class="section-shell section-space--tight">
+    <div class="section-heading">
+      <p class="eyebrow">Formation</p>
+      <h2>Un parcours nourri par plus de vingt ans de pratique</h2>
+    </div>
+    <ol class="timeline">
+      <li>
+        <strong>2004</strong>
+        <div><h3>Diplôme d’État de masseur-kinésithérapeute</h3><p>IFMK de Montpellier. Cette formation comprend notamment le <strong>drainage lymphatique</strong> et différentes pratiques de massage.</p></div>
+      </li>
+      <li>
+        <strong>2013</strong>
+        <div><h3>Diplôme d’ostéopathe</h3><p>ATSA à Limonest.</p></div>
+      </li>
+      <li>
+        <strong>2019</strong>
+        <div><h3>Formation « Ostéo bébé »</h3><p>Formation suivie à Vitry-sur-Seine.</p></div>
+      </li>
+      <li>
+        <strong>Mai 2026</strong>
+        <div><h3>Formation en pelvi-périnéologie</h3><p>Une spécificité issue de mon parcours de kinésithérapeute, qui enrichit mon regard sur la <strong>santé de la femme</strong>.</p></div>
+      </li>
+    </ol>
+  </section>
+
+  <section class="section-shell section-space--tight">
+    <div class="split-layout split-layout--reverse">
+      <PhotoPlaceholder
+        label="Fanny pendant un soin manuel"
+        format="landscape"
+        src="/images/fanny-cayol-peridon-consultation-osteopathie.jpg"
+        alt="Fanny Cayol Peridon pendant un soin manuel au cabinet"
+        objectPosition="58% 52%"
+      />
+      <div class="split-layout__copy">
+        <p class="eyebrow">Drainage & massages</p>
+        <h2>Des compétences développées en kinésithérapie</h2>
+        <p>
+          J’ai été formée au drainage lymphatique par <strong>Maryvonne Chardon-Bras</strong>,
+          spécialiste internationale de cette pratique, et au contact de <strong>services
+          hospitaliers spécialisés en lymphologie</strong>.
+        </p>
+        <p>
+          Mon parcours m’a également permis d’acquérir des compétences en <strong>massage
+          ayurvédique, thérapeutique, de détente et de récupération sportive</strong>. Ces pratiques
+          font partie de mon expérience de masseur-kinésithérapeute ; elles ne correspondent pas à
+          des diplômes indépendants.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-shell section-space--tight">
+    <div class="content-grid">
+      <article class="content-card"><h3>Écoute</h3><p>Créer un espace où vous pouvez <strong>expliquer librement ce que vous ressentez</strong>.</p></article>
+      <article class="content-card"><h3>Adaptation</h3><p>Choisir les gestes selon <strong>votre âge, votre état du jour et vos préférences</strong>.</p></article>
+      <article class="content-card"><h3>Douceur</h3><p>Associer <strong>écoute, douceur et travail manuel</strong> pour prendre soin de vous dans votre globalité.</p></article>
+    </div>
+  </section>
+
+  <BookingCta title="Faisons connaissance au cabinet" />
+</SiteLayout>
+
+<style>
+  .about-hero {
+    padding: clamp(4rem, 9vw, 8rem) 0;
+    background: linear-gradient(135deg, rgba(228, 239, 233, 0.78), rgba(249, 251, 248, 0.86));
+  }
+  .about-hero__inner {
+    display: grid;
+    grid-template-columns: minmax(260px, 0.65fr) minmax(0, 1.2fr);
+    align-items: center;
+    gap: clamp(3rem, 8vw, 8rem);
+  }
+  .about-hero__portrait {
+    width: min(100%, 370px);
+    aspect-ratio: 4 / 5;
+    border-radius: 48% 52% 40% 60% / 38% 42% 58% 62%;
+    box-shadow: 0 26px 58px rgba(20, 37, 28, 0.16);
+    overflow: hidden;
+  }
+  .about-hero__portrait img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
+  .about-hero h1 { margin-bottom: 0.6rem; }
+  .about-hero__role { margin-bottom: 1.5rem; color: #4f7f6a; font-size: 0.95rem; font-weight: 700; }
+  @media (max-width: 760px) {
+    .about-hero__inner { grid-template-columns: 1fr; text-align: center; }
+    .about-hero__portrait { width: min(72vw, 320px); margin-inline: auto; }
+    .about-hero .eyebrow { justify-content: center; }
+  }
+</style>

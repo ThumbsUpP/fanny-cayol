@@ -11,7 +11,7 @@ const ServicesSection: React.FC<ServicesSectionProps> = ({ services }) => (
   <section className="services">
     <SectionHeading
       title="Mes soins & prestations"
-      description="Chaque soin est pensé pour vous offrir un moment unique de détente et de récupération. Sélectionnez l'accompagnement qui répond à vos besoins du moment."
+      description="L'ostéopathie est au cœur de ma pratique. Je propose également des soins manuels complémentaires sur rendez-vous."
     />
     <div className="services__grid">
       {services.map(({ title, description, duration, image }, index) => (

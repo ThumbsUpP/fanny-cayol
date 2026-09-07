@@ -63,11 +63,10 @@ const serviceStructuredData = createServiceStructuredData({
       <p class="eyebrow">Situations fréquemment évoquées</p>
       <h2>Pourquoi les parents consultent-ils ?</h2>
       <p class="lead">
-        Les motifs ci-dessous sont des raisons de consultation rapportées par les familles. Ils ne
-        constituent <strong>ni une promesse de traitement ni une garantie de résultat</strong>.
+        Les parents peuvent notamment consulter pour les motifs suivants.
       </p>
     </div>
-    <div class="content-grid">
+    <div class="content-grid pediatric-reasons">
       <article class="content-card">
         <h3>Chez le nourrisson</h3>
         <ul>
@@ -85,13 +84,6 @@ const serviceStructuredData = createServiceStructuredData({
           <li><strong>problématique concernant les membres inférieurs</strong> ;</li>
           <li><strong>problématique concernant les membres supérieurs</strong>.</li>
         </ul>
-      </article>
-      <article class="content-card">
-        <h3>Un suivi coordonné</h3>
-        <p>
-          L’ostéopathie pédiatrique s’inscrit <strong>en complément du suivi par le pédiatre, le
-          médecin et les autres professionnels</strong> qui accompagnent votre enfant.
-        </p>
       </article>
     </div>
   </section>
@@ -126,3 +118,13 @@ const serviceStructuredData = createServiceStructuredData({
 
   <BookingCta title="Une question avant la consultation de votre enfant ?" text="Vous pouvez me laisser un SMS avec l’âge de votre enfant et votre motif de consultation. Je vous répondrai dès que possible." />
 </SiteLayout>
+
+<style>
+  .pediatric-reasons {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  @media (max-width: 760px) {
+    .pediatric-reasons { grid-template-columns: 1fr; }
+  }
+</style>

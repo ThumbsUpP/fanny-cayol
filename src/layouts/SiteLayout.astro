@@ -54,13 +54,15 @@ const baseGraph: Record<string, unknown>[] = [
     '@id': `${site.url}/#fanny-cayol-peridon`,
     name: site.name,
     alternateName: site.alternateNames,
-    jobTitle: 'Ostéopathe',
+    jobTitle: 'Masseur-kinésithérapeute et ostéopathe',
     description:
-      "Professionnelle de santé, ostéopathe et diplômée d'État de masseur-kinésithérapeute, Fanny Cayol Peridon exerce à Autrans.",
+      "Professionnelle de santé, masseur-kinésithérapeute diplômée d'État et ostéopathe, Fanny Cayol Peridon exerce à Autrans.",
     image: new URL('/images/fanny-cayol-peridon-osteopathe-autrans.webp', site.url).toString(),
     url: `${site.url}/fanny-cayol-peridon/`,
     knowsLanguage: 'fr-FR',
     knowsAbout: [
+      'Kinésithérapie générale',
+      'Rééducation périnéale',
       'Ostéopathie',
       'Ostéopathie pédiatrique',
       'Ostéopathie de la femme',
@@ -73,7 +75,7 @@ const baseGraph: Record<string, unknown>[] = [
   {
     '@type': ['MedicalBusiness', 'LocalBusiness'],
     '@id': `${site.url}/#cabinet`,
-    name: `${site.name}, ostéopathe à Autrans`,
+    name: `${site.name}, kinésithérapeute et ostéopathe à Autrans`,
     alternateName: site.alternateNames,
     description: site.description,
     url: `${site.url}/`,
@@ -128,7 +130,7 @@ const baseGraph: Record<string, unknown>[] = [
     about: { '@id': `${site.url}/#cabinet` },
     author: { '@id': `${site.url}/#fanny-cayol-peridon` },
     primaryImageOfPage: imageUrl,
-    dateModified: '2026-09-04',
+    dateModified: '2026-10-29',
     ...(mainEntityId ? { mainEntity: { '@id': mainEntityId } } : {}),
   },
 ];

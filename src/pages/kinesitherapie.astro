@@ -74,7 +74,7 @@ const serviceStructuredData = createServiceStructuredData({
   </section>
 
   <section class="section-shell section-space--tight">
-    <div class="content-grid">
+    <div class="content-grid session-grid">
       <article class="content-card">
         <p class="eyebrow">Votre première séance</p>
         <h2>Un bilan pour définir vos objectifs</h2>
@@ -97,9 +97,11 @@ const serviceStructuredData = createServiceStructuredData({
   <BookingCta title="Organisons votre prise en charge" text="Prenez rendez-vous en ligne ou contactez-moi par SMS pour toute question sur les séances de kinésithérapie." />
 </SiteLayout>
 
-<style>
-  .perineal-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+<style lang="scss">
+  section[id] { scroll-margin-top: 6rem; }
+  .perineal-grid, .session-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .session-grid h2 { font-size: clamp(1.4rem, 2.5vw, 1.9rem); }
   .perineal-note { margin-top: 1.5rem; }
   .perineal-note p:last-child { max-width: 850px; }
-  @media (max-width: 760px) { .perineal-grid { grid-template-columns: 1fr; } }
+  @media (max-width: 760px) { .perineal-grid, .session-grid { grid-template-columns: 1fr; } }
 </style>

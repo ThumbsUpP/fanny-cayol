@@ -1,10 +1,10 @@
 export const site = {
   name: 'Fanny Cayol Peridon',
   alternateNames: [],
-  role: 'Ostéopathe',
+  role: 'Kinésithérapeute et ostéopathe',
   description:
-    "Cabinet d'ostéopathie de Fanny Cayol Peridon à Autrans, au sein de NATURASOI.",
-  professionalLine: "Ostéopathe · Diplômée d'État de masseur-kinésithérapeute",
+    "Cabinet de kinésithérapie et d'ostéopathie de Fanny Cayol Peridon à Autrans, au sein de NATURASOI.",
+  professionalLine: "Masseur-kinésithérapeute diplômée d'État · Ostéopathe",
   url: 'https://www.fanny-cayol-peridon.fr',
   phoneDisplay: '06 68 37 86 16',
   phoneHref: 'tel:+33668378616',
@@ -30,6 +30,7 @@ export const areaServed = [
 
 export const navigation = [
   { label: 'Accueil', href: '/' },
+  { label: 'Kinésithérapie', href: '/kinesitherapie/' },
   { label: 'Ostéopathie', href: '/osteopathie/' },
   { label: 'Femmes', href: '/osteopathie-femme/' },
   { label: 'Pédiatrie', href: '/osteopathie-pediatrique/' },
@@ -40,12 +41,19 @@ export const navigation = [
 
 export const serviceLinks = [
   {
+    eyebrow: 'Rééducation et mobilité',
+    title: 'Kinésithérapie',
+    description: 'Kinésithérapie générale et rééducation périnéale pour les femmes et les hommes.',
+    href: '/kinesitherapie/',
+    number: '01',
+  },
+  {
     eyebrow: 'Pour tous les âges',
     title: 'Ostéopathie',
     description:
       "Une consultation manuelle personnalisée, guidée par l'écoute, l'examen et votre motif de consultation.",
     href: '/osteopathie/',
-    number: '01',
+    number: '02',
   },
   {
     eyebrow: 'À chaque étape de vie',
@@ -53,7 +61,7 @@ export const serviceLinks = [
     description:
       'Un accompagnement adapté pendant la grossesse, après la naissance et au fil des évolutions du corps.',
     href: '/osteopathie-femme/',
-    number: '02',
+    number: '03',
   },
   {
     eyebrow: 'Nourrissons & enfants',
@@ -61,7 +69,7 @@ export const serviceLinks = [
     description:
       "Des gestes doux, un temps d'échange avec les parents et une consultation adaptée à chaque âge.",
     href: '/osteopathie-pediatrique/',
-    number: '03',
+    number: '04',
   },
   {
     eyebrow: 'Doux ou dynamique',
@@ -69,7 +77,7 @@ export const serviceLinks = [
     description:
       'Deux approches personnalisées pour accompagner la circulation, la légèreté et le bien-être.',
     href: '/drainage-lymphatique/',
-    number: '04',
+    number: '05',
   },
   {
     eyebrow: 'Détente & récupération',
@@ -77,7 +85,7 @@ export const serviceLinks = [
     description:
       'Relaxant, sportif, ayurvédique ou ciblé : un massage construit avec vous, selon vos attentes.',
     href: '/massages/',
-    number: '05',
+    number: '06',
   },
 ] as const;
 

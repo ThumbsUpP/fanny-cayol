@@ -1,0 +1,107 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import PageHero from '../components/site/PageHero.astro';
+import Breadcrumbs from '../components/site/Breadcrumbs.astro';
+import PhotoPlaceholder from '../components/site/PhotoPlaceholder.astro';
+import BookingCta from '../components/site/BookingCta.astro';
+import RelatedLinks from '../components/site/RelatedLinks.astro';
+import { createServiceStructuredData, site } from '../data/site';
+
+const title = 'Kinésithérapie à Autrans et rééducation périnéale | Fanny Cayol Peridon';
+const description = 'Kinésithérapie générale et rééducation périnéale pour les femmes et les hommes à Autrans, au cabinet NATURASOI. Soins conventionnés sur rendez-vous.';
+const serviceStructuredData = createServiceStructuredData({
+  name: 'Kinésithérapie générale et rééducation périnéale à Autrans',
+  description,
+  path: '/kinesitherapie/',
+});
+---
+
+<SiteLayout title={title} description={description} canonicalPath="/kinesitherapie/" pageType="MedicalWebPage" extraStructuredData={serviceStructuredData}>
+  <Breadcrumbs items={[{ label: 'Accueil', href: '/' }, { label: 'Kinésithérapie' }]} />
+  <PageHero
+    eyebrow="Kinésithérapie · Rééducation · Mobilité"
+    title="Kinésithérapie à Autrans"
+    intro="Diplômée d’État depuis 2004, je vous accompagne avec des soins personnalisés, principalement manuels, et une rééducation adaptée à vos besoins et à vos objectifs."
+    photoLabel="Accompagnement manuel au cabinet"
+    photoSrc="/images/fanny-cayol-peridon-consultation-osteopathie.jpg"
+    photoAlt="Soin manuel réalisé au cabinet par Fanny Cayol Peridon"
+  >
+    <div slot="actions" class="actions">
+      <a class="button button--primary" href={site.bookingUrl} target="_blank" rel="noreferrer">Prendre rendez-vous</a>
+      <a class="button button--secondary" href="#reeducation-perineale">Rééducation périnéale</a>
+    </div>
+  </PageHero>
+
+  <section class="section-shell section-space" id="kinesitherapie-generale">
+    <div class="split-layout">
+      <div class="split-layout__copy">
+        <p class="eyebrow">Une approche personnalisée</p>
+        <h2>Kinésithérapie générale</h2>
+        <p>Diplômée en kinésithérapie depuis 2004, je vous accompagne dans votre prise en charge grâce à des <strong>soins personnalisés, principalement manuels</strong>.</p>
+        <p>Les séances associent différentes techniques adaptées à vos besoins : <strong>massages, étirements et exercices de renforcement musculaire</strong>, afin d’améliorer votre mobilité, de soulager les douleurs et de favoriser votre bien-être au quotidien.</p>
+        <p>Le choix des exercices et des techniques dépend de votre bilan, de vos objectifs et de votre évolution.</p>
+      </div>
+      <PhotoPlaceholder
+        label="Travail manuel pendant une consultation"
+        format="landscape"
+        src="/images/osteopathie-femme-mobilisation-douce.jpg"
+        alt="Mobilisation douce de l’épaule d’une patiente"
+      />
+    </div>
+  </section>
+
+  <section class="section-shell section-space--tight" id="reeducation-perineale">
+    <div class="section-heading">
+      <p class="eyebrow">Un accompagnement spécialisé</p>
+      <h2>Rééducation périnéale</h2>
+      <p class="lead">Je propose une prise en charge spécialisée en rééducation périnéale, destinée <strong>aux femmes comme aux hommes</strong>, à différentes étapes de leur vie.</p>
+    </div>
+    <div class="content-grid perineal-grid">
+      <article class="content-card">
+        <h3>Chez la femme</h3>
+        <p>Elle concerne notamment les <strong>fuites urinaires, l’incontinence anale, les douleurs pelviennes</strong>, les troubles liés à la grossesse ainsi que la rééducation après l’accouchement (post-partum).</p>
+      </article>
+      <article class="content-card">
+        <h3>Chez l’homme</h3>
+        <p>Elle permet notamment de prendre en charge les <strong>troubles urinaires et l’incontinence urinaire</strong> pouvant survenir après une chirurgie de la prostate.</p>
+      </article>
+    </div>
+    <div class="info-band perineal-note">
+      <p class="eyebrow">Écoute · Bienveillance · Discrétion</p>
+      <h3>Une prise en charge adaptée à chaque personne</h3>
+      <p>Chaque prise en charge est construite selon vos besoins, dans le respect de votre confort, de votre intimité et de votre rythme, afin de contribuer à améliorer votre qualité de vie au quotidien.</p>
+    </div>
+  </section>
+
+  <section class="section-shell section-space--tight">
+    <div class="content-grid session-grid">
+      <article class="content-card">
+        <p class="eyebrow">Votre première séance</p>
+        <h2>Un bilan pour définir vos objectifs</h2>
+        <p>Nous prenons le temps d’échanger sur votre situation, vos besoins et vos objectifs. Le bilan oriente ensuite le programme de rééducation et son adaptation au fil des séances.</p>
+      </article>
+      <article class="content-card">
+        <p class="eyebrow">Informations pratiques</p>
+        <h2>Des soins conventionnés</h2>
+        <p>Les séances de kinésithérapie sont proposées au cabinet NATURASOI dans le cadre conventionné. Leur prise en charge par l’Assurance maladie dépend notamment de la prescription et des conditions applicables à votre situation.</p>
+        <p><a href="/cabinet-tarifs-rendez-vous/">Accès, tarifs et rendez-vous →</a></p>
+      </article>
+    </div>
+  </section>
+
+  <RelatedLinks links={[
+    { title: 'Ostéopathie', description: 'Découvrir les consultations d’ostéopathie, distinctes de la kinésithérapie.', href: '/osteopathie/' },
+    { title: 'Mon parcours', description: 'Mes formations en kinésithérapie, ostéopathie et pelvi-périnéologie.', href: '/fanny-cayol-peridon/' },
+    { title: 'Cabinet et rendez-vous', description: 'Préparer votre venue à NATURASOI à Autrans.', href: '/cabinet-tarifs-rendez-vous/' },
+  ]} />
+  <BookingCta title="Organisons votre prise en charge" text="Prenez rendez-vous en ligne ou contactez-moi par SMS pour toute question sur les séances de kinésithérapie." />
+</SiteLayout>
+
+<style lang="scss">
+  section[id] { scroll-margin-top: 6rem; }
+  .perineal-grid, .session-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .session-grid h2 { font-size: clamp(1.4rem, 2.5vw, 1.9rem); }
+  .perineal-note { margin-top: 1.5rem; }
+  .perineal-note p:last-child { max-width: 850px; }
+  @media (max-width: 760px) { .perineal-grid, .session-grid { grid-template-columns: 1fr; } }
+</style>

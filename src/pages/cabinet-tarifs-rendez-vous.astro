@@ -5,11 +5,15 @@ import Breadcrumbs from '../components/site/Breadcrumbs.astro';
 import PhotoPlaceholder from '../components/site/PhotoPlaceholder.astro';
 import { site } from '../data/site';
 
-const title = 'Cabinet, tarifs et rendez-vous | Ostéopathe à Autrans';
+const title = 'Cabinet, tarifs et rendez-vous | Kinésithérapie et ostéopathie à Autrans';
 const description =
-  'Adresse, accès, tarifs et prise de rendez-vous avec Fanny Cayol Peridon, ostéopathe au cabinet NATURASOI à Autrans.';
+  'Adresse, accès, tarifs et prise de rendez-vous avec Fanny Cayol Peridon, kinésithérapeute et ostéopathe au cabinet NATURASOI à Autrans.';
 
 const faq = [
+  {
+    question: 'Les séances de kinésithérapie sont-elles conventionnées ?',
+    answer: 'Oui, la kinésithérapie est proposée dans le cadre conventionné. La prise en charge dépend de la prescription et des règles de l’Assurance maladie applicables à votre situation.',
+  },
   {
     question: 'Faut-il une ordonnance pour consulter un ostéopathe ?',
     answer: 'Non, aucune ordonnance n’est nécessaire pour prendre rendez-vous en ostéopathie.',
@@ -49,7 +53,7 @@ const faqStructuredData = {
   <Breadcrumbs items={[{ label: 'Accueil', href: '/' }, { label: 'Cabinet & rendez-vous' }]} />
   <PageHero
     eyebrow="NATURASOI · Autrans"
-    title="Cabinet d’ostéopathie à Autrans : préparer votre venue"
+    title="Cabinet de kinésithérapie et d’ostéopathie à Autrans"
     intro="Adresse, accès, tarifs et prise de rendez-vous : retrouvez ici l’essentiel avant votre consultation ou votre soin."
     photoLabel="Façade de NATURASOI à Autrans"
     photoSrc="/images/naturasoi-facade-autrans.jpg"
@@ -120,8 +124,18 @@ const faqStructuredData = {
   </section>
 
   <section class="section-shell section-space--tight">
+    <div class="info-band">
+      <p class="eyebrow">Kinésithérapie</p>
+      <h2>Séances conventionnées</h2>
+      <p>Les séances de kinésithérapie générale et de rééducation périnéale sont proposées au tarif conventionnel, selon les actes réalisés et la réglementation en vigueur. Leur remboursement par l’Assurance maladie dépend notamment de votre prescription et de votre situation.</p>
+      <p>Les massages et drainages de bien-être présentés ci-dessous sont des prestations distinctes, non assimilables à une séance conventionnée.</p>
+      <a class="button button--secondary" href="/kinesitherapie/">Découvrir la kinésithérapie</a>
+    </div>
+  </section>
+
+  <section class="section-shell section-space--tight">
     <div class="section-heading">
-      <p class="eyebrow">Tarifs</p>
+      <p class="eyebrow">Prestations de bien-être · tarifs distincts</p>
       <h2>Drainage lymphatique et massages</h2>
     </div>
     <div class="content-grid price-columns">

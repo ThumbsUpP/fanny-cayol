@@ -4,9 +4,9 @@ import PhotoPlaceholder from '../components/site/PhotoPlaceholder.astro';
 import BookingCta from '../components/site/BookingCta.astro';
 import { serviceLinks, site } from '../data/site';
 
-const title = 'Ostéopathe à Autrans | Fanny Cayol Peridon';
+const title = 'Kinésithérapeute et ostéopathe à Autrans | Fanny Cayol Peridon';
 const description =
-  'Fanny Cayol Peridon, ostéopathe et professionnelle de santé à Autrans-Méaudre-en-Vercors. Consultations sur rendez-vous au cabinet NATURASOI.';
+  'Fanny Cayol Peridon, kinésithérapeute et ostéopathe à Autrans-Méaudre-en-Vercors. Consultations sur rendez-vous au cabinet NATURASOI.';
 
 const servicesStructuredData = {
   '@type': 'ItemList',
@@ -32,7 +32,7 @@ const servicesStructuredData = {
     <div class="home-hero__inner">
       <div class="home-hero__copy">
         <p class="eyebrow">Fanny Cayol Peridon · Professionnelle de santé</p>
-        <h1><span class="home-hero__seo-title">Ostéopathe à Autrans</span> Retrouver du mouvement, en douceur.</h1>
+        <h1><span class="home-hero__seo-title">Kinésithérapeute & ostéopathe à Autrans</span> Retrouver du mouvement, en douceur.</h1>
         <p class="home-hero__intro">
           Je suis une <strong>professionnelle de santé</strong>, attentive aux autres et passionnée
           par mon métier. Grâce à ma double compétence d’ostéopathe et de
@@ -43,7 +43,7 @@ const servicesStructuredData = {
           <a class="button button--primary" href={site.bookingUrl} target="_blank" rel="noreferrer">
             Prendre rendez-vous en ligne
           </a>
-          <a class="button button--secondary" href="/osteopathie/">Découvrir l’ostéopathie</a>
+          <a class="button button--secondary" href="/kinesitherapie/">Découvrir la kinésithérapie</a>
         </div>
         <p class="home-hero__location">
           <span aria-hidden="true">⌖</span> {site.place} · {site.addressLine}, Autrans
@@ -61,7 +61,7 @@ const servicesStructuredData = {
         </div>
         <p>
           <strong>Fanny Cayol Peridon</strong>
-          Ostéopathe · Diplômée d’État de masseur-kinésithérapeute
+          Kinésithérapeute · Ostéopathe
         </p>
       </div>
     </div>
@@ -107,7 +107,7 @@ const servicesStructuredData = {
   <section class="section-shell section-space--tight">
     <div class="section-heading">
       <p class="eyebrow">Les accompagnements</p>
-      <h2>Des soins manuels, pensés pour chaque étape de vie</h2>
+      <h2>Kinésithérapie, ostéopathie et soins de bien-être</h2>
     </div>
     <div class="service-grid">
       {serviceLinks.map((service) => (

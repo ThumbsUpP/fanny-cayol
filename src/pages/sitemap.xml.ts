@@ -2,6 +2,7 @@ import type { APIRoute } from 'astro';
 
 const paths = [
   '/',
+  '/kinesitherapie/',
   '/osteopathie/',
   '/osteopathie-femme/',
   '/osteopathie-pediatrique/',
@@ -13,7 +14,7 @@ const paths = [
   '/politique-confidentialite/',
 ];
 
-const lastModified = '2026-09-02';
+const lastModified = '2026-10-29';
 
 export const GET: APIRoute = ({ site }) => {
   const baseUrl = site ?? new URL('https://www.fanny-cayol-peridon.fr');

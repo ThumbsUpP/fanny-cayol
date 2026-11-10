@@ -31,7 +31,7 @@ const SiteHeader: React.FC<Props> = ({ currentPath }) => (
         <span className="site-header__monogram" aria-hidden="true">FC</span>
         <span>
           <strong>Fanny Cayol Peridon</strong>
-          <small>Ostéopathe à Autrans</small>
+          <small>Kinésithérapeute & ostéopathe à Autrans</small>
         </span>
       </a>
 
